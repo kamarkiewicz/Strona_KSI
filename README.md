@@ -1,1 +1,1 @@
-# Strona_KSI
+# Strona_KSI.
