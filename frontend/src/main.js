@@ -6,6 +6,7 @@ import App from './App'
 import router from './router'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import 'bootstrap/dist/css/bootstrap.css'
+import 'font-awesome/css/font-awesome.css'
 
 // FIXME https://github.com/bootstrap-vue/bootstrap-vue/issues/1201
 let originalVueComponent = Vue.component
