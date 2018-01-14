@@ -75,33 +75,31 @@
             <a class="btn btn-lg btn-outline-light" href="#">Przejdź do galerii</a>
           </div>
           <div class="col-md-6 p-0">
-            <div id="carousel1" class="carousel slide" data-ride="carousel">
-              <div class="carousel-inner" role="listbox">
-                <div class="carousel-item">
-                  <img src="https://picsum.photos/500/500?image=1033" atl="first slide" class="d-block img-fluid w-100">
-                  <div class="carousel-caption">
-                    <h3>Dining room</h3>
-                    <p>Good architecture, better food</p>
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <img class="d-block img-fluid w-100" src="https://picsum.photos/500/500?image=1060" data-holder-rendered="true">
-                  <div class="carousel-caption">
-                    <h3>Cigar room</h3>
-                    <p>Enjoy our fine selection</p>
-                  </div>
-                </div>
-                <div class="carousel-item active">
-                  <img class="d-block img-fluid w-100" src="https://picsum.photos/500/500?image=1059" data-holder-rendered="true">
-                  <div class="carousel-caption">
-                    <h3>Relax area</h3>
-                    <p>Take the time to chill</p>
-                  </div>
-                </div>
-              </div>
-              <a class="carousel-control-prev" href="#carousel1" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a>
-              <a class="carousel-control-next" href="#carousel1" role="button" data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a>
-            </div>
+            <b-carousel id="carousel1"
+                        style="text-shadow: 1px 1px 2px #333;"
+                        controls
+                        indicators
+                        background="#ababab"
+                        :interval="4000"
+                        img-width="500"
+                        img-height="500"
+                        v-model="slide"
+                        @sliding-start="onSlideStart"
+                        @sliding-end="onSlideEnd"
+            >
+              <b-carousel-slide caption="First slide"
+                                text="Nulla vitae elit libero, a pharetra augue mollis interdum."
+                                img-src="https://picsum.photos/500/500?image=1033"
+              ></b-carousel-slide>
+              <b-carousel-slide caption="Second slide"
+                                text="Nulla vitae elit libero, a pharetra augue mollis interdum."
+                                img-src="https://picsum.photos/500/500?image=1060"
+              ></b-carousel-slide>
+              <b-carousel-slide caption="Third slide"
+                                text="Nulla vitae elit libero, a pharetra augue mollis interdum."
+                                img-src="https://picsum.photos/500/500?image=1059"
+              ></b-carousel-slide>
+            </b-carousel>
           </div>
         </div>
       </div>
@@ -113,7 +111,18 @@
 export default {
   name: 'HomeComponent',
   data () {
-    return {}
+    return {
+      slide: 0,
+      sliding: null
+    }
+  },
+  methods: {
+    onSlideStart (slide) {
+      this.sliding = true
+    },
+    onSlideEnd (slide) {
+      this.sliding = false
+    }
   }
 }
 </script>
