@@ -1,55 +1,41 @@
 <template>
   <div id="app">
-    <nav class="navbar navbar-expand-md bg-white navbar-light">
-      <div class="container">
-        <a class="navbar-bra mr-auto" href="#">
-          <img src="./assets/uwr-logo.png" width="200" height="75" class="d-inline-block align-top" alt="">
-          <img src="./assets/ksi-logo.png" width="200" height="75" class="d-inline-block align-top mx-3" alt="">
-        </a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#"><i class="fa d-inline fa-lg fa-bookmark-o"></i> ZOSIA</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#"><i class="fa d-inline fa-lg fa-bookmark-o"></i> Continuum</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#"><i class="fa d-inline fa-lg fa-bookmark-o"></i> II UWr</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <nav class="navbar navbar-expand-md bg-primary navbar-dark">
-      <div class="container">
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
-        <div class="collapse navbar-collapse text-center justify-content-end" id="navbar2SupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#">Aktualności</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">O nas</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Projekty</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Członkowie</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Galeria</a>
-            </li>
-          </ul>
-          <form class="form-inline m-0">
-            <input class="form-control mr-2" type="text" placeholder="Podaj frazę">
-            <button class="btn btn-primary" type="submit">Szukaj</button>
-          </form>
-        </div>
-      </div>
-    </nav>
+
+    <b-navbar toggleable="md" type="light" variant="white">
+      <b-container>
+          <b-navbar-brand href="#">
+            <img src="./assets/uwr-logo.png" width="200" height="75" class="d-inline-block align-top" alt="">
+            <img src="./assets/ksi-logo.png" width="200" height="75" class="d-inline-block align-top mx-3" alt="">
+          </b-navbar-brand>
+          <b-navbar-toggle class="ml-auto" target="brandnav_collapse"></b-navbar-toggle>
+          <b-collapse is-nav id="brandnav_collapse">
+            <b-navbar-nav class="ml-auto">
+              <b-nav-item><i class="fa d-inline fa-lg fa-bookmark-o"></i> ZOSIA</b-nav-item>
+              <b-nav-item><i class="fa d-inline fa-lg fa-bookmark-o"></i> Continuum</b-nav-item>
+              <b-nav-item><i class="fa d-inline fa-lg fa-bookmark-o"></i> II UWr</b-nav-item>
+            </b-navbar-nav>
+          </b-collapse>
+      </b-container>
+    </b-navbar>
+
+    <b-navbar toggleable="md" type="dark" variant="primary">
+      <b-container>
+        <b-navbar-toggle class="ml-auto" target="nav_collapse"></b-navbar-toggle>
+        <b-collapse is-nav id="nav_collapse">
+          <b-navbar-nav>
+            <b-nav-item>Aktualności</b-nav-item>
+            <b-nav-item>O nas</b-nav-item>
+            <b-nav-item>Projekty</b-nav-item>
+            <b-nav-item>Członkowie</b-nav-item>
+            <b-nav-item>Galeria</b-nav-item>
+          </b-navbar-nav>
+          <b-nav-form class="m-0 ml-auto">
+            <b-form-input class="mr-2" type="text" placeholder="Podaj frazę"/>
+            <b-button variant="primary" type="submit">Szukaj</b-button>
+          </b-nav-form>
+        </b-collapse>
+      </b-container>
+    </b-navbar>
 
     <router-view/>
 
