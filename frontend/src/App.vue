@@ -82,16 +82,16 @@
 </template>
 
 <script>
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
-import 'font-awesome/css/font-awesome.css'
-
 export default {
   name: 'app'
 }
 </script>
 
 <style lang="scss">
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+@import '../node_modules/bootstrap-vue/dist/bootstrap-vue.css';
+@import '../node_modules/font-awesome/css/font-awesome.css';
+
 #app {
   font-family: 'Lato', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
