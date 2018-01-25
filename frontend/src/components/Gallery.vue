@@ -1,39 +1,8 @@
 <template>
   <div class="container gallery-container">
-    <div class="tz-gallery">
-      <div class="row">
-        <div class="col-sm-12 col-md-4">
-          <a class="lightbox" href="https://picsum.photos/800/600?image=1010">
-            <img class="img-fluid" src="https://picsum.photos/800/600?image=1010" alt="Bridge">
-          </a>
-        </div>
-        <div class="col-sm-6 col-md-4">
-          <a class="lightbox" href="https://picsum.photos/800/600?image=1011">
-            <img class="img-fluid" src="https://picsum.photos/800/600?image=1011" alt="Park">
-          </a>
-        </div>
-        <div class="col-sm-6 col-md-4">
-          <a class="lightbox" href="https://picsum.photos/800/600?image=1012">
-            <img class="img-fluid" src="https://picsum.photos/800/600?image=1012" alt="Tunnel">
-          </a>
-        </div>
-        <div class="col-sm-12 col-md-8">
-          <a class="lightbox" href="https://picsum.photos/800/600?image=1013">
-            <img class="img-fluid" src="https://picsum.photos/800/600?image=1013" alt="Traffic">
-          </a>
-        </div>
-        <div class="col-sm-6 col-md-4">
-          <a class="lightbox" href="https://picsum.photos/800/600?image=1014">
-            <img class="img-fluid" src="https://picsum.photos/800/600?image=1014" alt="Coast">
-          </a>
-        </div>
-        <div class="col-sm-6 col-md-4">
-          <a class="lightbox" href="https://picsum.photos/800/600?image=1016">
-            <img class="img-fluid" src="https://picsum.photos/800/600?image=1016" alt="Rails">
-          </a>
-        </div>
-      </div>
-    </div>
+    <a v-for="img in images" :key="img.id" :href="img.src">
+      <img class="img-fluid" :src="img.src" alt="">
+    </a>
   </div>
 </template>
 
@@ -41,55 +10,47 @@
 export default {
   name: 'GalleryComponent',
   data () {
-    return {}
+    return {
+      images: [
+        { id: 1, src: 'https://picsum.photos/640/427?image=1021' },
+        { id: 2, src: 'https://picsum.photos/640/1138?image=1022' },
+        { id: 3, src: 'https://picsum.photos/640/427?image=1023' },
+        { id: 4, src: 'https://picsum.photos/640/853?image=1024' },
+        { id: 5, src: 'https://picsum.photos/640/427?image=1025' },
+        { id: 6, src: 'https://picsum.photos/640/1138?image=1026' },
+        { id: 7, src: 'https://picsum.photos/640/427?image=1027' },
+        { id: 8, src: 'https://picsum.photos/640/853?image=1028' },
+        { id: 9, src: 'https://picsum.photos/640/427?image=1029' },
+        { id: 10, src: 'https://picsum.photos/640/427?image=1030' },
+        { id: 11, src: 'https://picsum.photos/640/427?image=1031' },
+        { id: 12, src: 'https://picsum.photos/640/427?image=1032' },
+        { id: 13, src: 'https://picsum.photos/640/427?image=1033' },
+        { id: 14, src: 'https://picsum.photos/640/427?image=1034' },
+        { id: 15, src: 'https://picsum.photos/640/427?image=1035' },
+        { id: 16, src: 'https://picsum.photos/640/853?image=1036' },
+        { id: 17, src: 'https://picsum.photos/640/853?image=1037' },
+        { id: 18, src: 'https://picsum.photos/640/427?image=1038' },
+        { id: 19, src: 'https://picsum.photos/640/427?image=1039' },
+        { id: 20, src: 'https://picsum.photos/640/427?image=1040' },
+        { id: 21, src: 'https://picsum.photos/640/1138?image=1041' }
+      ]
+    }
   }
 }
 </script>
 
 <style lang="scss">
 .gallery-container {
-  background-color: #fff;
-  color: #35373a;
   min-height: 100vh;
   padding: 30px 50px;
-}
+  column-count: 1;
 
-.tz-gallery {
-
-  /* Override bootstrap column paddings */
-  .row > div {
-    padding: 2px;
+  img {
+    padding: 8px 0;
   }
 
-  .lightbox:before {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -13px;
-    margin-left: -13px;
-    opacity: 0;
-    color: #fff;
-    pointer-events: none;
-    z-index: 9000;
-    transition: 0.3s;
-  }
-
-
-  .lightbox:after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    background-color: rgba(46, 132, 206, 0.7);
-    content: '';
-    transition: 0.4s;
-  }
-
-  .lightbox:hover:after,
-  .lightbox:hover:before {
-    opacity: 0.4;
+  @media (min-width: 768px) {
+      column-count: 3;
   }
 }
 </style>
