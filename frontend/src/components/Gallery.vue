@@ -1,8 +1,12 @@
 <template>
-  <div class="container gallery-container">
-    <a v-for="img in images" :key="img.id" :href="img.src">
-      <img class="img-fluid" :src="img.src" alt="">
-    </a>
+  <div class="container mt-5">
+    <h4>{{album}}</h4>
+    <h1>{{title}}</h1>
+    <div class="gallery-container pt-4 pb-5">
+      <a v-for="img in images" :key="img.id" :href="img.src">
+        <img class="img-fluid" :src="img.src" alt="">
+      </a>
+    </div>
   </div>
 </template>
 
@@ -11,6 +15,8 @@ export default {
   name: 'GalleryComponent',
   data () {
     return {
+      album: 'Nazwa albumu',
+      title: 'Tytuł przykładowej galerii',
       images: [
         { id: 1, src: 'https://picsum.photos/640/427?image=1021' },
         { id: 2, src: 'https://picsum.photos/640/1138?image=1022' },
@@ -42,15 +48,15 @@ export default {
 <style lang="scss">
 .gallery-container {
   min-height: 100vh;
-  padding: 30px 50px;
-  column-count: 1;
 
   img {
     padding: 8px 0;
   }
 
-  @media (min-width: 768px) {
-      column-count: 3;
+  column-count: 1;
+
+  @media (min-width: 720px) { // md
+    column-count: 4;
   }
 }
 </style>
