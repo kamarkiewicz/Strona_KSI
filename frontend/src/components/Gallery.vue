@@ -2,9 +2,13 @@
   <div class="container mt-5">
     <h4>{{album}}</h4>
     <h1>{{title}}</h1>
-    <div class="gallery-container pt-4 pb-5">
+    <div class="gallery-container mt-4 mb-5">
       <a v-for="img in images" :key="img.id" :href="img.src">
-        <img class="img-fluid" :src="img.src" alt="">
+        <b-img class="img-fluid"
+               :src="img.src"
+               :width="img.width"
+               :height="img.height"
+               alt="" />
       </a>
     </div>
   </div>
