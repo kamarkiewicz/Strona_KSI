@@ -1,7 +1,5 @@
 <template>
-  <div class="container mt-5">
-    
-  </div>
+
 </template>
 
 <script>
@@ -9,10 +7,10 @@ export default {
   name: 'ArticleComponent',
   data () {
     return {
-      title: 'Nazwa artykułu',
+      title: 'Tytuł artykułu',
       content: 'Treść artykułu',
-      image: 'Źródło zdjęcia głównego'
-        
+      image: 'Źródło zdjęcia artykułu'
+
     }
   }
 }
