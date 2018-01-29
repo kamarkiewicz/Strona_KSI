@@ -1,11 +1,11 @@
 <template>
 <div class="container mt-5">
   <div class="article-header">
-    <p> {{ date }} </p>
+    <p class="text-primary"> {{ date }} </p>
     <h1>{{ title }}</h1>
   </div>  
   
-     <b-img :src="image" fluid alt="Responsive image" id="main-img"/>
+     <b-img :src="image" fluid alt="Responsive image" id="main-img" class="rounded"/>
   
   <div v-html="content" class="container" id="content">
   </div>
@@ -28,27 +28,15 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../../node_modules/bootstrap/scss/bootstrap.scss';
-@import '../../node_modules/bootstrap-vue/dist/bootstrap-vue.css';
-
- .container, .article-header{
-  color: #637485;
-  font-family: 'Lato', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
- }
 
 .article-header{
    padding: 1vw 0 3vw 0;
  }
 .article-header p{
-  color: #00a6d9;
   font-weight: 700;
   margin-bottom: 1vh !important;
 }
-h1{
-  font-size: 2.5vw;
-}
+
 
 h1::after{
   content: '';
@@ -63,13 +51,12 @@ h1::after{
   margin-bottom: 1.5vh;
 }
 #main-img{
-  
   margin-bottom: 3vh;
 }
 
 #content{
   margin-bottom: 10vh;
-  font-size: 1vw;
+  
 }
 
 </style>
