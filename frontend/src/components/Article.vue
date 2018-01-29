@@ -55,6 +55,7 @@ h1::after{
 }
 
 #content{
+  padding: 0;
   margin-bottom: 10vh;
   
 }
