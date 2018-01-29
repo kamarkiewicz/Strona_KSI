@@ -28,9 +28,14 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+@import '../../node_modules/bootstrap-vue/dist/bootstrap-vue.css';
+
  .container, .article-header{
-   color: #637485;
-   font-family: "Quicksand",Helvetica,sans-serif
+  color: #637485;
+  font-family: 'Lato', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
  }
 
 .article-header{
@@ -39,18 +44,24 @@ export default {
 .article-header p{
   color: #00a6d9;
   font-weight: 700;
-  margin-bottom: 0.5em;
+  margin-bottom: 1vh !important;
+}
+h1{
+  font-size: 2.5vw;
 }
 
 h1::after{
   content: '';
   position: relative;
-  bottom: -2vh;
+  bottom: -3vh;
 	display: block;
 	border-top: 1px solid #c9c9c9;
-  width: 15vw;
+  width: 12vw;
 }
 
+.container p{
+  margin-bottom: 1.5vh;
+}
 #main-img{
   
   margin-bottom: 3vh;
@@ -58,6 +69,7 @@ h1::after{
 
 #content{
   margin-bottom: 10vh;
+  font-size: 1vw;
 }
 
 </style>
