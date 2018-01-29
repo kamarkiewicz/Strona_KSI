@@ -7,7 +7,7 @@
   <div class="container-fluid">
      <b-img :src="image" fluid alt="Responsive image" id="main-img"/>
   </div>
-  <div v-html="content" class="container">
+  <div v-html="content" class="container" id="content">
   </div>
 </div>
 </template>
@@ -28,15 +28,28 @@ export default {
 </script>
 
 <style lang="scss">
- 
+ .container, .article-header{
+   color: #637485;
+   font-family: "Quicksand",Helvetica,sans-serif
+ }
+
 .article-header{
    margin-left: 5vw;
-   padding-bottom: 5vw;
+   padding-bottom: 4vw;
  }
+.article-header p{
+  color: #00a6d9;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+}
 
 #main-img{
   width: 100%;
   margin-bottom: 3vh;
+}
+
+#content{
+  margin-bottom: 10vh;
 }
 
 </style>
