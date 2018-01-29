@@ -88,13 +88,30 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../node_modules/bootstrap/scss/bootstrap.scss';
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+// stylelint-disable value-keyword-case
+$font-family-sans-serif:      -apple-system, Quicksand, Lato, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+$font-family-base:            $font-family-sans-serif;
+// stylelint-enable value-keyword-case
+
+$body-bg:       #fff;
+$body-color:    #637485;
+$primary:       #00a6d9;
+// $secondary:     #fff;
+// $light:         #00a6d9;
+// $dark:          #577492;
+
+$enable-shadows:            false;
+$enable-gradients:          true;
+$enable-transitions: true;
+
+$navbar-dark-color:                 rgba(#fff, .9);
+$navbar-dark-hover-color:           rgba(#fff, .75);
+$navbar-dark-active-color:          #fff;
+
+@import "../node_modules/bootstrap/scss/bootstrap";
 @import '../node_modules/bootstrap-vue/dist/bootstrap-vue.css';
 @import '../node_modules/font-awesome/css/font-awesome.css';
-
-#app {
-  font-family: 'Lato', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 </style>
