@@ -1,12 +1,12 @@
 <template>
-<div class="conatainer mt-5">
+<div class="container mt-5">
   <div class="article-header">
     <p> {{ date }} </p>
     <h1>{{ title }}</h1>
   </div>  
-  <div class="container-fluid">
+  
      <b-img :src="image" fluid alt="Responsive image" id="main-img"/>
-  </div>
+  
   <div v-html="content" class="container" id="content">
   </div>
 </div>
@@ -34,8 +34,7 @@ export default {
  }
 
 .article-header{
-   margin-left: 5vw;
-   padding-bottom: 4vw;
+   padding: 1vw 0 3vw 0;
  }
 .article-header p{
   color: #00a6d9;
@@ -43,8 +42,17 @@ export default {
   margin-bottom: 0.5em;
 }
 
+h1::after{
+  content: '';
+  position: relative;
+  bottom: -2vh;
+	display: block;
+	border-top: 1px solid #c9c9c9;
+  width: 15vw;
+}
+
 #main-img{
-  width: 100%;
+  
   margin-bottom: 3vh;
 }
 
