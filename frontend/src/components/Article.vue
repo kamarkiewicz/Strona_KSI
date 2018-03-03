@@ -1,15 +1,15 @@
 <template>
-<div class="container mt-5">
-  <div class="article-header">
-    <p class="text-primary"> {{ date }} </p>
-    <h1>{{ title }}</h1>
-  </div>  
-  
-     <b-img :src="image" fluid alt="Responsive image" id="main-img" class="rounded"/>
-  
-  <div v-html="content" class="container" id="content">
+  <div class="container mt-5">
+    <div class="article-header">
+      <p class="text-primary"> {{ date }} </p>
+      <h1>{{ title }}</h1>
+    </div>
+
+    <b-img :src="image" fluid alt="Responsive image" id="main-img" class="rounded"/>
+
+    <div v-html="content" class="container" id="content">
+    </div>
   </div>
-</div>
 </template>
 
 <script>
@@ -27,7 +27,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
 .article-header{
    padding: 1vw 0 3vw 0;
@@ -57,7 +57,7 @@ h1::after{
 #content{
   padding: 0;
   margin-bottom: 10vh;
-  
+
 }
 
 </style>
