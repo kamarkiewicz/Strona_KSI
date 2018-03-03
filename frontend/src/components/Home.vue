@@ -1,38 +1,7 @@
 <template>
   <div class="home">
-    <div class="py-5">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <h2 class="text-primary">Aktualności</h2>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <div class="row">
-              <div class="col-md-4">
-                <img class="img-fluid d-block w-100 mb-3 rounded" src="https://picsum.photos/270/180?image=1024">
-                <h2 class="text-primary">Tytuł aktualności 1</h2>
-                <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                  aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              </div>
-              <div class="col-md-4">
-                <img class="img-fluid d-block w-100 mb-3 rounded" src="https://picsum.photos/270/180?image=1020">
-                <h2 class="text-primary">Tytuł aktualności 2</h2>
-                <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                  aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              </div>
-              <div class="col-md-4">
-                <img class="img-fluid d-block w-100 mb-3 rounded" src="https://picsum.photos/270/180?image=1010">
-                <h2 class="text-primary">Tytuł aktualności 3</h2>
-                <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                  aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+
+    <home-news-component></home-news-component>
 
     <div class="py-5">
       <div class="container">
@@ -108,8 +77,13 @@
 </template>
 
 <script>
+import HomeNewsComponent from './HomeNews.vue'
+
 export default {
   name: 'HomeComponent',
+  components: {
+    HomeNewsComponent
+  },
   data () {
     return {
       slide: 0,
