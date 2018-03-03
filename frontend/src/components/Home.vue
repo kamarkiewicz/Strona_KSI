@@ -35,68 +35,20 @@
       </div>
     </div>
 
-    <div class="py-5 text-white bg-secondary">
-      <div class="container">
-        <div class="row">
-          <div class="align-self-center p-5 col-md-6">
-            <h1 class="mb-4">Zobacz na własne oczy!</h1>
-            <p class="mb-5">Get a fluid web page working on all devices with the Bootstrap 4 grid system.&nbsp; Responsive design made intuitive and effective with Pingendo.</p>
-            <a class="btn btn-lg btn-outline-light" href="#">Przejdź do galerii</a>
-          </div>
-          <div class="col-md-6 p-0">
-            <b-carousel id="carousel1"
-                        style="text-shadow: 1px 1px 2px #333;"
-                        controls
-                        indicators
-                        background="#ababab"
-                        :interval="4000"
-                        img-width="500"
-                        img-height="500"
-                        v-model="slide"
-                        @sliding-start="onSlideStart"
-                        @sliding-end="onSlideEnd"
-            >
-              <b-carousel-slide caption="First slide"
-                                text="Nulla vitae elit libero, a pharetra augue mollis interdum."
-                                img-src="https://picsum.photos/500/500?image=1033"
-              ></b-carousel-slide>
-              <b-carousel-slide caption="Second slide"
-                                text="Nulla vitae elit libero, a pharetra augue mollis interdum."
-                                img-src="https://picsum.photos/500/500?image=1060"
-              ></b-carousel-slide>
-              <b-carousel-slide caption="Third slide"
-                                text="Nulla vitae elit libero, a pharetra augue mollis interdum."
-                                img-src="https://picsum.photos/500/500?image=1059"
-              ></b-carousel-slide>
-            </b-carousel>
-          </div>
-        </div>
-      </div>
-    </div>
+    <home-carousel-component></home-carousel-component>
+
   </div>
 </template>
 
 <script>
 import HomeNewsComponent from './HomeNews.vue'
+import HomeCarouselComponent from './HomeCarousel.vue'
 
 export default {
   name: 'HomeComponent',
   components: {
-    HomeNewsComponent
-  },
-  data () {
-    return {
-      slide: 0,
-      sliding: null
-    }
-  },
-  methods: {
-    onSlideStart (slide) {
-      this.sliding = true
-    },
-    onSlideEnd (slide) {
-      this.sliding = false
-    }
+    HomeNewsComponent,
+    HomeCarouselComponent
   }
 }
 </script>
