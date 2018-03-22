@@ -1,8 +1,8 @@
 {
   "name": "frontend",
   "version": "1.0.0",
-  "description": "My stunning Nuxt.js project",
-  "author": "Kamil Markiewicz",
+  "description": "Front-end of KSI webpage",
+  "author": "Kamil Markiewicz <k.a.markiewicz@gmail.com>",
   "private": true,
   "scripts": {
     "dev": "nuxt",
@@ -13,16 +13,19 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "nuxt": "^1.0.0",
-    "bootstrap-vue": "^1.0.2",
+    "@nuxtjs/axios": "^5.0.0",
+    "@nuxtjs/font-awesome": "^1.0.3",
     "bootstrap": "^4.0.0-beta.2",
-    "@nuxtjs/axios": "^5.0.0"
+    "bootstrap-vue": "^1.0.2",
+    "nuxt": "^1.0.0"
   },
   "devDependencies": {
-    "cross-env": "^5.0.1",
     "babel-eslint": "^8.2.1",
+    "cross-env": "^5.0.1",
     "eslint": "^4.15.0",
     "eslint-loader": "^1.7.1",
-    "eslint-plugin-vue": "^4.0.0"
+    "eslint-plugin-vue": "^4.0.0",
+    "sass-loader": "^6.0.7",
+    "node-sass": "^4.7.2"
   }
 }
