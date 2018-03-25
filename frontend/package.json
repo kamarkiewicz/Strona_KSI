@@ -4,11 +4,6 @@
   "description": "Front-end of KSI webpage",
   "author": "Kamil Markiewicz <k.a.markiewicz@gmail.com>",
   "private": true,
-  "babel": {
-    "presets": [
-      "env"
-    ]
-  },
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
@@ -16,8 +11,9 @@
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint",
-    "unit": "jest --config test/unit/jest.conf.js --coverage",
-    "test": "yarn run unit"
+    "test:unit": "jest --config test/unit/jest.conf.js --coverage",
+    "test:e2e": "yarn run build && nightwatch --config test/e2e/nightwatch.conf.js --env chrome",
+    "test": "yarn run test:unit && yarn run test:e2e"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.0.0",
@@ -28,17 +24,24 @@
   },
   "devDependencies": {
     "@vue/test-utils": "^1.0.0-beta.12",
+    "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.1",
     "babel-jest": "^22.4.3",
+    "babel-plugin-add-module-exports": "^0.2.1",
     "babel-preset-env": "^1.6.1",
     "babel-preset-es2015": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "chromedriver": "^2.37.0",
+    "cross-spawn": "^6.0.5",
     "eslint": "^4.15.0",
     "eslint-loader": "^1.7.1",
     "eslint-plugin-vue": "^4.0.0",
     "jest": "^22.4.3",
     "jest-serializer-vue": "^1.0.0",
+    "nightwatch": "^0.9.20",
     "node-sass": "^4.7.2",
     "sass-loader": "^6.0.7",
+    "selenium-server": "^3.11.0",
     "vue-jest": "^2.3.0"
   }
 }
