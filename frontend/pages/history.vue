@@ -35,6 +35,16 @@ $bg-color: #f5f8fa;
 $subheadtitle-color: #00a6d9;
 $content-color: #637485;
 
+@mixin bg-triangle($color) {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" preserveAspectRatio="none"><polygon points="0,0 0,100 100,100" style="fill: #{$color}"/></svg>');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.footer {
+  padding-top: 7em;
+}
+
 .history-page {
   &.outer {
     background-color: $bg-color;
@@ -42,6 +52,19 @@ $content-color: #637485;
     padding: 6em 0 4em 0;
     padding-bottom: 4em;
     position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+
+      width: 100%;
+      height: 5em;
+
+      @include bg-triangle($bg-color);
+      transform: translateY(100%) rotate(180deg);
+    }
   }
 
   .inner {
@@ -57,36 +80,14 @@ $content-color: #637485;
       margin-bottom: 0.25em;
       text-transform: uppercase;
     }
-    h2 {
-      margin-bottom: 0;
+    &::after {
+      content: '';
+      display: block;
+      border-bottom: 1px solid #dadada;
+      width: 8em;
+      height: 1em;
     }
-    padding: 0 0 3.5em 0;
-    border-bottom: solid 1px #dadada;
-    margin: 0 0 3em 0;
+    margin-bottom: 2.25em;
   }
-}
-
-@mixin bg-triangle($color) {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" preserveAspectRatio="none"><polygon points="0,0 0,100 100,100" style="fill: #{$color}"/></svg>');
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-}
-
-/// leaning bar on the bottom of site content
-.history-page.outer::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-
-  width: 100%;
-  height: 5em;
-
-  @include bg-triangle($bg-color);
-  transform: translateY(100%) rotate(180deg);
-}
-
-.footer {
-  padding-top: 7em;
 }
 </style>
