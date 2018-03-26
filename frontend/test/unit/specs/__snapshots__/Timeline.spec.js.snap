@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Timeline renders correctly 1`] = `
+<section class="timeline">
+  <section>
+    <header>
+      <p>09.04.16</p>
+      <h4>Magna etiam sed lorem ipsum dolor amet</h4>
+    </header>
+    <div class="image">
+      <img src="https://picsum.photos/g/264/134?image=81" alt="">
+    </div>
+    <div class="content">
+      <p>Phasellus in ante vitae nibh porttitor tempus vitae ut ante. Vestibulum blandit dolor elementum viverra. Sed quat a diam, aliquet tempus felis. Phasellus et magna vitae nibh porttitor tempus vitae.</p>
+      <ul class="actions">
+        <li>
+          <a href="#" class="button">More</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section>
+    <header>
+      <p>08.28.16</p>
+      <h4>Sed feugiat et mauris adipiscing dolor</h4>
+    </header>
+    <div class="image">
+      <img src="https://picsum.photos/g/264/134?image=82" alt="">
+    </div>
+    <div class="content">
+      <p>Phasellus in ante vitae nibh porttitor tempus vitae ut ante. Vestibulum blandit dolor elementum viverra. Sed quat a diam, aliquet tempus felis. Phasellus et magna vitae nibh porttitor tempus vitae.</p>
+      <ul class="actions">
+        <li>
+          <a href="#" class="button">More</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section>
+    <header>
+      <p>08.22.16</p>
+      <h4>Tellus magna dolore sed elementum</h4>
+    </header>
+    <div class="image">
+      <img src="https://picsum.photos/g/264/134?image=83" alt="">
+    </div>
+    <div class="content">
+      <p>Phasellus in ante vitae nibh porttitor tempus vitae ut ante. Vestibulum blandit dolor elementum viverra. Sed quat a diam, aliquet tempus felis. Phasellus et magna vitae nibh porttitor tempus vitae.</p>
+      <ul class="actions">
+        <li>
+          <a href="#" class="button">More</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>
+`;
