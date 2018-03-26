@@ -66,21 +66,24 @@ $content-color: #637485;
   }
 }
 
+@mixin bg-triangle($color) {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" preserveAspectRatio="none"><polygon points="0,0 0,100 100,100" style="fill: #{$color}"/></svg>');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
 /// leaning bar on the bottom of site content
-// TODO: background-image is not flexible (color)
 .history-page.outer::after {
-  transform: translateY(100%) rotate(180deg);
   content: '';
   position: absolute;
   left: 0;
   bottom: 0;
 
   width: 100%;
-  height: 6em;
+  height: 5em;
 
-  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMDAnIGhlaWdodD0nMTAwJyB2aWV3Qm94PScwIDAgMTAwIDEwMCcgcHJlc2VydmVBc3BlY3RSYXRpbz0nbm9uZSc+PHBvbHlnb24gcG9pbnRzPScwLDAgMCwxMDAgMTAwLDEwMCcgc3R5bGU9J2ZpbGw6I2Y1ZjhmYTsnIC8+PC9zdmc+");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
+  @include bg-triangle($bg-color);
+  transform: translateY(100%) rotate(180deg);
 }
 
 .footer {
