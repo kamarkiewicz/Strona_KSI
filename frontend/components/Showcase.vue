@@ -1,5 +1,5 @@
 <template>
-  <div class="py-5">
+  <section class="showcase pt-5 pb-1">
     <div class="container">
 
       <div class="row mb-5">
@@ -33,7 +33,7 @@
       </div>
 
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -47,5 +47,25 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '~assets/scss/utils';
 
+$bg-color: #ffffff;
+
+.showcase {
+  background-color: $bg-color;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 5em;
+
+    @include bg-triangle($bg-color);
+    transform: translateY(100%) rotate(180deg); // scaleX(-1);
+  }
+}
 </style>
