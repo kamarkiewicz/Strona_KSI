@@ -1,5 +1,9 @@
 version: '3'
 
+volumes:
+  appdata:
+  dbdata:
+
 services:
   api:
     image: strapi/strapi
@@ -15,7 +19,7 @@ services:
     ports:
       - 1337:1337
     volumes:
-      - ./strapi-app:/usr/src/api/strapi-app
+      - appdata:/usr/src/api/strapi-app
       - /usr/src/api/strapi-app/node_modules
     depends_on:
       - db
@@ -28,5 +32,5 @@ services:
     ports:
       - 27017:27017
     volumes:
-      - ./db:/data/db
+      - dbdata:/data/db
     restart: always
