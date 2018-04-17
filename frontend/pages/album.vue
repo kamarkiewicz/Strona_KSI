@@ -1,22 +1,23 @@
 <template>
   <section class="wrapper">
-    <div class="inner">
+    <div class="container p-5">
 
-      <h2 class="major">Vitae phasellus</h2>
-      <p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
+      <h2 class="major">Album galerii</h2>
 
-      <section class="features">
-        <article v-for="el in albums" :key="el.id">
-          <a class="image"><img :src="el.imgSrc" alt=""></a>
-          <h3 class="major">{{ el.title }}</h3>
-          <p>{{ el.content }}</p>
-          <a class="special" :href="el.albumLink">Learn more</a>
-        </article>
+      <p class="mb-5">Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
+
+      <section class="container-fluid">
+        <b-row>
+          <b-col lg="6" v-for="el in albums" :key="el.id">
+          <article>
+            <a class="image"><img :src="el.imgSrc" alt=""></a>
+            <h3 class="major">{{ el.title }}</h3>
+            <p>{{ el.content }}</p>
+            <a class="special" :href="el.galleryLink">Przejdź do galerii</a>
+          </article>
+          </b-col>
+        </b-row>
       </section>
-
-      <ul class="actions">
-        <li><a class="button">Browse All</a></li>
-      </ul>
 
     </div>
   </section>
@@ -32,55 +33,55 @@ export default {
           imgSrc: 'https://picsum.photos/505/295?image=1031',
           title: 'Sed feugiat lorem',
           content: 'Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.',
-          albumLink: '#'
+          galleryLink: '#'
         },
         { id: 2,
           imgSrc: 'https://picsum.photos/505/295?image=1032',
           title: 'Nisl placerat',
           content: 'Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.',
-          albumLink: '#'
+          galleryLink: '#'
         },
         { id: 3,
           imgSrc: 'https://picsum.photos/505/295?image=1033',
           title: 'Ante fermentum',
           content: 'Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.',
-          albumLink: '#'
+          galleryLink: '#'
         },
         { id: 4,
           imgSrc: 'https://picsum.photos/505/295?image=1014',
           title: 'Fusce consequat',
           content: 'Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.',
-          albumLink: '#'
+          galleryLink: '#'
         },
         { id: 5,
           imgSrc: 'https://picsum.photos/505/295?image=1035',
           title: 'Sed feugiat lorem',
           content: 'Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.',
-          albumLink: '#'
+          galleryLink: '#'
         },
         { id: 6,
           imgSrc: 'https://picsum.photos/505/295?image=1036',
           title: 'Nisl placerat',
           content: 'Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.',
-          albumLink: '#'
+          galleryLink: '#'
         },
         { id: 7,
           imgSrc: 'https://picsum.photos/505/295?image=1037',
           title: 'Ante fermentum',
           content: 'Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.',
-          albumLink: '#'
+          galleryLink: '#'
         },
         { id: 8,
           imgSrc: 'https://picsum.photos/505/295?image=1038',
           title: 'Fusce consequat',
           content: 'Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.',
-          albumLink: '#'
+          galleryLink: '#'
         },
         { id: 9,
           imgSrc: 'https://picsum.photos/505/295?image=1039',
           title: 'Sed feugiat lorem',
           content: 'Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.',
-          albumLink: '#'
+          galleryLink: '#'
         }
       ]
     }
@@ -89,78 +90,40 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// .box-shadow {
-//   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
-// }
+
+$bg-color: #f5f8fa;
+$headtitle-color: #00a6d9;
+$article-color: #ffffff;
+$content-color: #637485;
+$link-color: #00a6d9;
+$linkicon-border: rgba($content-color, 0.125);
+$corner-rounding: 0.5em;
 
 .wrapper {
-    background-color: #2e3141;
-    position: relative;
+    background-color: $bg-color;
+    color: $content-color;
 }
 
-.wrapper .inner {
-    padding: 3em 0 1em 0;
-    margin: 0 auto;
-    width: 56em;
-}
-
-h2 {
-    font-size: 1.2em;
-}
-
-p {
-    margin: 0 0 2em 0;
-}
-
-.features {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 0 2em 0;
-}
-
-.features article {
-    padding: 1.75em 1.75em 0.1em 1.75em;
-    background-color: #353849;
-    border-radius: 5px;
+article {
     margin: 1.5em 3em 1.5em 0;
-    width: calc(50% - 3em);
+    padding: 1.75em 1.75em 0.1em 1.75em;
+    background-color: $article-color;
+    border-radius: $corner-rounding;
+    box-shadow: 0 1em 5em rgba(0, 0, 0, 0.05);
 }
 
-.features article .image {
-    border-radius: 5px 5px 0 0;
+article .image {
+    border-radius: $corner-rounding $corner-rounding 0 0;
     display: block;
     margin-bottom: 1.75em;
     margin-left: -1.75em;
     margin-top: -1.75em;
-    position: relative;
     width: calc(100% + 3.5em);
 }
 
-.image {
-    border-radius: 5px;
-    border: 0;
-    display: inline-block;
-    position: relative;
-}
-
-a {
-    -moz-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
-    -webkit-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
-    -ms-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
-    transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
-    border-bottom: dotted 1px rgba(255, 255, 255, 0.35);
-    color: #ffffff;
-    text-decoration: none;
-}
-
-.features article .image img {
-    border-radius: 5px 5px 0 0;
+article .image img {
+    border-radius: $corner-rounding $corner-rounding 0 0;
     width: 100%;
-}
-
-.image img {
-    border-radius: 5px;
-    display: block;
 }
 
 h1.major, h2.major, h3.major, h4.major, h5.major, h6.major {
@@ -168,11 +131,16 @@ h1.major, h2.major, h3.major, h4.major, h5.major, h6.major {
     border-bottom: solid 2px rgba(255, 255, 255, 0.125);
 }
 
+h2 {
+    font-size: 1.2em;
+}
+
 h3 {
     font-size: 0.9em;
 }
+
 h1, h2, h3, h4, h5, h6 {
-    color: #ffffff;
+    color: $headtitle-color;
     font-weight: 700;
     letter-spacing: 0.1em;
     margin: 0 0 1em 0;
@@ -182,7 +150,7 @@ h1, h2, h3, h4, h5, h6 {
 a {
     transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
     border-bottom: dotted 1px rgba(255, 255, 255, 0.35);
-    color: #ffffff;
+    color: $link-color;
     text-decoration: none;
 }
 
@@ -200,7 +168,7 @@ a.special:not(.button) {
 a.special:not(.button):before {
     transition: background-color 0.2s ease-in-out;
     border-radius: 100%;
-    border: solid 2px rgba(255, 255, 255, 0.125);
+    border: solid 2px $linkicon-border;
     content: '\f105';
     display: inline-block;
     font-size: 1.25em;
@@ -217,7 +185,6 @@ a.special:not(.button):before {
     font-family: FontAwesome;
     font-style: normal;
     font-weight: normal;
-    text-transform: none !important;
 }
 
 </style>
