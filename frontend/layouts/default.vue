@@ -3,9 +3,11 @@
 
     <b-navbar toggleable="md" type="light" variant="white">
       <b-container>
-          <b-navbar-brand href="#">
-            <img src="~/assets/uwr-logo.png" width="200" height="75" class="d-inline-block align-top" alt="">
-            <img src="~/assets/ksi-logo.png" width="200" height="75" class="d-inline-block align-top mx-3" alt="">
+          <b-navbar-brand to="/">
+              <img src="~/assets/uwr-logo.png" width="200" height="75" alt="">
+          </b-navbar-brand>
+          <b-navbar-brand to="/">
+              <img src="~/assets/ksi-logo.png" width="200" height="75" alt="">
           </b-navbar-brand>
           <b-navbar-toggle class="ml-auto" target="brandnav_collapse"></b-navbar-toggle>
           <b-collapse is-nav id="brandnav_collapse">
