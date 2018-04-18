@@ -1,6 +1,6 @@
 <template>
   <section class="history-page outer">
-    <div class="inner">
+    <div class="container pt-5">
 
       <header class="major">
         <p>{{ subtitle }}</p>
@@ -30,16 +30,11 @@ export default {
 </script>
 
 <style lang="scss">
+@import '~assets/scss/utils';
 
 $bg-color: #f5f8fa;
 $subheadtitle-color: #00a6d9;
 $content-color: #637485;
-
-@mixin bg-triangle($color) {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" preserveAspectRatio="none"><polygon points="0,0 0,100 100,100" style="fill: #{$color}"/></svg>');
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-}
 
 .footer {
   padding-top: 7em;
@@ -49,8 +44,6 @@ $content-color: #637485;
   &.outer {
     background-color: $bg-color;
     color: $content-color;
-    padding: 6em 0 4em 0;
-    padding-bottom: 4em;
     position: relative;
 
     &::after {
@@ -65,12 +58,6 @@ $content-color: #637485;
       @include bg-triangle($bg-color);
       transform: translateY(100%) rotate(180deg);
     }
-  }
-
-  .inner {
-    margin: 0 auto;
-    max-width: 75em;
-    width: calc(100% - 4em);
   }
 
   header.major {
