@@ -16,32 +16,32 @@
     "test": "yarn run test:unit && yarn run test:e2e"
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.0.0",
+    "@nuxtjs/axios": "^5.3.1",
     "@nuxtjs/font-awesome": "^1.0.3",
-    "bootstrap": "^4.0.0-beta.2",
-    "bootstrap-vue": "^1.0.2",
+    "bootstrap": "^4.1.0",
+    "bootstrap-vue": "^2.0.0-rc.8",
     "nuxt": "^1.0.0"
   },
   "devDependencies": {
-    "@vue/test-utils": "^1.0.0-beta.12",
+    "@vue/test-utils": "^1.0.0-beta.14",
     "babel-core": "^6.26.0",
-    "babel-eslint": "^8.2.1",
+    "babel-eslint": "^8.2.3",
     "babel-jest": "^22.4.3",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-preset-env": "^1.6.1",
     "babel-preset-es2015": "^6.24.1",
     "babel-register": "^6.26.0",
-    "chromedriver": "^2.37.0",
+    "chromedriver": "^2.38.0",
     "cross-spawn": "^6.0.5",
     "eslint": "^4.15.0",
-    "eslint-loader": "^1.7.1",
-    "eslint-plugin-vue": "^4.0.0",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-vue": "^4.5.0",
     "jest": "^22.4.3",
     "jest-serializer-vue": "^1.0.0",
     "nightwatch": "^0.9.20",
-    "node-sass": "^4.7.2",
-    "sass-loader": "^6.0.7",
+    "node-sass": "^4.8.3",
+    "sass-loader": "^7.0.1",
     "selenium-server": "^3.11.0",
-    "vue-jest": "^2.3.0"
+    "vue-jest": "^2.5.0"
   }
 }
