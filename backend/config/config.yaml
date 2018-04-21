@@ -5,5 +5,5 @@ debug: true
 i18n: pl
 
 languages:
-    en: English
-    ukr: Ukrainian
+    pl: Polish
+    ua: Ukrainian
