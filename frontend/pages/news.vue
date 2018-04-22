@@ -21,6 +21,9 @@
         </b-row>
       </section>
 
+      <b-pagination align="center" :total-rows="totalRows" v-model="currentPage" :per-page="perPage">
+      </b-pagination>
+
     </div>
   </section>
 </template>
@@ -28,57 +31,61 @@
 <script>
 export default {
   data() {
+    var news = [
+      {
+        id: 1,
+        date: '2018-11-28',
+        title: 'The Gettogether',
+        content: '<p>A party you cannot refuse...</p><p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>',
+        image: 'https://picsum.photos/505/295?image=1008',
+        link: '#read-more-link'
+      },
+      {
+        id: 2,
+        date: '2018-11-28',
+        title: 'The Gettogether',
+        content: '<p>A party you cannot refuse...</p><p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>',
+        image: 'https://picsum.photos/505/295?image=1018',
+        link: '#read-more-link'
+      },
+      {
+        id: 3,
+        date: '2018-11-28',
+        title: 'The Gettogether',
+        content: '<p>A party you cannot refuse...</p><p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>',
+        image: 'https://picsum.photos/505/295?image=918',
+        link: '#read-more-link'
+      },
+      {
+        id: 4,
+        date: '2018-11-28',
+        title: 'The Gettogether',
+        content: '<p>A party you cannot refuse...</p><p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>',
+        image: 'https://picsum.photos/505/295?image=1008',
+        link: '#read-more-link'
+      },
+      {
+        id: 5,
+        date: '2018-11-28',
+        title: 'The Gettogether',
+        content: '<p>A party you cannot refuse...</p><p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>',
+        image: 'https://picsum.photos/505/295?image=1018',
+        link: '#read-more-link'
+      },
+      {
+        id: 6,
+        date: '2018-11-28',
+        title: 'The Gettogether',
+        content: '<p>A party you cannot refuse...</p><p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>',
+        image: 'https://picsum.photos/505/295?image=918',
+        link: '#read-more-link'
+      },
+    ]
     return {
-      news: [
-        {
-          id: 1,
-          date: '2018-11-28',
-          title: 'The Gettogether',
-          content: '<p>A party you cannot refuse...</p><p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>',
-          image: 'https://picsum.photos/505/295?image=1008',
-          link: '#read-more-link'
-        },
-        {
-          id: 2,
-          date: '2018-11-28',
-          title: 'The Gettogether',
-          content: '<p>A party you cannot refuse...</p><p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>',
-          image: 'https://picsum.photos/505/295?image=1018',
-          link: '#read-more-link'
-        },
-        {
-          id: 3,
-          date: '2018-11-28',
-          title: 'The Gettogether',
-          content: '<p>A party you cannot refuse...</p><p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>',
-          image: 'https://picsum.photos/505/295?image=918',
-          link: '#read-more-link'
-        },
-        {
-          id: 4,
-          date: '2018-11-28',
-          title: 'The Gettogether',
-          content: '<p>A party you cannot refuse...</p><p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>',
-          image: 'https://picsum.photos/505/295?image=1008',
-          link: '#read-more-link'
-        },
-        {
-          id: 5,
-          date: '2018-11-28',
-          title: 'The Gettogether',
-          content: '<p>A party you cannot refuse...</p><p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>',
-          image: 'https://picsum.photos/505/295?image=1018',
-          link: '#read-more-link'
-        },
-        {
-          id: 6,
-          date: '2018-11-28',
-          title: 'The Gettogether',
-          content: '<p>A party you cannot refuse...</p><p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>',
-          image: 'https://picsum.photos/505/295?image=918',
-          link: '#read-more-link'
-        },
-      ]
+      currentPage: 1,
+      perPage: 4,
+      totalRows: news.length,
+      news: news
     }
   }
 }
