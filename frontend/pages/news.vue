@@ -13,7 +13,7 @@
             <article>
               <a class="image"><img :src="el.image" alt=""></a>
               <h3 class="major">{{ el.date }} | {{ el.title }}</h3>
-              <div v-html="el.content" id="content"></div>
+              <div v-html="el.excerpt" id="excerpt"></div>
               <a class="special" :href="el.link">Czytaj więcej</a>
             </article>
 
@@ -36,7 +36,7 @@ export default {
         id: 1,
         date: '2018-11-28',
         title: 'The Gettogether',
-        content: '<p>A party you cannot refuse...</p><p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>',
+        excerpt: '<p>A party you cannot refuse...</p><p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>',
         image: 'https://picsum.photos/505/295?image=1008',
         link: '#read-more-link'
       },
@@ -44,7 +44,7 @@ export default {
         id: 2,
         date: '2018-11-28',
         title: 'The Gettogether',
-        content: '<p>A party you cannot refuse...</p><p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>',
+        excerpt: '<p>A party you cannot refuse...</p><p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>',
         image: 'https://picsum.photos/505/295?image=1018',
         link: '#read-more-link'
       },
@@ -52,7 +52,7 @@ export default {
         id: 3,
         date: '2018-11-28',
         title: 'The Gettogether',
-        content: '<p>A party you cannot refuse...</p><p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>',
+        excerpt: '<p>A party you cannot refuse...</p><p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>',
         image: 'https://picsum.photos/505/295?image=918',
         link: '#read-more-link'
       },
@@ -60,7 +60,7 @@ export default {
         id: 4,
         date: '2018-11-28',
         title: 'The Gettogether',
-        content: '<p>A party you cannot refuse...</p><p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>',
+        excerpt: '<p>A party you cannot refuse...</p><p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>',
         image: 'https://picsum.photos/505/295?image=1008',
         link: '#read-more-link'
       },
@@ -68,7 +68,7 @@ export default {
         id: 5,
         date: '2018-11-28',
         title: 'The Gettogether',
-        content: '<p>A party you cannot refuse...</p><p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>',
+        excerpt: '<p>A party you cannot refuse...</p><p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>',
         image: 'https://picsum.photos/505/295?image=1018',
         link: '#read-more-link'
       },
@@ -76,7 +76,7 @@ export default {
         id: 6,
         date: '2018-11-28',
         title: 'The Gettogether',
-        content: '<p>A party you cannot refuse...</p><p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>',
+        excerpt: '<p>A party you cannot refuse...</p><p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>',
         image: 'https://picsum.photos/505/295?image=918',
         link: '#read-more-link'
       },
