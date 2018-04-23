@@ -1,12 +1,14 @@
 <template>
-  <section id="home-news" class="news wrapper">
-    <div class="container py-5">
+  <section id="news" class="news wrapper">
+    <div class="container p-5">
 
-      <h2 class="major">{{ $t('general.news') }}</h2>
+      <h2 class="major">Aktualności</h2>
+
+      <p class="mb-5">Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
 
       <section class="container-fluid">
         <b-row>
-          <b-col lg="4" v-for="el in news" :key="el.id">
+          <b-col lg="6" v-for="el in news" :key="el.id">
 
             <article>
               <a class="image"><img :src="el.image" alt=""></a>
@@ -19,45 +21,76 @@
         </b-row>
       </section>
 
+      <b-pagination align="center" :total-rows="totalRows" v-model="currentPage" :per-page="perPage">
+      </b-pagination>
+
     </div>
   </section>
 </template>
 
 <script>
 export default {
-  data () {
+  data() {
     var news = [
       {
         id: 1,
         date: '2018-11-28',
-        title: 'Tytuł aktualności 1',
+        title: 'The Gettogether',
         excerpt: '<p>A party you cannot refuse...</p><p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>',
-        image: 'https://picsum.photos/270/180?image=1024',
+        image: 'https://picsum.photos/505/295?image=1008',
         link: '#read-more-link'
       },
       {
         id: 2,
         date: '2018-11-28',
-        title: 'Tytuł aktualności 2',
+        title: 'The Gettogether',
         excerpt: '<p>A party you cannot refuse...</p><p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>',
-        image: 'https://picsum.photos/270/180?image=1020',
+        image: 'https://picsum.photos/505/295?image=1018',
         link: '#read-more-link'
       },
       {
         id: 3,
         date: '2018-11-28',
-        title: 'Tytuł aktualności 3',
+        title: 'The Gettogether',
         excerpt: '<p>A party you cannot refuse...</p><p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>',
-        image: 'https://picsum.photos/270/180?image=1010',
+        image: 'https://picsum.photos/505/295?image=918',
+        link: '#read-more-link'
+      },
+      {
+        id: 4,
+        date: '2018-11-28',
+        title: 'The Gettogether',
+        excerpt: '<p>A party you cannot refuse...</p><p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>',
+        image: 'https://picsum.photos/505/295?image=1008',
+        link: '#read-more-link'
+      },
+      {
+        id: 5,
+        date: '2018-11-28',
+        title: 'The Gettogether',
+        excerpt: '<p>A party you cannot refuse...</p><p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>',
+        image: 'https://picsum.photos/505/295?image=1018',
+        link: '#read-more-link'
+      },
+      {
+        id: 6,
+        date: '2018-11-28',
+        title: 'The Gettogether',
+        excerpt: '<p>A party you cannot refuse...</p><p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>',
+        image: 'https://picsum.photos/505/295?image=918',
         link: '#read-more-link'
       },
     ]
     return {
+      currentPage: 1,
+      perPage: 4,
+      totalRows: news.length,
       news: news
     }
   }
 }
 </script>
+
 
 <style lang="scss">
 
@@ -76,6 +109,7 @@ $corner-rounding: 0.5em;
   }
 
   article {
+      margin: 1.5em 3em 1.5em 0;
       padding: 1.75em 1.75em 0.1em 1.75em;
       background-color: $article-color;
       border-radius: $corner-rounding;
@@ -96,18 +130,25 @@ $corner-rounding: 0.5em;
       width: 100%;
   }
 
-  h1.major, h3.major, h4.major, h5.major, h6.major {
+  h1.major, h2.major, h3.major, h4.major, h5.major, h6.major {
+      padding-bottom: 1em;
       border-bottom: solid 2px rgba(255, 255, 255, 0.125);
   }
 
-  h3 {
+  h2 {
       font-size: 1.2em;
+  }
+
+  h3 {
+      font-size: 0.9em;
   }
 
   h1, h2, h3, h4, h5, h6 {
       color: $headtitle-color;
-      font-weight: 400;
+      font-weight: 700;
+      letter-spacing: 0.1em;
       margin: 0 0 1em 0;
+      text-transform: uppercase;
   }
 
   a {
