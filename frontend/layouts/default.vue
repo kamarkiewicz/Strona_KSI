@@ -15,14 +15,17 @@
               <b-nav-item><i class="fa d-inline fa-lg fa-calendar-o"></i> ZOSIA</b-nav-item>
               <b-nav-item><i class="fa d-inline fa-lg fa-handshake-o"></i> Continuum</b-nav-item>
               <b-nav-item><i class="fa d-inline fa-lg fa-bookmark-o"></i> II UWr</b-nav-item>
-              <b-nav-item
-                v-for="(locale, index) in $i18n.locales"
-                v-if="locale.code !== $i18n.locale"
-                :key="index"
-                :exact="true"
-                :to="switchLocalePath(locale.code)">
-                  <i class="fa d-inline fa-lg fa-flag-o"></i> {{ locale.name }}
-              </b-nav-item>
+              <b-nav-item-dropdown right>
+                <template slot="button-content"><i class="fa d-inline fa-lg fa-flag-o pr-1"></i></template>
+                <b-dropdown-item
+                  v-for="(locale, index) in $i18n.locales"
+                  v-if="locale.code !== $i18n.locale"
+                  :key="index"
+                  :exact="true"
+                  :to="switchLocalePath(locale.code)">
+                    {{ locale.name }}
+                </b-dropdown-item>
+              </b-nav-item-dropdown>
             </b-navbar-nav>
           </b-collapse>
       </b-container>
@@ -39,17 +42,27 @@
             <b-nav-item>Członkowie</b-nav-item>
             <b-nav-item>Galeria</b-nav-item>
           </b-navbar-nav>
+
           <b-nav-form class="m-0 ml-auto">
-            <b-form-input class="mr-2" type="text" placeholder="Podaj frazę"/>
-            <b-button variant="primary" type="submit">Szukaj</b-button>
+            <b-form-row class="mx-auto w-100">
+              <b-col cols="9">
+                <b-form-input class="w-100" type="text" placeholder="Podaj frazę"/>
+              </b-col>
+              <b-col cols="3">
+                <b-button class="w-100" variant="primary" type="submit">
+                  <i class="fa fa-search text-white"></i>
+                </b-button>
+              </b-col>
+            </b-form-row>
           </b-nav-form>
+
         </b-collapse>
       </b-container>
     </b-navbar>
 
     <nuxt/>
 
-    <div class="footer bg-dark text-white">
+    <footer class="footer bg-dark text-white">
       <div class="container">
         <div class="row">
           <div class="p-4 col-md-4">
@@ -87,7 +100,8 @@
           </div>
         </div>
       </div>
-    </div>
+    </footer>
+
   </div>
 </template>
 
