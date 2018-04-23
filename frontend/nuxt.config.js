@@ -42,6 +42,32 @@ module.exports = {
   modules: [
     // Doc: https://github.com/nuxt-community/axios-module#usage
     '@nuxtjs/axios',
+    // Doc: https://nuxt-community.github.io/nuxt-i18n/
+    ['nuxt-i18n', {
+      locales: [
+        {
+          code: 'en',
+          iso: 'en-US',
+          name: 'English',
+          langFile: 'en-US.js'
+        },
+        {
+          code: 'pl',
+          iso: 'pl-PL',
+          name: 'Polski',
+          langFile: 'pl-PL.js'
+        },
+        {
+          code: 'ua',
+          iso: 'ua-UA',
+          name: 'український',
+          langFile: 'ua-UA.js'
+        }
+      ],
+      defaultLocale: 'pl',
+      loadLanguagesAsync: true,
+      langDir: 'locales/',
+    }],
     // Doc: https://bootstrap-vue.js.org/docs/
     ['bootstrap-vue/nuxt', { css: false }],
     // Doc: https://fontawesome.com/icons
