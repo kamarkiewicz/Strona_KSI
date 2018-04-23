@@ -15,6 +15,14 @@
               <b-nav-item><i class="fa d-inline fa-lg fa-bookmark-o"></i> ZOSIA</b-nav-item>
               <b-nav-item><i class="fa d-inline fa-lg fa-bookmark-o"></i> Continuum</b-nav-item>
               <b-nav-item><i class="fa d-inline fa-lg fa-bookmark-o"></i> II UWr</b-nav-item>
+              <b-nav-item>
+                <nuxt-link
+                  v-for="(locale, index) in $i18n.locales"
+                  v-if="locale.code !== $i18n.locale"
+                  :key="index"
+                  :exact="true"
+                  :to="switchLocalePath(locale.code)">{{ locale.name }}</nuxt-link>
+              </b-nav-item>
             </b-navbar-nav>
           </b-collapse>
       </b-container>

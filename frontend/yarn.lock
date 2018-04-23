@@ -5407,6 +5407,14 @@ number-is-nan@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
 
+nuxt-i18n@^2.9.5:
+  version "2.9.5"
+  resolved "https://registry.yarnpkg.com/nuxt-i18n/-/nuxt-i18n-2.9.5.tgz#d9dd042b26ed15f5378fc4df7d4eb8c1fee844a4"
+  dependencies:
+    cookie "^0.3.1"
+    vue-i18n "^7.5.0"
+    vue-i18n-extensions "^0.1.0"
+
 nuxt@^1.0.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/nuxt/-/nuxt-1.4.0.tgz#66df9ede68daf2ef4cfbcc329da7dda0003e0420"
@@ -8059,6 +8067,10 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
+vm2@^3.5.0:
+  version "3.5.2"
+  resolved "https://registry.yarnpkg.com/vm2/-/vm2-3.5.2.tgz#6ae7c75a867775946e1d4a66623374e0245150e0"
+
 vue-eslint-parser@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/vue-eslint-parser/-/vue-eslint-parser-2.0.3.tgz#c268c96c6d94cfe3d938a5f7593959b0ca3360d1"
@@ -8077,6 +8089,16 @@ vue-functional-data-merge@^2.0.5:
 vue-hot-reload-api@^2.2.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.0.tgz#97976142405d13d8efae154749e88c4e358cf926"
+
+vue-i18n-extensions@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/vue-i18n-extensions/-/vue-i18n-extensions-0.1.0.tgz#58a65bc5c80abf000ca41735ef0cf4ccb480e013"
+  dependencies:
+    vm2 "^3.5.0"
+
+vue-i18n@^7.5.0:
+  version "7.6.0"
+  resolved "https://registry.yarnpkg.com/vue-i18n/-/vue-i18n-7.6.0.tgz#8745807756f6ca5090fd85629e9cab99b1c6e442"
 
 vue-jest@^2.5.0:
   version "2.5.0"
