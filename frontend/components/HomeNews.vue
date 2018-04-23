@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h2 class="text-primary">{{ title }}</h2>
+          <h2 class="text-primary">{{ $t('general.news') }}</h2>
         </div>
       </div>
       <div class="row">
@@ -27,7 +27,6 @@
 export default {
   data () {
     return {
-      title: 'Aktualności',
       newsList: [
         { id: 1,
           pic: 'https://picsum.photos/270/180?image=1024',

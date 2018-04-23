@@ -3,25 +3,25 @@
 
     <b-navbar toggleable="md" type="light" variant="white">
       <b-container>
-          <b-navbar-brand to="/">
+          <b-navbar-brand :to="localePath('index')">
               <img src="~/assets/uwr-logo.png" width="200" height="75" alt="">
           </b-navbar-brand>
-          <b-navbar-brand to="/">
+          <b-navbar-brand :to="localePath('index')">
               <img src="~/assets/ksi-logo.png" width="200" height="75" alt="">
           </b-navbar-brand>
           <b-navbar-toggle class="ml-auto" target="brandnav_collapse"></b-navbar-toggle>
           <b-collapse is-nav id="brandnav_collapse">
             <b-navbar-nav class="ml-auto">
-              <b-nav-item><i class="fa d-inline fa-lg fa-bookmark-o"></i> ZOSIA</b-nav-item>
-              <b-nav-item><i class="fa d-inline fa-lg fa-bookmark-o"></i> Continuum</b-nav-item>
+              <b-nav-item><i class="fa d-inline fa-lg fa-calendar-o"></i> ZOSIA</b-nav-item>
+              <b-nav-item><i class="fa d-inline fa-lg fa-handshake-o"></i> Continuum</b-nav-item>
               <b-nav-item><i class="fa d-inline fa-lg fa-bookmark-o"></i> II UWr</b-nav-item>
-              <b-nav-item>
-                <nuxt-link
-                  v-for="(locale, index) in $i18n.locales"
-                  v-if="locale.code !== $i18n.locale"
-                  :key="index"
-                  :exact="true"
-                  :to="switchLocalePath(locale.code)">{{ locale.name }}</nuxt-link>
+              <b-nav-item
+                v-for="(locale, index) in $i18n.locales"
+                v-if="locale.code !== $i18n.locale"
+                :key="index"
+                :exact="true"
+                :to="switchLocalePath(locale.code)">
+                  <i class="fa d-inline fa-lg fa-flag-o"></i> {{ locale.name }}
               </b-nav-item>
             </b-navbar-nav>
           </b-collapse>
