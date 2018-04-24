@@ -26,6 +26,9 @@ module.exports = {
     "components/**/*.{js,vue}",
     "layouts/**/*.{js,vue}",
     "pages/**/*.{js,vue}",
+    "store/**/*.js",
+    "plugins/**/*.{js,vue}",
+    "middleware/**/*.{js,vue}",
     "!**/node_modules/**"
   ]
 }
