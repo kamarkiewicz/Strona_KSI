@@ -29,64 +29,20 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   data() {
-    var news = [
-      {
-        id: 1,
-        date: '2018-11-28',
-        title: 'The Gettogether',
-        excerpt: '<p>A party you cannot refuse...</p><p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>',
-        image: 'https://picsum.photos/505/295?image=1008',
-        link: '#read-more-link'
-      },
-      {
-        id: 2,
-        date: '2018-11-28',
-        title: 'The Gettogether',
-        excerpt: '<p>A party you cannot refuse...</p><p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>',
-        image: 'https://picsum.photos/505/295?image=1018',
-        link: '#read-more-link'
-      },
-      {
-        id: 3,
-        date: '2018-11-28',
-        title: 'The Gettogether',
-        excerpt: '<p>A party you cannot refuse...</p><p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>',
-        image: 'https://picsum.photos/505/295?image=918',
-        link: '#read-more-link'
-      },
-      {
-        id: 4,
-        date: '2018-11-28',
-        title: 'The Gettogether',
-        excerpt: '<p>A party you cannot refuse...</p><p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>',
-        image: 'https://picsum.photos/505/295?image=1008',
-        link: '#read-more-link'
-      },
-      {
-        id: 5,
-        date: '2018-11-28',
-        title: 'The Gettogether',
-        excerpt: '<p>A party you cannot refuse...</p><p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>',
-        image: 'https://picsum.photos/505/295?image=1018',
-        link: '#read-more-link'
-      },
-      {
-        id: 6,
-        date: '2018-11-28',
-        title: 'The Gettogether',
-        excerpt: '<p>A party you cannot refuse...</p><p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>',
-        image: 'https://picsum.photos/505/295?image=918',
-        link: '#read-more-link'
-      },
-    ]
     return {
       currentPage: 1,
       perPage: 4,
-      totalRows: news.length,
-      news: news
     }
+  },
+  computed: {
+    ...mapGetters({
+      news: 'news/entries',
+      totalRows: 'news/entriesCount',
+    })
   }
 }
 </script>
