@@ -12,7 +12,7 @@
 
             <article>
               <a class="image"><img :src="el.image" alt=""></a>
-              <h3 class="major">{{ el.date }} | {{ el.title }}</h3>
+              <h3 class="major">{{ $d(el.date) }} | {{ el.title }}</h3>
               <div v-html="el.excerpt" id="excerpt"></div>
               <a class="special" :href="el.link">Czytaj więcej</a>
             </article>
@@ -32,11 +32,14 @@
 import { mapGetters } from 'vuex'
 
 export default {
-  data() {
+  data () {
     return {
       currentPage: 1,
       perPage: 4,
     }
+  },
+  async asyncData({ store }) {
+    await store.dispatch('news/GET_ENTRIES')
   },
   computed: {
     ...mapGetters({
