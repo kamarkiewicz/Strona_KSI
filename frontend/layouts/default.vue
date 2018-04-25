@@ -36,11 +36,11 @@
         <b-navbar-toggle class="ml-auto" target="nav_collapse"></b-navbar-toggle>
         <b-collapse is-nav id="nav_collapse">
           <b-navbar-nav>
-            <b-nav-item>Aktualności</b-nav-item>
-            <b-nav-item>O nas</b-nav-item>
-            <b-nav-item>Projekty</b-nav-item>
-            <b-nav-item>Członkowie</b-nav-item>
-            <b-nav-item>Galeria</b-nav-item>
+            <b-nav-item :to="localePath('news')">Aktualności</b-nav-item>
+            <b-nav-item :to="localePath('news')">O nas</b-nav-item>
+            <b-nav-item :to="localePath('news')">Projekty</b-nav-item>
+            <b-nav-item :to="localePath('news')">Członkowie</b-nav-item>
+            <b-nav-item :to="localePath('album')">Galeria</b-nav-item>
           </b-navbar-nav>
 
           <b-nav-form class="m-0 ml-auto">
