@@ -1,0 +1,5 @@
+engine: tntsearch
+
+collections:
+    news: [title, excerpt, content]
+
