@@ -38,8 +38,11 @@ export default {
       perPage: 4,
     }
   },
-  async asyncData({ store }) {
-    await store.dispatch('news/GET_ENTRIES')
+  async asyncData ({ store, app }) {
+    await store.dispatch('news/GET_ENTRIES', app.i18n.locale)
+  },
+  async fetch ({ store, app }) {
+    await store.dispatch('news/GET_ENTRIES', app.i18n.locale)
   },
   computed: {
     ...mapGetters({
@@ -51,7 +54,7 @@ export default {
 </script>
 
 
-<style lang="scss">
+<style lang="scss" scoped>
 
 $bg-color: #f5f8fa;
 $headtitle-color: #00a6d9;
