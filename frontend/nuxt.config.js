@@ -46,7 +46,7 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
-    // Doc: https://github.com/nuxt-community/axios-module#usage
+    // Doc: https://axios.nuxtjs.org/usage.html
     '@nuxtjs/axios',
     // Doc: https://nuxt-community.github.io/nuxt-i18n/
     ['nuxt-i18n', {
@@ -84,7 +84,7 @@ module.exports = {
   ** Axios module configuration
   */
   axios: {
-    // See https://github.com/nuxt-community/axios-module#options
+    // See https://axios.nuxtjs.org/options.html
   },
 
   /*
