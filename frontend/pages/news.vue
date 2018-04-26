@@ -37,11 +37,8 @@ export default {
       perPage: 4,
     }
   },
-  async asyncData ({ store, app }) {
-    await store.dispatch('news/GET_ENTRIES', app.i18n.locale)
-  },
-  async fetch ({ store, app }) {
-    await store.dispatch('news/GET_ENTRIES', app.i18n.locale)
+  async fetch ({ store }) {
+    await store.dispatch('news/GET_ENTRIES')
   },
   computed: {
     ...mapGetters({

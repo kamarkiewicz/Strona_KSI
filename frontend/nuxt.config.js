@@ -39,6 +39,7 @@ module.exports = {
   */
   plugins: [
     { src: '~plugins/axios.js', ssr: false },
+    { src: '~plugins/i18n.js' },
   ],
 
   /*

@@ -7,8 +7,8 @@ export const mutations = {
 }
 
 export const actions = {
-  async GET_ENTRIES ({ commit }, locale) {
-    const { entries } = await this.$axios.$get(`/api/collections/get/news?lang=${locale || 'pl'}`)
+  async GET_ENTRIES ({ commit, rootGetters }) {
+    const { entries } = await this.$axios.$get(`/api/collections/get/news?lang=${rootGetters.locale}`)
     commit('SET_ENTRIES', entries.map(entry => ({
         id: entry._id,
         date: entry._created  * 1000,
