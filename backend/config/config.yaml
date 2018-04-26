@@ -8,3 +8,12 @@ languages:
     # en: English (Default)
     pl: Polish
     ua: Ukrainian
+
+groups:
+    editor:
+        $admin: false
+        $vars:
+            finder.path: /storage/upload
+        cockpit:
+            backend: true
+            finder: true
