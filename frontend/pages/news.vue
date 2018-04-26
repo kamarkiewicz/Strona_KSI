@@ -1,30 +1,29 @@
 <template>
   <section id="news" class="news wrapper">
-    <div class="container p-5">
 
+    <div class="container pt-5 pb-4">
       <h2 class="major">{{ $t('general.news') }}</h2>
-
-      <p class="mb-5">Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
-
-      <section class="container-fluid">
-        <b-row>
-          <b-col lg="6" v-for="el in news" :key="el.id">
-
-            <article>
-              <a class="image"><img :src="el.image" alt=""></a>
-              <h3 class="major">{{ $d(el.date) }} | {{ el.title }}</h3>
-              <div v-html="el.excerpt" id="excerpt"></div>
-              <a class="special" :href="el.link">Czytaj więcej</a>
-            </article>
-
-          </b-col>
-        </b-row>
-      </section>
-
-      <b-pagination align="center" :total-rows="totalRows" v-model="currentPage" :per-page="perPage">
-      </b-pagination>
-
+      <p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
     </div>
+
+    <section class="container">
+      <b-row>
+        <b-col md="12" lg="6" v-for="el in news" :key="el.id">
+
+          <article>
+            <a class="image"><img :src="el.image" alt=""></a>
+            <h3 class="major">{{ $d(el.date) }} | {{ el.title }}</h3>
+            <div v-html="el.excerpt" class="excerpt"></div>
+            <a class="special" :href="el.link">Czytaj więcej</a>
+          </article>
+
+        </b-col>
+      </b-row>
+
+      <b-pagination class="py-5" align="center" :total-rows="totalRows" v-model="currentPage" :per-page="perPage">
+      </b-pagination>
+    </section>
+
   </section>
 </template>
 
@@ -71,7 +70,7 @@ $corner-rounding: 0.5em;
   }
 
   article {
-      margin: 1.5em 3em 1.5em 0;
+      // margin: 1.5em 3em 1.5em 0;
       padding: 1.75em 1.75em 0.1em 1.75em;
       background-color: $article-color;
       border-radius: $corner-rounding;
