@@ -1,98 +1,56 @@
 <template>
   <section id="news" class="news wrapper">
-    <div class="container p-5">
 
-      <h2 class="major">Aktualności</h2>
-
-      <p class="mb-5">Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
-
-      <section class="container-fluid">
-        <b-row>
-          <b-col lg="6" v-for="el in news" :key="el.id">
-
-            <article>
-              <a class="image"><img :src="el.image" alt=""></a>
-              <h3 class="major">{{ el.date }} | {{ el.title }}</h3>
-              <div v-html="el.excerpt" id="excerpt"></div>
-              <a class="special" :href="el.link">Czytaj więcej</a>
-            </article>
-
-          </b-col>
-        </b-row>
-      </section>
-
-      <b-pagination align="center" :total-rows="totalRows" v-model="currentPage" :per-page="perPage">
-      </b-pagination>
-
+    <div class="container pt-5 pb-4">
+      <h2 class="major">{{ $t('general.news') }}</h2>
+      <p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
     </div>
+
+    <section class="container">
+      <b-row>
+        <b-col md="12" lg="6" v-for="el in news" :key="el.id">
+
+          <article>
+            <a class="image"><img :src="el.image" alt=""></a>
+            <h3 class="major">{{ $d(el.date) }} | {{ el.title }}</h3>
+            <div v-html="el.excerpt" class="excerpt"></div>
+            <a class="special" :href="el.link">Czytaj więcej</a>
+          </article>
+
+        </b-col>
+      </b-row>
+
+      <b-pagination class="py-5" align="center" :total-rows="totalRows" v-model="currentPage" :per-page="perPage">
+      </b-pagination>
+    </section>
+
   </section>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
-  data() {
-    var news = [
-      {
-        id: 1,
-        date: '2018-11-28',
-        title: 'The Gettogether',
-        excerpt: '<p>A party you cannot refuse...</p><p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>',
-        image: 'https://picsum.photos/505/295?image=1008',
-        link: '#read-more-link'
-      },
-      {
-        id: 2,
-        date: '2018-11-28',
-        title: 'The Gettogether',
-        excerpt: '<p>A party you cannot refuse...</p><p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>',
-        image: 'https://picsum.photos/505/295?image=1018',
-        link: '#read-more-link'
-      },
-      {
-        id: 3,
-        date: '2018-11-28',
-        title: 'The Gettogether',
-        excerpt: '<p>A party you cannot refuse...</p><p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>',
-        image: 'https://picsum.photos/505/295?image=918',
-        link: '#read-more-link'
-      },
-      {
-        id: 4,
-        date: '2018-11-28',
-        title: 'The Gettogether',
-        excerpt: '<p>A party you cannot refuse...</p><p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>',
-        image: 'https://picsum.photos/505/295?image=1008',
-        link: '#read-more-link'
-      },
-      {
-        id: 5,
-        date: '2018-11-28',
-        title: 'The Gettogether',
-        excerpt: '<p>A party you cannot refuse...</p><p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>',
-        image: 'https://picsum.photos/505/295?image=1018',
-        link: '#read-more-link'
-      },
-      {
-        id: 6,
-        date: '2018-11-28',
-        title: 'The Gettogether',
-        excerpt: '<p>A party you cannot refuse...</p><p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>',
-        image: 'https://picsum.photos/505/295?image=918',
-        link: '#read-more-link'
-      },
-    ]
+  data () {
     return {
       currentPage: 1,
       perPage: 4,
-      totalRows: news.length,
-      news: news
     }
+  },
+  async fetch ({ store }) {
+    await store.dispatch('news/GET_ENTRIES')
+  },
+  computed: {
+    ...mapGetters({
+      news: 'news/entries',
+      totalRows: 'news/entriesCount',
+    })
   }
 }
 </script>
 
 
-<style lang="scss">
+<style lang="scss" scoped>
 
 $bg-color: #f5f8fa;
 $headtitle-color: #00a6d9;
@@ -109,7 +67,7 @@ $corner-rounding: 0.5em;
   }
 
   article {
-      margin: 1.5em 3em 1.5em 0;
+      // margin: 1.5em 3em 1.5em 0;
       padding: 1.75em 1.75em 0.1em 1.75em;
       background-color: $article-color;
       border-radius: $corner-rounding;
