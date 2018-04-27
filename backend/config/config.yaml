@@ -1,9 +1,19 @@
-# custom config
+# More options: https://getcockpit.com/documentation/reference/configuration
 
 debug: true
 
-i18n: pl
+app.name: Strona_KSI
 
 languages:
+    # en: English (Default)
     pl: Polish
     ua: Ukrainian
+
+groups:
+    editor:
+        $admin: false
+        $vars:
+            finder.path: /storage/upload
+        cockpit:
+            backend: true
+            finder: true
