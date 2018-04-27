@@ -6,12 +6,15 @@
       <p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
     </div>
 
-    <section class="container">
+    <section class="container pb-5">
       <b-row>
         <b-col md="12" lg="6" v-for="el in news" :key="el.id">
 
-          <article>
-            <a class="image"><img :src="el.image" alt=""></a>
+          <article class="my-3">
+            <div class="image">
+              <img v-if="el.image.path" :src="el.image.path" :alt="el.image.title">
+              <img v-else src="http://via.placeholder.com/505x295" alt="placeholder">
+            </div>
             <h3 class="major">{{ $d(el.date) }} | {{ el.title }}</h3>
             <div v-html="el.excerpt" class="excerpt"></div>
             <a class="special" :href="el.link">Czytaj więcej</a>
@@ -20,7 +23,7 @@
         </b-col>
       </b-row>
 
-      <b-pagination class="py-5" align="center" :total-rows="totalRows" v-model="currentPage" :per-page="perPage">
+      <b-pagination class="pt-4" align="center" :total-rows="totalRows" v-model="currentPage" :per-page="perPage">
       </b-pagination>
     </section>
 
