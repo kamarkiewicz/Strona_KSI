@@ -36,9 +36,9 @@
         <b-collapse is-nav id="nav_collapse">
           <b-navbar-nav>
             <b-nav-item :to="localePath('news')">Aktualności</b-nav-item>
-            <b-nav-item :to="localePath('news')">O nas</b-nav-item>
-            <b-nav-item :to="localePath('news')">Projekty</b-nav-item>
-            <b-nav-item :to="localePath('news')">Członkowie</b-nav-item>
+            <b-nav-item :to="localePath('about-us')">O nas</b-nav-item>
+            <b-nav-item :to="localePath('projects')">Projekty</b-nav-item>
+            <b-nav-item :to="localePath('members')">Członkowie</b-nav-item>
             <b-nav-item :to="localePath('album')">Galeria</b-nav-item>
           </b-navbar-nav>
 
