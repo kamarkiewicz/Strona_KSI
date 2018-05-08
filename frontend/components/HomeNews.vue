@@ -12,7 +12,7 @@
               <a class="image"><img :src="el.image" alt=""></a>
               <h3 class="major">{{ el.date }} | {{ el.title }}</h3>
               <div v-html="el.excerpt" id="excerpt"></div>
-              <nuxt-link class="special" :to="localePath('news') + '/slug'">Czytaj więcej</nuxt-link>
+              <a class="special" :href="el.link">Czytaj więcej</a>
             </article>
 
           </b-col>
