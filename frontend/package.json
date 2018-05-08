@@ -13,7 +13,8 @@
     "precommit": "npm run lint",
     "test:unit": "jest --config test/unit/jest.conf.js --coverage",
     "test:e2e": "yarn run build && nightwatch --config test/e2e/nightwatch.conf.js --env chrome",
-    "test": "yarn run test:unit && yarn run test:e2e"
+    "test": "yarn run test:unit && yarn run test:e2e",
+    "deploy:dev": "now --env API_URL=https://stronaksi-backend.now.sh --public && now alias && now rm frontend --safe --yes"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.1",
