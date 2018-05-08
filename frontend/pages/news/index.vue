@@ -17,7 +17,7 @@
             </div>
             <h3 class="major">{{ $d(el.date) }} | {{ el.title }}</h3>
             <div v-html="el.excerpt" class="excerpt"></div>
-            <a class="special" :href="el.link">Czytaj więcej</a>
+            <nuxt-link class="special" :to="el.link" append>Czytaj więcej</nuxt-link>
           </article>
 
         </b-col>
