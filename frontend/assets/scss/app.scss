@@ -19,3 +19,13 @@ $navbar-dark-hover-color:           rgba(#fff, .75);
 $navbar-dark-active-color:          #fff;
 
 @import "node_modules/bootstrap/scss/bootstrap";
+
+/* app.scss */
+
+// nuxt page transition
+.page-enter-active, .page-leave-active {
+  transition: opacity .2s;
+}
+.page-enter, .page-leave-to {
+  opacity: 0;
+}
