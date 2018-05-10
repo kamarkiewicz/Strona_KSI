@@ -43,16 +43,7 @@
           </b-navbar-nav>
 
           <b-nav-form class="m-0 ml-auto">
-            <b-form-row class="mx-auto w-100">
-              <b-col cols="9">
-                <b-form-input class="w-100" type="text" placeholder="Podaj frazę"/>
-              </b-col>
-              <b-col cols="3">
-                <b-button class="w-100" variant="primary" type="submit">
-                  <i class="fa fa-search text-white"></i>
-                </b-button>
-              </b-col>
-            </b-form-row>
+            <search-bar></search-bar>
           </b-nav-form>
 
         </b-collapse>
@@ -60,3 +51,13 @@
     </b-navbar>
   </header>
 </template>
+
+<script>
+import SearchBar from '~/components/SearchBar'
+
+export default {
+  components: {
+    SearchBar,
+  }
+}
+</script>
