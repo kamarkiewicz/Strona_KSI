@@ -1,7 +1,7 @@
 <template>
   <header class="header">
-    <b-navbar toggleable="md" type="light" variant="white">
-      <b-container>
+    <b-navbar toggleable="lg" type="light" variant="white">
+      <b-container class="fluid-md">
           <b-navbar-brand :to="localePath('index')">
               <img src="~/assets/uwr-logo.png" width="200" height="75" alt="">
           </b-navbar-brand>
@@ -9,13 +9,14 @@
               <img src="~/assets/ksi-logo.png" width="200" height="75" alt="">
           </b-navbar-brand>
           <b-navbar-toggle class="ml-auto" target="brandnav_collapse"></b-navbar-toggle>
+
           <b-collapse is-nav id="brandnav_collapse">
             <b-navbar-nav class="ml-auto">
               <b-nav-item><i class="fa d-inline fa-lg fa-calendar-o"></i> ZOSIA</b-nav-item>
               <b-nav-item><i class="fa d-inline fa-lg fa-handshake-o"></i> Continuum</b-nav-item>
               <b-nav-item><i class="fa d-inline fa-lg fa-bookmark-o"></i> II UWr</b-nav-item>
               <b-nav-item-dropdown right>
-                <template slot="button-content"><i class="fa d-inline fa-lg fa-flag-o pr-1"></i></template>
+                <template slot="button-content"><i class="fa d-inline fa-lg fa-globe pr-1"></i></template>
                 <b-dropdown-item
                   v-for="(locale, index) in $i18n.locales"
                   v-if="locale.code !== $i18n.locale"
@@ -31,7 +32,7 @@
     </b-navbar>
 
     <b-navbar toggleable="md" type="dark" variant="primary">
-      <b-container>
+      <b-container class="fluid-lg">
         <b-navbar-toggle class="ml-auto" target="nav_collapse"></b-navbar-toggle>
         <b-collapse is-nav id="nav_collapse">
           <b-navbar-nav>

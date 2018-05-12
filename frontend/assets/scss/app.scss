@@ -29,3 +29,17 @@ $navbar-dark-active-color:          #fff;
 .page-enter, .page-leave-to {
   opacity: 0;
 }
+
+@include media-breakpoint-down(md) {
+  .fluid-md {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  .fluid-lg {
+    width: 100%;
+    max-width: none;
+  }
+}
