@@ -40,7 +40,6 @@ module.exports = {
   */
   plugins: [
     { src: '~plugins/axios.js', ssr: false },
-    { src: '~plugins/i18n.js' },
   ],
 
   /*
@@ -51,28 +50,29 @@ module.exports = {
     '@nuxtjs/axios',
     // Doc: https://nuxt-community.github.io/nuxt-i18n/
     ['nuxt-i18n', {
+      parsePages: false, // Disable acorn parsing
       locales: [
         {
           code: 'en',
           iso: 'en-US',
           name: 'English',
-          langFile: 'en-US.js'
+          file: 'en-US.js'
         },
         {
           code: 'pl',
           iso: 'pl-PL',
           name: 'Polski',
-          langFile: 'pl-PL.js'
+          file: 'pl-PL.js'
         },
         {
           code: 'ua',
           iso: 'ua-UA',
           name: 'український',
-          langFile: 'ua-UA.js'
+          file: 'ua-UA.js'
         }
       ],
       defaultLocale: 'pl',
-      loadLanguagesAsync: true,
+      lazy: true,
       langDir: 'locales/',
     }],
     // Doc: https://bootstrap-vue.js.org/docs/
