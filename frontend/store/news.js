@@ -16,8 +16,8 @@ function getImage (image) {
 }
 
 export const actions = {
-  async GET_ENTRIES ({ commit, rootGetters }) {
-    const { entries } = await this.$axios.$get(`/api/collections/get/news?lang=${rootGetters.locale}`)
+  async GET_ENTRIES ({ commit, rootState }) {
+    const { entries } = await this.$axios.$get(`/api/collections/get/news?lang=${rootState.i18n.locale}`)
     commit('SET_ENTRIES', entries.map(entry => ({
         id: entry._id,
         date: entry._created  * 1000,
