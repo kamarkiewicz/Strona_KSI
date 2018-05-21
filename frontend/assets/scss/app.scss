@@ -7,8 +7,8 @@ $body-bg:       #fff;
 $body-color:    #637485;
 $primary:       #00a6d9;
 // $secondary:     #fff;
-// $light:         #00a6d9;
-// $dark:          #577492;
+$light:         #f5f8fa;
+$dark:          #343a40;
 
 $enable-shadows:            false;
 $enable-gradients:          true;
@@ -28,4 +28,18 @@ $navbar-dark-active-color:          #fff;
 }
 .page-enter, .page-leave-to {
   opacity: 0;
+}
+
+@include media-breakpoint-down(md) {
+  .fluid-md {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  .fluid-lg {
+    width: 100%;
+    max-width: none;
+  }
 }
