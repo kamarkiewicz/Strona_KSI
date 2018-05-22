@@ -8,12 +8,12 @@
 
       <section class="container-fluid">
         <b-row>
-          <b-col lg="6" v-for="el in albums" :key="el.id">
+          <b-col lg="6" v-for="el in galleries" :key="el.id">
           <article>
-            <a class="image"><img :src="el.imgSrc" alt=""></a>
+            <a class="image"><img :src="el.image.path" alt=""></a>
             <h3 class="major">{{ el.title }}</h3>
-            <p>{{ el.content }}</p>
-            <nuxt-link class="special" :to="el.galleryLink" append>Przejdź do galerii</nuxt-link>
+            <p>{{ el.description }}</p>
+            <nuxt-link class="special" :to="el.link" append>Przejdź do galerii</nuxt-link>
           </article>
           </b-col>
         </b-row>
@@ -24,67 +24,17 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
-  data() {
-    return {
-      albums: [
-        {
-          id: 1,
-          imgSrc: 'https://picsum.photos/505/295?image=1031',
-          title: 'Sed feugiat lorem',
-          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.',
-          galleryLink: 'slug'
-        },
-        { id: 2,
-          imgSrc: 'https://picsum.photos/505/295?image=1032',
-          title: 'Nisl placerat',
-          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.',
-          galleryLink: 'slug'
-        },
-        { id: 3,
-          imgSrc: 'https://picsum.photos/505/295?image=1033',
-          title: 'Ante fermentum',
-          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.',
-          galleryLink: 'slug'
-        },
-        { id: 4,
-          imgSrc: 'https://picsum.photos/505/295?image=1014',
-          title: 'Fusce consequat',
-          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.',
-          galleryLink: 'slug'
-        },
-        { id: 5,
-          imgSrc: 'https://picsum.photos/505/295?image=1035',
-          title: 'Sed feugiat lorem',
-          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.',
-          galleryLink: 'slug'
-        },
-        { id: 6,
-          imgSrc: 'https://picsum.photos/505/295?image=1036',
-          title: 'Nisl placerat',
-          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.',
-          galleryLink: 'slug'
-        },
-        { id: 7,
-          imgSrc: 'https://picsum.photos/505/295?image=1037',
-          title: 'Ante fermentum',
-          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.',
-          galleryLink: 'slug'
-        },
-        { id: 8,
-          imgSrc: 'https://picsum.photos/505/295?image=1038',
-          title: 'Fusce consequat',
-          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.',
-          galleryLink: 'slug'
-        },
-        { id: 9,
-          imgSrc: 'https://picsum.photos/505/295?image=1039',
-          title: 'Sed feugiat lorem',
-          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.',
-          galleryLink: 'slug'
-        }
-      ]
-    }
+  async fetch ({ store }) {
+    await store.dispatch('album/getEntries')
+  },
+  computed: {
+    ...mapGetters({
+      galleries: 'album/entries',
+      totalRows: 'album/entriesCount',
+    })
   }
 }
 </script>
