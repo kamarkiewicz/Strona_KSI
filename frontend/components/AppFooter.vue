@@ -14,15 +14,31 @@
             <a href="#" class="text-white">Panel administracyjny</a>
           </ul>
         </div>
+
         <div class="p-4 col-md-4">
-          <h2 class="mb-4">Kontakt</h2>
-          <p>
-            <a href="mailto:contact@example.com" class="text-white"><i class="fa d-inline mr-3 text-secondary fa-envelope-o"></i>contact@example.com</a>
-          </p>
-          <p>
-            <a href="https://goo.gl/maps/Y7tyP99MnzH2" class="text-white" target="_blank"><i class="fa d-inline mr-3 fa-map-marker text-secondary"></i>Fryderyka Joliot-Curie 15<br>50-383 Wrocław</a>
-          </p>
+          <h2 class="mb-4 text-secondary">Kontakt</h2>
+          <div class="row pb-2">
+              <div class="col-xs-3 text-center">
+                  <i class="fa mr-3 fa-envelope-o"></i>
+              </div>
+              <div class="col-xs-9">
+                <a :href="'mailto:' + email" class="link-unstyled">
+                  <div v-text="email"></div>
+                </a>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-xs-3 text-center">
+                  <i class="fa mr-3 fa-map-marker"></i>
+              </div>
+              <div class="col-xs-9">
+                  <a :href="location" class="link-unstyled" target="_blank">
+                    <div v-html="details"></div>
+                  </a>
+              </div>
+          </div>
         </div>
+
         <div class="p-4 col-md-4">
           <div class="row">
             <div class="col-md-4"><i class="fa fa-fw fa-facebook fa-3x text-white"></i></div>
@@ -39,3 +55,17 @@
     </div>
   </footer>
 </template>
+
+<script>
+import { mapGetters } from 'vuex'
+
+export default {
+  computed: {
+    ...mapGetters({
+      email: 'contact/email',
+      location: 'contact/location',
+      details: 'contact/details',
+    })
+  }
+}
+</script>
