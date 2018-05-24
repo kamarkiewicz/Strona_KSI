@@ -1,27 +1,34 @@
 <template>
-  <div class="container mt-5">
-    <div class="article-header">
-      <p class="text-primary"> {{ date }} </p>
-      <h1>{{ title }}</h1>
-    </div>
-
-    <b-img :src="image" fluid alt="Responsive image" id="main-img" class="rounded"/>
-
-    <div v-html="content" class="container" id="content">
-    </div>
+  <div>
+    <article class="container my-5">
+      <div class="article-header">
+        <p class="text-primary"> {{ date }} </p>
+        <h1>{{ title }}</h1>
+      </div>
+      <div v-if="image.path" class="image text-center mb-4">
+        <b-img :src="image.path" alt="Featured image" class="rounded" fluid />
+      </div>
+      <div v-html="excerpt" class="font-weight-bold" id="excerpt"></div>
+      <hr/>
+      <div v-html="content" id="content"></div>
+    </article>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'ArticleComponent',
-  data () {
-    return {
-      title: 'Tytuł artykułu',
-      date: '13 stycznia 2017',
-      content: '<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p><p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p><p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p> <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p> <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p><p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>',
-      image: 'https://lorempixel.com/1089/395/'
+import { fetchSingleNews, getImage } from '~/assets/js/utils'
 
+export default {
+  async asyncData ({ app, params, store }) {
+    const locale = store.state.i18n.locale
+    const slug = params.article
+    const entry = await fetchSingleNews(app.$axios, slug, locale)
+    return {
+      title: entry.title,
+      date: new Date(entry._created * 1000),
+      excerpt: entry.excerpt,
+      content: entry.content,
+      image: getImage(entry.image),
     }
   }
 }
@@ -49,9 +56,6 @@ h1::after{
 
 .container p{
   margin-bottom: 1.5vh;
-}
-#main-img{
-  margin-bottom: 3vh;
 }
 
 #content{
