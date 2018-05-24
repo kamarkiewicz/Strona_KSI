@@ -17,7 +17,7 @@ export const actions = {
         title: entry.title,
         excerpt: entry.excerpt,
         image: getImage(entry.image),
-        link: 'slug',
+        link: entry.title_slug,
       }))
     )
   }
