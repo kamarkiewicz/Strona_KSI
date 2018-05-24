@@ -40,6 +40,11 @@ export default {
       perPage: 4,
     }
   },
+  head () {
+    return {
+      title: this.$t('general.news'),
+    }
+  },
   async fetch ({ store }) {
     await store.dispatch('news/GET_ENTRIES')
   },

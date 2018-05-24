@@ -9,15 +9,16 @@ export const mutations = {
 }
 
 export const actions = {
-  async GET_ENTRIES ({ commit, rootState }) {
-    const { entries } = await this.$axios.$get(`/api/collections/get/news?lang=${rootState.i18n.locale}`)
+  async getEntries ({ commit, rootState }) {
+    const { entries } = await this.$axios.$get(`/api/collections/get/galleries?lang=${rootState.i18n.locale}`)
     commit('SET_ENTRIES', entries.map(entry => ({
         id: entry._id,
         date: entry._created  * 1000,
+        image: getImage(entry.image), // Featured image
         title: entry.title,
-        excerpt: entry.excerpt,
-        image: getImage(entry.image),
-        link: entry.title_slug,
+        description: entry.description,
+        images: entry.images.map(image => getImage(image)),
+        link: 'slug',
       }))
     )
   }
