@@ -30,6 +30,11 @@ export default {
       content: entry.content,
       image: getImage(entry.image),
     }
+  },
+  head () {
+    return {
+      title: this.title,
+    }
   }
 }
 </script>
