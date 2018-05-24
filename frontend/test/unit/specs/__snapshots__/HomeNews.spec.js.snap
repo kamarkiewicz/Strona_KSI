@@ -3,7 +3,7 @@
 exports[`HomeNews renders correctly 1`] = `
 <section id="home-news" class="news wrapper">
   <div class="container py-5">
-    <h2 class="major"></h2>
+    <h2 class="major">general.news</h2>
     <section class="container-fluid">
       <b-row>
         <b-col lg="4">
