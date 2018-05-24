@@ -1,7 +1,7 @@
-const path = require("path")
+import { resolve } from 'path'
 
-module.exports = {
-  "rootDir": path.resolve(__dirname, "../../"),
+export default {
+  "rootDir": resolve(__dirname, "../../"),
   "verbose": true,
   "moduleFileExtensions": [
     "js",
