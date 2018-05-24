@@ -1,4 +1,4 @@
-import { shallow, mount } from '@vue/test-utils'
+import { shallowMount, mount } from '@vue/test-utils'
 import Timeline from '@/components/Timeline.vue'
 
 describe('Timeline', () => {
@@ -9,7 +9,7 @@ describe('Timeline', () => {
 
   it('contains some events', () => {
     const msg = '09.04.16 Magna etiam'
-    const wrapper = shallow(Timeline)
+    const wrapper = shallowMount(Timeline)
     expect(wrapper.text()).toMatch(msg)
   })
 })
