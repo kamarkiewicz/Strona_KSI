@@ -2,7 +2,7 @@
   <div>
     <article class="container my-5">
       <div class="article-header">
-        <p class="text-primary"> {{ date }} </p>
+        <p class="text-primary"> {{ $d(date) }} </p>
         <h1>{{ title }}</h1>
       </div>
       <div v-if="image.path" class="image text-center mb-4">
@@ -25,7 +25,7 @@ export default {
     const entry = await fetchSingleNews(app.$axios, slug, locale)
     return {
       title: entry.title,
-      date: new Date(entry._created * 1000),
+      date: entry._created * 1000,
       excerpt: entry.excerpt,
       content: entry.content,
       image: getImage(entry.image),
