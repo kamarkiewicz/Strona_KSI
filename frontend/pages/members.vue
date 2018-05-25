@@ -25,78 +25,16 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
-  data () {
-    return {
-      members: [
-        {
-          image: 'https://picsum.photos/200/200?image=818',
-          description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.',
-          name: 'Bruce Lee',
-          title: 'Przewodniczący',
-        },
-        {
-          image: 'https://picsum.photos/200/200?image=768',
-          description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.',
-          name: 'Chuck "Half-kick" Norris',
-          title: 'Zastępca przewodniczącego',
-        },
-        {
-          image: 'https://picsum.photos/200/200?image=669',
-          description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.',
-          name: 'Carlito',
-          title: 'Skarbnik',
-        },
-        {
-          image: 'https://picsum.photos/200/200?image=818',
-          description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.',
-          name: 'Bruce Lee',
-          title: 'Przewodniczący',
-        },
-        {
-          image: 'https://picsum.photos/200/200?image=768',
-          description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.',
-          name: 'Chuck "Half-kick" Norris',
-          title: 'Zastępca przewodniczącego',
-        },
-        {
-          image: 'https://picsum.photos/200/200?image=669',
-          description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.',
-          name: 'Carlito',
-          title: 'Skarbnik',
-        },
-        {
-          image: 'https://picsum.photos/200/200?image=818',
-          description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.',
-          name: 'Bruce Lee',
-          title: 'Przewodniczący',
-        },
-        {
-          image: 'https://picsum.photos/200/200?image=768',
-          description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.',
-          name: 'Chuck "Half-kick" Norris',
-          title: 'Zastępca przewodniczącego',
-        },
-        {
-          image: 'https://picsum.photos/200/200?image=669',
-          description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.',
-          name: 'Carlito',
-          title: 'Skarbnik',
-        },
-        {
-          image: 'https://picsum.photos/200/200?image=818',
-          description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.',
-          name: 'Bruce Lee',
-          title: 'Przewodniczący',
-        },
-        {
-          image: 'https://picsum.photos/200/200?image=768',
-          description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.',
-          name: 'Chuck "Half-kick" Norris',
-          title: 'Zastępca przewodniczącego',
-        }
-      ]
-    }
+  async fetch ({ store }) {
+    await store.dispatch('members/getEntries')
+  },
+  computed: {
+    ...mapGetters({
+      members: 'members/entries',
+    })
   }
 }
 </script>

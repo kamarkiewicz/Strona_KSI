@@ -31,13 +31,53 @@ export async function fetchSlugs (axios, collectionName, slugField, locales) {
 export async function fetchSingleNews (axios, slug, locale) {
   const field = locale !== BACK_DEFAULT_LOCALE ? `title_${locale}_slug` : 'title_slug'
   const filter = `filter[${field}]`
-  const { entries, total } = await axios.$get('/api/collections/get/news', {
-    params: {
-      [filter]: slug,
-      lang: locale
-    }
-  })
-  if (total > 1) console.log(total)
-  if (!entries.length) throw new Error('There is no such article, sorry')
-  return entries[0]
+  let data
+  try {
+    const { entries, total } = await axios.$get('/api/collections/get/news', {
+      params: {
+        [filter]: slug,
+        lang: locale
+      }
+    })
+    if (total > 1) console.log(total)
+    if (!entries.length) throw new Error('There is no such article, sorry')
+    data = entries[0]
+  }
+  catch (e) {
+    console.error(e)
+  }
+  return data
+}
+
+// Gets region data through API
+export async function fetchRegion (axios, region, locale) {
+  let data
+  try {
+    data = await axios.$get(`/api/regions/data/${region}`, {
+      params: {
+        lang: locale
+      }
+    })
+    data.location = `https://maps.google.com/?q=${data.location.lat},${data.location.lng}`
+  }
+  catch (e) {
+    console.error(e)
+  }
+  return data
+}
+
+// Gets collection data through API
+export async function fetchCollection (axios, collectionName, locale) {
+  let data
+  try {
+    data = await axios.$get(`/api/collections/get/${collectionName}`, {
+      params: {
+        lang: locale
+      }
+    })
+  }
+  catch (e) {
+    console.error(e)
+  }
+  return data
 }

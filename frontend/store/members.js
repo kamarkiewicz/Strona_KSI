@@ -10,15 +10,13 @@ export const mutations = {
 
 export const actions = {
   async getEntries ({ commit, rootState }) {
-    const { entries } = await fetchCollection(this.$axios, 'galleries', rootState.i18n.locale)
+    const { entries } = await fetchCollection(this.$axios, 'members', rootState.i18n.locale)
     commit('SET_ENTRIES', entries.map(entry => ({
         id: entry._id,
-        date: entry._created  * 1000,
-        image: getImage(entry.image), // Featured image
+        name: entry.name,
         title: entry.title,
         description: entry.description,
-        images: entry.images.map(image => getImage(image)),
-        link: 'slug',
+        image: getImage(entry.image), // Avatar
       }))
     )
   }
