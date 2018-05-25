@@ -1,3 +1,4 @@
 export const general = {
-  news: 'Aktualności'
+  news: 'Aktualności',
+  album: 'Album galerii'
 };

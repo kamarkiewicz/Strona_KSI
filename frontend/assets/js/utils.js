@@ -27,28 +27,6 @@ export async function fetchSlugs (axios, collectionName, slugField, locales) {
   return entries
 }
 
-// Fetches single news by slug in given locale
-export async function fetchSingleNews (axios, slug, locale) {
-  const field = locale !== BACK_DEFAULT_LOCALE ? `title_${locale}_slug` : 'title_slug'
-  const filter = `filter[${field}]`
-  let data
-  try {
-    const { entries, total } = await axios.$get('/api/collections/get/news', {
-      params: {
-        [filter]: slug,
-        lang: locale
-      }
-    })
-    if (total > 1) console.log(total)
-    if (!entries.length) throw new Error('There is no such article, sorry')
-    data = entries[0]
-  }
-  catch (e) {
-    console.error(e)
-  }
-  return data
-}
-
 // Gets region data through API
 export async function fetchRegion (axios, region, locale) {
   let data
@@ -75,6 +53,28 @@ export async function fetchCollection (axios, collectionName, locale) {
         lang: locale
       }
     })
+  }
+  catch (e) {
+    console.error(e)
+  }
+  return data
+}
+
+// Fetches single entry in collection
+export async function fetchSingleByTitle (axios, collectionName, slug, locale) {
+  const field = locale !== BACK_DEFAULT_LOCALE ? `title_${locale}_slug` : 'title_slug'
+  const filter = `filter[${field}]`
+  let data
+  try {
+    const { entries, total } = await axios.$get('/api/collections/get/' + collectionName, {
+      params: {
+        [filter]: slug,
+        lang: locale
+      }
+    })
+    if (total > 1) console.error(`There is ${total} entries with slug ${slug} in ${locale}`)
+    if (!entries.length) throw new Error('There is no such entry')
+    data = entries[0]
   }
   catch (e) {
     console.error(e)

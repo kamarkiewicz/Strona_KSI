@@ -2,34 +2,30 @@
   <div>
     <article class="container my-5">
       <div class="article-header">
-        <p class="text-primary"> {{ $d(date) }} </p>
-        <h1>{{ title }}</h1>
+        <p class="text-primary"> {{ $d(entry.date) }} </p>
+        <h1>{{ entry.title }}</h1>
       </div>
-      <div v-if="image.path" class="image text-center mb-4">
-        <b-img :src="image.path" alt="Featured image" class="rounded" fluid />
+      <div v-if="entry.image.path" class="image text-center mb-4">
+        <b-img :src="entry.image.path" alt="Featured image" class="rounded" fluid />
       </div>
-      <div v-html="excerpt" class="font-weight-bold" id="excerpt"></div>
+      <div v-html="entry.excerpt" class="font-weight-bold" id="excerpt"></div>
       <hr/>
-      <div v-html="content" id="content"></div>
+      <div v-html="entry.content" id="content"></div>
     </article>
   </div>
 </template>
 
 <script>
-import { fetchSingleNews, getImage } from '~/assets/js/utils'
+import { mapGetters } from 'vuex'
 
 export default {
-  async asyncData ({ app, params, store }) {
-    const locale = store.state.i18n.locale
-    const slug = params.article
-    const entry = await fetchSingleNews(app.$axios, slug, locale)
-    return {
-      title: entry.title,
-      date: entry._created * 1000,
-      excerpt: entry.excerpt,
-      content: entry.content,
-      image: getImage(entry.image),
-    }
+  computed: {
+    ...mapGetters({
+      entry: 'news/entry',
+    })
+  },
+  async fetch ({ app, params, store }) {
+    await store.dispatch('news/getSingle', { axios: app.$axios, slug: params.article })
   },
   head () {
     return {
