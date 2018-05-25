@@ -60,6 +60,9 @@
 import { mapGetters } from 'vuex'
 
 export default {
+  async beforeMount () {
+    await this.$store.dispatch('contact/getEntries')
+  },
   computed: {
     ...mapGetters({
       email: 'contact/email',

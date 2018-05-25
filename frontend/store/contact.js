@@ -1,3 +1,4 @@
+import { fetchRegion } from '~/assets/js/utils'
 
 export const state = () => ({
   email: '',
@@ -15,9 +16,9 @@ export const mutations = {
 
 export const actions = {
   async getEntries ({ commit, rootState }) {
-    const data = await this.$axios.$get(`/api/regions/data/contact?lang=${rootState.i18n.locale}`)
-    data.location = `https://maps.google.com/?q=${data.location.lat},${data.location.lng}`
-    commit('SET_ENTRIES', data)
+    const data = await fetchRegion (this.$axios, 'contact', rootState.i18n.locale)
+    if (data)
+      commit('SET_ENTRIES', data)
   }
 }
 
