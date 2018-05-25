@@ -81,3 +81,25 @@ export async function fetchCollection (axios, collectionName, locale) {
   }
   return data
 }
+
+// Fetches single entry in collection
+export async function fetchSingleByTitle (axios, collectionName, slug, locale) {
+  const field = locale !== BACK_DEFAULT_LOCALE ? `title_${locale}_slug` : 'title_slug'
+  const filter = `filter[${field}]`
+  let data
+  try {
+    const { entries, total } = await axios.$get('/api/collections/get/' + collectionName, {
+      params: {
+        [filter]: slug,
+        lang: locale
+      }
+    })
+    if (total > 1) console.error(`There is ${total} entries with slug ${slug} in ${locale}`)
+    if (!entries.length) throw new Error('There is no such entry')
+    data = entries[0]
+  }
+  catch (e) {
+    console.error(e)
+  }
+  return data
+}
