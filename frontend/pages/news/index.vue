@@ -40,20 +40,20 @@ export default {
       perPage: 4,
     }
   },
-  head () {
-    return {
-      title: this.$t('general.news'),
-    }
-  },
-  async fetch ({ store }) {
-    await store.dispatch('news/GET_ENTRIES')
-  },
   computed: {
     ...mapGetters({
       news: 'news/entries',
       totalRows: 'news/entriesCount',
     })
-  }
+  },
+  async fetch ({ app, store }) {
+    await store.dispatch('news/getEntries', { axios: app.$axios })
+  },
+  head () {
+    return {
+      title: this.$t('general.news'),
+    }
+  },
 }
 </script>
 

@@ -27,15 +27,20 @@
 import { mapGetters } from 'vuex'
 
 export default {
-  async fetch ({ store }) {
-    await store.dispatch('album/getEntries')
-  },
   computed: {
     ...mapGetters({
       galleries: 'album/entries',
       totalRows: 'album/entriesCount',
     })
-  }
+  },
+  async fetch ({ app, store }) {
+    await store.dispatch('album/getEntries', { axios: app.$axios })
+  },
+  head () {
+    return {
+      title: this.$t('general.album'),
+    }
+  },
 }
 </script>
 

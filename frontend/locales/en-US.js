@@ -1,3 +1,4 @@
 export const general = {
-  news: 'News'
+  news: 'News',
+  album: 'Galleries',
 };
