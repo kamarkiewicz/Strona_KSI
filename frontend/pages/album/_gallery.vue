@@ -3,12 +3,12 @@
     <h4>{{ entry.album }}</h4>
     <h1>{{ entry.title }}</h1>
     <div class="gallery-container mt-4 mb-5">
-      <a v-for="img in entry.images" :key="img" :href="img.path">
+      <a v-for="img in entry.images" :key="img.meta.asset" :href="img.path">
         <b-img class="img-fluid"
                :src="img.path"
                :width="img.width"
                :height="img.height"
-               alt="" />
+               :alt="img.meta.asset" />
       </a>
     </div>
   </div>
