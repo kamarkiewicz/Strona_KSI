@@ -65,3 +65,19 @@ export async function fetchRegion (axios, region, locale) {
   }
   return data
 }
+
+// Gets collection data through API
+export async function fetchCollection (axios, collectionName, locale) {
+  let data
+  try {
+    data = await axios.$get(`/api/collections/get/${collectionName}`, {
+      params: {
+        lang: locale
+      }
+    })
+  }
+  catch (e) {
+    console.error(e)
+  }
+  return data
+}

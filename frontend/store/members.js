@@ -1,4 +1,4 @@
-import { getImage } from '~/assets/js/utils'
+import { getImage, fetchCollection } from '~/assets/js/utils'
 
 export const state = () => ({
   entries: []
@@ -10,7 +10,7 @@ export const mutations = {
 
 export const actions = {
   async getEntries ({ commit, rootState }) {
-    const { entries } = await this.$axios.$get(`/api/collections/get/members?lang=${rootState.i18n.locale}`)
+    const { entries } = await fetchCollection(this.$axios, 'members', rootState.i18n.locale)
     commit('SET_ENTRIES', entries.map(entry => ({
         id: entry._id,
         name: entry.name,
