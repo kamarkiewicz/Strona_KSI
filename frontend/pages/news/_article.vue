@@ -16,13 +16,13 @@
 </template>
 
 <script>
-import { fetchSingleNews, getImage } from '~/assets/js/utils'
+import { fetchSingleByTitle, getImage } from '~/assets/js/utils'
 
 export default {
   async asyncData ({ app, params, store }) {
     const locale = store.state.i18n.locale
     const slug = params.article
-    const entry = await fetchSingleNews(app.$axios, slug, locale)
+    const entry = await fetchSingleByTitle(app.$axios, 'news', slug, locale)
     return {
       title: entry.title,
       date: entry._created * 1000,
