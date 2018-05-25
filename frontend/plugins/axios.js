@@ -4,7 +4,7 @@ export default function ({ $axios, redirect }) {
   })
 
   $axios.onError(error => {
-    // TODO: error handling - show a toast
-    console.log(error)
+    console.log('TODO: error handling - show a toast')
+    console.error(error)
   })
 }
