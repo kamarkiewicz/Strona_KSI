@@ -5,13 +5,10 @@
         <div class="p-4 col-md-4">
           <h2 class="mb-4 text-secondary">Mapa strony</h2>
           <ul class="list-unstyled">
-            <a href="#" class="text-white">Strona główna</a>
-            <br>
-            <a href="#" class="text-white">Galeria</a>
-            <br>
-            <a href="#" class="text-white">Aktualności</a>
-            <br>
-            <a href="#" class="text-white">Panel administracyjny</a>
+            <li v-for="el in leftSectionLinks" :key="el.id">
+              <a v-if="el.external" :href="el.link" class="text-white" target="_blank">{{ el.caption }}</a>
+              <nuxt-link v-else :to="el.link" class="text-white">{{ el.caption }}</nuxt-link>
+            </li>
           </ul>
         </div>
 
@@ -60,6 +57,33 @@
 import { mapGetters } from 'vuex'
 
 export default {
+  data () {
+    return {
+      leftSectionLinks: [
+        {
+          id: 1,
+          caption: 'Strona Główna',
+          link: '/',
+        },
+        {
+          id: 2,
+          caption: 'Aktualności',
+          link: '/news',
+        },
+        {
+          id: 3,
+          caption: 'Galeria',
+          link: '/album',
+        },
+        {
+          id: 4,
+          caption: 'Panel administracyjny',
+          link: this.$store.state.adminPanelLink,
+          external: true,
+        },
+      ]
+    }
+  },
   async beforeMount () {
     await this.$store.dispatch('contact/getEntries')
   },
