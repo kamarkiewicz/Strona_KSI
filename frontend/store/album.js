@@ -24,8 +24,8 @@ export const actions = {
       }))
     )
   },
-  async getSingle ({ commit, rootState }, { slug }) {
-    const entry = await fetchSingleByTitle(this.$axios, 'galleries', slug, rootState.i18n.locale)
+  async getSingle ({ commit, rootState }, { axios, slug }) {
+    const entry = await fetchSingleByTitle(axios, 'galleries', slug, rootState.i18n.locale)
     commit('SET_ENTRY', {
       album: slug,
       title: entry.title,

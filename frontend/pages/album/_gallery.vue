@@ -23,8 +23,8 @@ export default {
       entry: 'album/entry',
     })
   },
-  mounted () {
-    this.$store.dispatch('album/getSingle', { slug: this.$route.params.gallery })
+  async fetch ({ app, params, store }) {
+    await store.dispatch('album/getSingle', { axios: app.$axios, slug: params.gallery })
   },
   head () {
     return {
