@@ -7,7 +7,7 @@
           <ul class="list-unstyled">
             <li v-for="el in leftSectionLinks" :key="el.id">
               <a v-if="el.external" :href="el.link" class="text-white" target="_blank">{{ el.caption }}</a>
-              <nuxt-link v-else :to="el.link" class="text-white">{{ el.caption }}</nuxt-link>
+              <nuxt-link v-else :to="localePath(el.link)" class="text-white">{{ el.caption }}</nuxt-link>
             </li>
           </ul>
         </div>
@@ -63,17 +63,17 @@ export default {
         {
           id: 1,
           caption: 'Polityka prywatności',
-          link: '/privacy',
+          link: 'privacy',
         },
         {
           id: 2,
           caption: 'Aktualności',
-          link: '/news',
+          link: 'news',
         },
         {
           id: 3,
           caption: 'Galeria',
-          link: '/album',
+          link: 'album',
         },
         {
           id: 4,
