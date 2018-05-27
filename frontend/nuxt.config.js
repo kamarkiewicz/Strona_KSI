@@ -51,6 +51,7 @@ module.exports = {
     // Doc: https://nuxt-community.github.io/nuxt-i18n/
     ['nuxt-i18n', {
       parsePages: false, // Disable acorn parsing
+      detectBrowserLanguage: false,
       locales: [
         {
           code: 'en',
