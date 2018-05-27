@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="p-4 col-md-4">
-          <h2 class="mb-4 text-secondary">Mapa strony</h2>
+          <h2 class="mb-4 text-secondary">Inne linki</h2>
           <ul class="list-unstyled">
             <li v-for="el in leftSectionLinks" :key="el.id">
               <a v-if="el.external" :href="el.link" class="text-white" target="_blank">{{ el.caption }}</a>
@@ -62,8 +62,8 @@ export default {
       leftSectionLinks: [
         {
           id: 1,
-          caption: 'Strona Główna',
-          link: '/',
+          caption: 'Polityka prywatności',
+          link: '/privacy',
         },
         {
           id: 2,
