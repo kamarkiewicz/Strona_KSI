@@ -7,42 +7,42 @@ exports[`HomeNews renders correctly 1`] = `
     <section class="container-fluid">
       <b-row>
         <b-col lg="4">
-          <article>
+          <article class="preview-card">
             <a class="image">
               <img src="https://picsum.photos/270/180?image=1024" alt="">
             </a>
-            <h3 class="major">2018-11-28 | Tytuł aktualności 1</h3>
-            <div id="excerpt">
+            <h3 class="title">1527628516335 | Tytuł aktualności 1</h3>
+            <div class="excerpt">
               <p>A party you cannot refuse...</p>
               <p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>
             </div>
-            <a href="#read-more-link" class="special">Czytaj więcej</a>
+            <a href="#read-more-link" class="link">Czytaj więcej</a>
           </article>
         </b-col>
         <b-col lg="4">
-          <article>
+          <article class="preview-card">
             <a class="image">
               <img src="https://picsum.photos/270/180?image=1020" alt="">
             </a>
-            <h3 class="major">2018-11-28 | Tytuł aktualności 2</h3>
-            <div id="excerpt">
+            <h3 class="title">1527628516335 | Tytuł aktualności 2</h3>
+            <div class="excerpt">
               <p>A party you cannot refuse...</p>
               <p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>
             </div>
-            <a href="#read-more-link" class="special">Czytaj więcej</a>
+            <a href="#read-more-link" class="link">Czytaj więcej</a>
           </article>
         </b-col>
         <b-col lg="4">
-          <article>
+          <article class="preview-card">
             <a class="image">
               <img src="https://picsum.photos/270/180?image=1010" alt="">
             </a>
-            <h3 class="major">2018-11-28 | Tytuł aktualności 3</h3>
-            <div id="excerpt">
+            <h3 class="title">1527628516335 | Tytuł aktualności 3</h3>
+            <div class="excerpt">
               <p>A party you cannot refuse...</p>
               <p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>
             </div>
-            <a href="#read-more-link" class="special">Czytaj więcej</a>
+            <a href="#read-more-link" class="link">Czytaj więcej</a>
           </article>
         </b-col>
       </b-row>

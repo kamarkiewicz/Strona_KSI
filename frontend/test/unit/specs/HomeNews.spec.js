@@ -7,7 +7,10 @@ Vue.config.ignoredElements = [
 ];
 
 const cfg = {
-  mocks: { $t: (label) => { return label } },
+  mocks: {
+    $t: (label) => { return label },
+    $d: (label) => { return label },
+  },
 }
 
 describe('HomeNews', () => {
@@ -17,8 +20,8 @@ describe('HomeNews', () => {
   })
 
   it('contains News header', () => {
-    const msg = 'ktualności'
+    const label = 'general.news'
     const wrapper = shallowMount(HomeNews, cfg)
-    expect(wrapper.text()).toMatch(msg)
+    expect(wrapper.text()).toMatch(label)
   })
 })
