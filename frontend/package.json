@@ -37,7 +37,7 @@
     "eslint": "^4.15.0",
     "eslint-loader": "^2.0.0",
     "eslint-plugin-vue": "^4.5.0",
-    "jest": "^22.4.4",
+    "jest": "^23.0.1",
     "jest-serializer-vue": "^1.0.0",
     "nightwatch": "^0.9.21",
     "node-sass": "^4.9.0",
