@@ -24,6 +24,8 @@
 </template>
 
 <script>
+import { Image } from '~/assets/js/utils'
+
 export default {
   data () {
     var news = [
@@ -32,7 +34,7 @@ export default {
         date: '2018-11-28',
         title: 'Tytuł aktualności 1',
         excerpt: '<p>A party you cannot refuse...</p><p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>',
-        image: 'https://picsum.photos/270/180?image=1024',
+        image: new Image('https://picsum.photos/270/180?image=1024'),
         link: '#read-more-link'
       },
       {
@@ -40,7 +42,7 @@ export default {
         date: '2018-11-28',
         title: 'Tytuł aktualności 2',
         excerpt: '<p>A party you cannot refuse...</p><p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>',
-        image: 'https://picsum.photos/270/180?image=1020',
+        image: new Image('https://picsum.photos/270/180?image=1020'),
         link: '#read-more-link'
       },
       {
@@ -48,7 +50,7 @@ export default {
         date: '2018-11-28',
         title: 'Tytuł aktualności 3',
         excerpt: '<p>A party you cannot refuse...</p><p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>',
-        image: 'https://picsum.photos/270/180?image=1010',
+        image: new Image('https://picsum.photos/270/180?image=1010'),
         link: '#read-more-link'
       },
     ]

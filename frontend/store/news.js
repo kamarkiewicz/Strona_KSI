@@ -1,4 +1,4 @@
-import { getImage, fetchCollection, fetchSingleByTitle } from '~/assets/js/utils'
+import { Image, fetchCollection, fetchSingleByTitle } from '~/assets/js/utils'
 
 const COLLECTION_NAME = 'news'
 
@@ -20,7 +20,7 @@ export const actions = {
         date: entry._created  * 1000,
         title: entry.title,
         excerpt: entry.excerpt,
-        image: getImage(entry.image),
+        image: new Image(entry.image),
         link: entry.title_slug,
       }))
     )
@@ -32,7 +32,7 @@ export const actions = {
       date: entry._created * 1000,
       excerpt: entry.excerpt,
       content: entry.content,
-      image: getImage(entry.image),
+      image: new Image(entry.image),
     })
   }
 }

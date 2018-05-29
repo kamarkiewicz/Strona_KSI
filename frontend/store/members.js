@@ -1,4 +1,4 @@
-import { getImage, fetchCollection } from '~/assets/js/utils'
+import { Image, fetchCollection } from '~/assets/js/utils'
 
 export const state = () => ({
   entries: []
@@ -16,7 +16,7 @@ export const actions = {
         name: entry.name,
         title: entry.title,
         description: entry.description,
-        image: getImage(entry.image), // Avatar
+        image: new Image(entry.image), // Avatar
       }))
     )
   }
