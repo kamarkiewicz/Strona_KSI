@@ -1,5 +1,5 @@
 import { shallowMount, mount } from '@vue/test-utils'
-import Timeline from '@/components/Timeline.vue'
+import Timeline from '~/components/Timeline.vue'
 
 describe('Timeline', () => {
   it('renders correctly', () => {

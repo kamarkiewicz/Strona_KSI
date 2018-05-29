@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import { shallowMount, mount } from '@vue/test-utils'
-import HomeNews from '@/components/HomeNews.vue'
+import HomeNews from '~/components/HomeNews.vue'
 
 Vue.config.ignoredElements = [
   'b-row', 'b-col'

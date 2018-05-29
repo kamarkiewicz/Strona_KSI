@@ -24,7 +24,7 @@
 
 <script>
 import { Image } from '~/assets/js/utils'
-import PreviewCard from '~/components/PreviewCard'
+import PreviewCard from '~/components/PreviewCard.vue'
 
 export default {
   components: {
