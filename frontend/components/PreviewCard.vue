@@ -4,10 +4,13 @@
       <img v-if="image.path" :src="image.path" :alt="image.title">
       <img v-else src="http://via.placeholder.com/505x295" alt="placeholder">
     </a>
-    <h3 class="title">{{ $d(date) }} | {{ title }}</h3>
+    <h3 v-if="date" class="title">{{ $d(date) }} | {{ title }}</h3>
+    <h3 v-else class="title">{{ title }}</h3>
     <div v-html="excerpt" class="excerpt"></div>
-    <nuxt-link v-if="linkAppend" class="link" :to="link" append>{{ linkText }}</nuxt-link>
-    <nuxt-link v-else class="link" :to="link">{{ linkText }}</nuxt-link>
+    <div class="link">
+      <nuxt-link v-if="linkAppend" :to="link" append>{{ linkText }}</nuxt-link>
+      <nuxt-link v-else :to="link">{{ linkText }}</nuxt-link>
+    </div>
   </article>
 </template>
 
@@ -22,7 +25,7 @@ export default {
     },
     date: {
       type: [Date, Number],
-      required: true
+      required: false
     },
     title: {
       type: String,
@@ -86,7 +89,7 @@ $corner-rounding: 0.5em;
     margin: 0 0 1em 0;
   }
 
-  .link {
+  .link a {
     transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
     border-bottom: dotted 1px rgba(255, 255, 255, 0.35);
     color: $link-color;
