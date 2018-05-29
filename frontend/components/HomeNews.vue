@@ -1,5 +1,5 @@
 <template>
-  <section id="home-news" class="news wrapper">
+  <section class="news wrapper">
     <div class="container py-5">
 
       <h2 class="major">{{ $t('general.news') }}</h2>

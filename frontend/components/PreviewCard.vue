@@ -1,11 +1,13 @@
 <template>
   <article class="preview-card">
     <a class="image" v-if="image">
-      <img :src="image.path" alt="">
+      <img v-if="image.path" :src="image.path" :alt="image.title">
+      <img v-else src="http://via.placeholder.com/505x295" alt="placeholder">
     </a>
     <h3 class="title">{{ $d(date) }} | {{ title }}</h3>
     <div v-html="excerpt" class="excerpt"></div>
-    <a class="link" :href="link">{{ linkText }}</a>
+    <nuxt-link v-if="linkAppend" class="link" :to="link" append>{{ linkText }}</nuxt-link>
+    <nuxt-link v-else class="link" :to="link">{{ linkText }}</nuxt-link>
   </article>
 </template>
 
@@ -38,6 +40,11 @@ export default {
       type: String,
       required: true
     },
+    linkAppend: {
+      type: Boolean,
+      default: false,
+      required: false
+    }
   },
 }
 </script>
