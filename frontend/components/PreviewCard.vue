@@ -1,17 +1,15 @@
 <template>
-  <article class="preview-card">
-    <a class="image" v-if="image">
-      <img v-if="image.path" :src="image.path" :alt="image.title">
-      <img v-else src="http://via.placeholder.com/505x295" alt="placeholder">
-    </a>
-    <h3 v-if="date" class="title">{{ $d(date) }} | {{ title }}</h3>
-    <h3 v-else class="title">{{ title }}</h3>
-    <div v-html="excerpt" class="excerpt"></div>
-    <div class="link">
-      <nuxt-link v-if="linkAppend" :to="link" append>{{ linkText }}</nuxt-link>
-      <nuxt-link v-else :to="link">{{ linkText }}</nuxt-link>
+  <div class="preview-card card rounded border-0">
+    <img class="card-img-top rounded-top" v-if="image.path" :src="image.path" :alt="image.title">
+    <img class="card-img-top rounded-top" v-else src="http://via.placeholder.com/505x295" alt="placeholder">
+    <div class="card-body">
+      <h6 class="card-subtitle mb-2 text-muted" v-if="date">{{ $d(date) }}</h6>
+      <h5 class="card-title">{{ title }}</h5>
+      <div class="card-text" v-html="excerpt"></div>
+      <nuxt-link class="card-link" :to="link" v-if="linkAppend" append>{{ linkText }}</nuxt-link>
+      <nuxt-link class="card-link" :to="link" v-else>{{ linkText }}</nuxt-link>
     </div>
-  </article>
+  </div>
 </template>
 
 <script>
@@ -59,67 +57,35 @@ $article-color: #ffffff;
 $content-color: #637485;
 $link-color: #00a6d9;
 $linkicon-border: rgba($content-color, 0.125);
-$corner-rounding: 0.5em;
 
 .preview-card {
-  padding: 1.75em 1.75em 0.1em 1.75em;
   background-color: $article-color;
-  border-radius: $corner-rounding;
-  box-shadow: 0 1em 5em rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1em 5em rgba(0, 0, 0, 0.07);
 
-  .image {
-    border-radius: $corner-rounding $corner-rounding 0 0;
-    display: block;
-    margin-bottom: 1.75em;
-    margin-left: -1.75em;
-    margin-top: -1.75em;
-    width: calc(100% + 3.5em);
-
-    img {
-      border-radius: $corner-rounding $corner-rounding 0 0;
-      width: 100%;
-    }
-  }
-
-  .title {
-    border-bottom: solid 2px rgba(255, 255, 255, 0.125);
-    font-size: 1.2em;
+  .card-title {
     color: $headtitle-color;
     font-weight: 400;
-    margin: 0 0 1em 0;
   }
 
-  .link a {
-    transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
-    border-bottom: dotted 1px rgba(255, 255, 255, 0.35);
+  .card-link {
     color: $link-color;
     text-decoration: none;
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
 
-    &:not(.button) {
-      text-decoration: none;
-      border-bottom: 0;
-      display: block;
-      font-size: 0.8em;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      margin: 0 0 2em 0;
-      text-transform: uppercase;
-    }
-
-    &:not(.button):before {
-      transition: background-color 0.2s ease-in-out;
+    &:before {
       border-radius: 100%;
       border: solid 2px $linkicon-border;
       content: '\f105';
       display: inline-block;
-      font-size: 1.25em;
-      height: 2em;
-      line-height: 1.65em;
-      margin-right: 0.85em;
+      font-size: 1.25rem;
+      width: 2rem;
+      height: 2rem;
+      line-height: 1.65rem;
+      margin-right: 0.85rem;
       text-align: center;
-      text-indent: 0.15em;
+      text-indent: 0.15rem;
       vertical-align: middle;
-      width: 2em;
 
       -moz-osx-font-smoothing: grayscale;
       -webkit-font-smoothing: antialiased;
@@ -129,4 +95,5 @@ $corner-rounding: 0.5em;
     }
   }
 }
+
 </style>
