@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`HomeNews renders correctly 1`] = `
-<section class="news wrapper">
+<section class="news wrapper pb-3">
   <div class="container pt-5">
     <h2 class="major">general.news</h2>
   </div>
-  <section class="container px-5">
+  <section class="container px-5 pb-5">
     <b-row>
       <b-col lg="4" class="pr-3 pb-5">
         <div class="preview-card card rounded border-0">
