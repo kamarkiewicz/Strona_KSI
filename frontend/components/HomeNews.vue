@@ -1,24 +1,24 @@
 <template>
   <section class="news wrapper">
-    <div class="container py-5">
 
+    <div class="container pt-5">
       <h2 class="major">{{ $t('general.news') }}</h2>
-
-      <section class="container-fluid">
-        <b-row>
-          <b-col lg="4" v-for="el in news" :key="el.id">
-            <preview-card
-              :image="el.image"
-              :date="el.date"
-              :title="el.title"
-              :excerpt="el.excerpt"
-              :link="el.link"
-              linkText="Czytaj więcej" />
-          </b-col>
-        </b-row>
-      </section>
-
     </div>
+
+    <section class="container px-5">
+      <b-row>
+        <b-col lg="4" class="pr-3 pb-5" v-for="el in news" :key="el.id">
+          <preview-card
+            :image="el.image"
+            :date="el.date"
+            :title="el.title"
+            :excerpt="el.excerpt"
+            :link="el.link"
+            linkText="Czytaj więcej" />
+        </b-col>
+      </b-row>
+    </section>
+
   </section>
 </template>
 
