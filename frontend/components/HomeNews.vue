@@ -1,11 +1,11 @@
 <template>
-  <section class="news wrapper">
+  <section class="news wrapper pb-3">
 
     <div class="container pt-5">
       <h2 class="major">{{ $t('general.news') }}</h2>
     </div>
 
-    <section class="container px-5">
+    <section class="container px-5 pb-5">
       <b-row>
         <b-col lg="4" class="pr-3 pb-5" v-for="el in news" :key="el.id">
           <preview-card
@@ -74,6 +74,7 @@ $content-color: #637485;
   &.wrapper {
       background-color: $bg-color;
       color: $content-color;
+      position: relative;
   }
 
   h1.major, h3.major, h4.major, h5.major, h6.major {
