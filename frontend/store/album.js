@@ -1,4 +1,4 @@
-import { getImage, fetchCollection, fetchSingleByTitle } from '~/assets/js/utils'
+import { Image, fetchCollection, fetchSingleByTitle } from '~/assets/js/utils'
 
 const COLLECTION_NAME = 'galleries'
 
@@ -18,10 +18,10 @@ export const actions = {
     commit('SET_ENTRIES', entries.map(entry => ({
         id: entry._id,
         date: entry._created  * 1000,
-        image: getImage(entry.image), // Featured image
+        image: new Image(entry.image), // Featured image
         title: entry.title,
         description: entry.description,
-        images: entry.images.map(getImage),
+        images: entry.entries.map(e => new Image(e)),
         link: entry.title_slug,
       }))
     )
@@ -31,7 +31,7 @@ export const actions = {
     commit('SET_ENTRY', {
       album: slug,
       title: entry.title,
-      images: entry.images.map(getImage)
+      images: entry.entries.map(e => new Image(e))
     })
   }
 }

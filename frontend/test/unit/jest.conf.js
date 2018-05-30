@@ -9,7 +9,7 @@ export default {
     "vue"
   ],
   "moduleNameMapper": {
-    "^@/(.*)$": "<rootDir>/$1"
+    "^~/(.*)$": "<rootDir>/$1"
   },
   "transform": {
     "^.+\\.js$": "<rootDir>/node_modules/babel-jest",

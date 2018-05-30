@@ -1,14 +1,23 @@
 
 const BACK_DEFAULT_LOCALE = 'en'
 
-// Access image field from backend
-export function getImage (image) {
-  if ((image || {}).path) {
-    // path may be relative URL
-    let isAbsolute = /^(?:[a-z]+:)?\/\//i.test(image.path)
-    image.path = (isAbsolute ? '' : process.env.API_URL) + image.path
+// Image field type from the backend
+export class Image {
+  constructor (image) {
+    if (image.constructor === String) {
+      image = {
+        path: image,
+        meta: {}
+      }
+    }
+    if ((image || {}).path) {
+      // path may be relative URL; this block normalizes it
+      let isAbsolute = /^(?:[a-z]+:)?\/\//i.test(image.path)
+      image.path = (isAbsolute ? '' : process.env.API_URL) + image.path
+    }
+    this.path = image.path
+    this.meta = image.meta
   }
-  return image
 }
 
 // Allows to fetch all slugs for given collection
