@@ -1,7 +1,7 @@
 <template>
   <div class="home">
 
-    <home-news/>
+    <home-news :news="news" />
 
     <showcase />
 
@@ -20,6 +20,14 @@ export default {
     HomeNews,
     Showcase,
     HomeCarousel
-  }
+  },
+  computed: {
+    news () {
+      return this.$store.getters['news/entries'].slice(0, 3)
+    },
+  },
+  async fetch ({ app, store }) {
+    await store.dispatch('news/getEntries', { axios: app.$axios })
+  },
 }
 </script>
