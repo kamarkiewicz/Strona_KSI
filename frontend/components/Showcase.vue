@@ -49,7 +49,7 @@ $bg-color: #ffffff;
     height: 5em;
 
     @include bg-triangle($bg-color);
-    transform: translateY(0) rotate(0); // scaleX(-1);
+    transform: translateY(0) rotate(0) scaleX(-1);
   }
 
   &::after {
