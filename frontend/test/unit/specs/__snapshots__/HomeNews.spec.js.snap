@@ -7,49 +7,46 @@ exports[`HomeNews renders correctly 1`] = `
     <section class="container-fluid">
       <b-row>
         <b-col lg="4">
-          <article class="preview-card">
-            <a class="image">
-              <img src="https://picsum.photos/270/180?image=1024">
-            </a>
-            <h3 class="title">1527628516335 | Tytuł aktualności 1</h3>
-            <div class="excerpt">
-              <p>A party you cannot refuse...</p>
-              <p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>
+          <div class="preview-card card rounded border-0">
+            <img src="https://picsum.photos/270/180?image=1024" class="card-img-top rounded-top">
+            <div class="card-body">
+              <h6 class="card-subtitle mb-2 text-muted">1527628516335</h6>
+              <h5 class="card-title">Tytuł aktualności 1</h5>
+              <div class="card-text">
+                <p>A party you cannot refuse...</p>
+                <p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>
+              </div>
+              <nuxt-link to="#read-more-link" class="card-link">Czytaj więcej</nuxt-link>
             </div>
-            <div class="link">
-              <nuxt-link to="#read-more-link">Czytaj więcej</nuxt-link>
-            </div>
-          </article>
+          </div>
         </b-col>
         <b-col lg="4">
-          <article class="preview-card">
-            <a class="image">
-              <img src="https://picsum.photos/270/180?image=1020">
-            </a>
-            <h3 class="title">1527628516335 | Tytuł aktualności 2</h3>
-            <div class="excerpt">
-              <p>A party you cannot refuse...</p>
-              <p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>
+          <div class="preview-card card rounded border-0">
+            <img src="https://picsum.photos/270/180?image=1020" class="card-img-top rounded-top">
+            <div class="card-body">
+              <h6 class="card-subtitle mb-2 text-muted">1527628516335</h6>
+              <h5 class="card-title">Tytuł aktualności 2</h5>
+              <div class="card-text">
+                <p>A party you cannot refuse...</p>
+                <p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>
+              </div>
+              <nuxt-link to="#read-more-link" class="card-link">Czytaj więcej</nuxt-link>
             </div>
-            <div class="link">
-              <nuxt-link to="#read-more-link">Czytaj więcej</nuxt-link>
-            </div>
-          </article>
+          </div>
         </b-col>
         <b-col lg="4">
-          <article class="preview-card">
-            <a class="image">
-              <img src="https://picsum.photos/270/180?image=1010">
-            </a>
-            <h3 class="title">1527628516335 | Tytuł aktualności 3</h3>
-            <div class="excerpt">
-              <p>A party you cannot refuse...</p>
-              <p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>
+          <div class="preview-card card rounded border-0">
+            <img src="https://picsum.photos/270/180?image=1010" class="card-img-top rounded-top">
+            <div class="card-body">
+              <h6 class="card-subtitle mb-2 text-muted">1527628516335</h6>
+              <h5 class="card-title">Tytuł aktualności 3</h5>
+              <div class="card-text">
+                <p>A party you cannot refuse...</p>
+                <p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>
+              </div>
+              <nuxt-link to="#read-more-link" class="card-link">Czytaj więcej</nuxt-link>
             </div>
-            <div class="link">
-              <nuxt-link to="#read-more-link">Czytaj więcej</nuxt-link>
-            </div>
-          </article>
+          </div>
         </b-col>
       </b-row>
     </section>
