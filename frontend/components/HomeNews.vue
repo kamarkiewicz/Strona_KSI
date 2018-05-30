@@ -30,37 +30,12 @@ export default {
   components: {
     PreviewCard,
   },
-  data () {
-    var news = [
-      {
-        id: 1,
-        date: 1527628516335,
-        title: 'Tytuł aktualności 1',
-        excerpt: '<p>A party you cannot refuse...</p><p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>',
-        image: new Image('https://picsum.photos/270/180?image=1024'),
-        link: '#read-more-link'
-      },
-      {
-        id: 2,
-        date: 1527628516335,
-        title: 'Tytuł aktualności 2',
-        excerpt: '<p>A party you cannot refuse...</p><p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>',
-        image: new Image('https://picsum.photos/270/180?image=1020'),
-        link: '#read-more-link'
-      },
-      {
-        id: 3,
-        date: 1527628516335,
-        title: 'Tytuł aktualności 3',
-        excerpt: '<p>A party you cannot refuse...</p><p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>',
-        image: new Image('https://picsum.photos/270/180?image=1010'),
-        link: '#read-more-link'
-      },
-    ]
-    return {
-      news: news
-    }
-  }
+  props: {
+    news: {
+      type: Array,
+      required: true
+    },
+  },
 }
 </script>
 
