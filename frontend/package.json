@@ -12,7 +12,7 @@
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "yarn run lint",
     "test:unit": "node -r babel-register ./node_modules/jest/bin/jest --config test/unit/jest.conf.js --coverage",
-    "test:e2e": "yarn run build && nightwatch --config test/e2e/nightwatch.conf.js --env chrome",
+    "test:e2e": "yarn run build && cross-env API_URL=https://stronaksi-backend.now.sh node -r babel-register ./node_modules/nightwatch/bin/nightwatch --config test/e2e/nightwatch.conf.js --env chrome",
     "test": "yarn run test:unit && yarn run test:e2e",
     "deploy:dev": "now --env API_URL=https://stronaksi-backend.now.sh --public && now alias && now rm frontend --safe --yes"
   },
@@ -33,6 +33,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-register": "^6.26.0",
     "chromedriver": "^2.38.3",
+    "cross-env": "^5.1.6",
     "cross-spawn": "^6.0.5",
     "eslint": "^4.15.0",
     "eslint-loader": "^2.0.0",
