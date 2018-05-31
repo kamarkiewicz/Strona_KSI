@@ -6,8 +6,7 @@
       <h6 class="card-subtitle mb-2 text-muted" v-if="date">{{ $d(date) }}</h6>
       <h5 class="card-title">{{ title }}</h5>
       <div class="card-text" v-html="excerpt"></div>
-      <nuxt-link class="card-link" :to="link" v-if="linkAppend" append>{{ linkText }}</nuxt-link>
-      <nuxt-link class="card-link" :to="link" v-else>{{ linkText }}</nuxt-link>
+      <nuxt-link class="card-link" :to="link">{{ linkText }}</nuxt-link>
     </div>
   </div>
 </template>
@@ -34,18 +33,13 @@ export default {
       required: false
     },
     link: {
-      type: String,
+      type: [String, Object],
       required: true
     },
     linkText: {
       type: String,
       required: true
     },
-    linkAppend: {
-      type: Boolean,
-      default: false,
-      required: false
-    }
   },
 }
 </script>

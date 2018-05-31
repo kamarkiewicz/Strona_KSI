@@ -13,7 +13,7 @@
             :date="el.date"
             :title="el.title"
             :excerpt="el.excerpt"
-            :link="el.link"
+            :link="localePath({ name: 'news-article', params: { article: el.link }})"
             linkText="Czytaj więcej" />
         </b-col>
       </b-row>

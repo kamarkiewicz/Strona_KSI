@@ -13,7 +13,7 @@
             :image="el.image"
             :title="el.title"
             :excerpt="el.description"
-            :link="el.link" linkAppend
+            :link="localePath({ name: 'album-gallery', params: { gallery: el.link }})"
             linkText="Przejdź do galerii" />
         </b-col>
       </b-row>
