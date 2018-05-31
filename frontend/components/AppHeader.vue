@@ -12,9 +12,9 @@
 
           <b-collapse is-nav id="brandnav_collapse">
             <b-navbar-nav class="ml-auto">
-              <b-nav-item><i class="fa d-inline fa-lg fa-calendar-o"></i> ZOSIA</b-nav-item>
-              <b-nav-item><i class="fa d-inline fa-lg fa-handshake-o"></i> Continuum</b-nav-item>
-              <b-nav-item><i class="fa d-inline fa-lg fa-bookmark-o"></i> II UWr</b-nav-item>
+              <b-nav-item target="_blank" href="https://www.zosia.org/"><i class="fa d-inline fa-lg fa-calendar-o"></i> ZOSIA</b-nav-item>
+              <b-nav-item target="_blank" href="http://continuum.uni.wroc.pl/"><i class="fa d-inline fa-lg fa-handshake-o"></i> Continuum</b-nav-item>
+              <b-nav-item target="_blank" href="http://www.ii.uni.wroc.pl/"><i class="fa d-inline fa-lg fa-bookmark-o"></i> II UWr</b-nav-item>
               <b-nav-item-dropdown right>
                 <template slot="button-content"><i class="fa d-inline fa-lg fa-globe pr-1"></i></template>
                 <b-dropdown-item
