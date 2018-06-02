@@ -9,10 +9,11 @@ export const mutations = {
 }
 
 export const actions = {
-  nuxtServerInit ({ commit }, ctx) {
+  async nuxtServerInit ({ commit, dispatch }, ctx) {
     commit('INITIALIZE', {
       adminPanelLink: ctx.env.API_URL
     })
+    await dispatch('contact/getEntries', { axios: ctx.$axios })
   },
 }
 

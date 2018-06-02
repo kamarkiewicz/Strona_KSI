@@ -15,8 +15,8 @@ export const mutations = {
 }
 
 export const actions = {
-  async getEntries ({ commit, rootState }) {
-    const data = await fetchRegion (this.$axios, 'contact', rootState.i18n.locale)
+  async getEntries ({ commit, rootState }, { axios }) {
+    const data = await fetchRegion (axios, 'contact', rootState.i18n.locale)
     if (data)
       commit('SET_ENTRIES', data)
   }
