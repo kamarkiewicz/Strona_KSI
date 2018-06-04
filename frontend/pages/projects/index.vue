@@ -9,59 +9,17 @@
         </div>
       </div>
 
-      <div class="row">
-        <div class="py-5 col-md-6">
+      <div class="row" v-for="(chunk, index) in entryChunks" :key="`chunk-${index}`">
+        <div class="py-5 col-md-6" v-for="el in chunk" :key="el.id">
           <div class="row">
             <div class="text-center col-4">
-              <i class="d-block mx-auto fa fa-5x fa-print"></i>
+              <i class="d-block mx-auto fa fa-5x" :class="el.icon"></i>
             </div>
             <div class="col-8">
               <h5 class="mb-3 text-primary">
-                <b>Drukarka 3D</b>
+                <b>{{ el.title }}</b>
               </h5>
-              <p class="my-1">Krótki opis wprowadzający do projektu. Pełny opis projektu wraz z galerią z projektu powinien być raczej na podstronie.</p>
-            </div>
-          </div>
-        </div>
-        <div class="py-5 col-md-6">
-          <div class="row">
-            <div class="text-center col-4">
-              <i class="d-block mx-auto fa fa-5x fa-code"></i>
-            </div>
-            <div class="col-8">
-              <h5 class="mb-3 text-primary">
-                <b>Strona_KSI.</b>
-              </h5>
-              <p class="my-1">Jest to projekt zrodzony z potrzeby nowoczesnej, dostępnej na urządzeniach mobilnych wizytówce w sieci.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="py-5 col-md-6">
-          <div class="row">
-            <div class="text-center col-4">
-              <i class="d-block mx-auto fa fa-5x fa-microchip"></i>
-            </div>
-            <div class="col-8">
-              <h5 class="mb-3 text-primary">
-                <b>S.O.F.A.</b>
-              </h5>
-              <p class="my-1">Sofa na kółkach - korzystając z doświadczenia zebranego przy łaziku wysyłamy odrobinę luksusu na Księżyc!</p>
-            </div>
-          </div>
-        </div>
-        <div class="py-5 col-md-6">
-          <div class="row">
-            <div class="text-center col-4">
-              <i class="d-block mx-auto fa fa-5x fa-key"></i>
-            </div>
-            <div class="col-8">
-              <h5 class="mb-3 text-primary">
-                <b>Elektroniczny zamek</b>
-              </h5>
-              <p class="my-1">Nigdy więcej zgubionego kluczyka do pokoju koła ;)</p>
+              <p class="my-1">{{ el.description }}</p>
             </div>
           </div>
         </div>
@@ -72,6 +30,8 @@
 </template>
 
 <script>
+import _ from 'lodash'
+
 export default {
   data () {
     return {
@@ -102,7 +62,12 @@ export default {
         },
       ]
     }
-  }
+  },
+  computed: {
+    entryChunks () {
+      return _.chunk(this.entries, 2)
+    },
+  },
 }
 </script>
 
