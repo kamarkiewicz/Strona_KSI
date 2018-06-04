@@ -19,7 +19,7 @@
               <h5 class="mb-3 text-primary">
                 <b>{{ el.title }}</b>
               </h5>
-              <p class="my-1">{{ el.description }}</p>
+              <p class="my-1">{{ el.excerpt }}</p>
             </div>
           </div>
         </div>
@@ -30,43 +30,25 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import _ from 'lodash'
 
 export default {
-  data () {
-    return {
-      entries: [
-        {
-          id: 1,
-          title: 'Drukarka 3D',
-          description: 'Krótki opis wprowadzający do projektu. Pełny opis projektu wraz z galerią z projektu powinien być raczej na podstronie.',
-          icon: 'fa-print',
-        },
-        {
-          id: 2,
-          title: 'Strona_KSI.',
-          description: 'Jest to projekt zrodzony z potrzeby nowoczesnej, dostępnej na urządzeniach mobilnych wizytówce w sieci.',
-          icon: 'fa-code',
-        },
-        {
-          id: 3,
-          title: 'S.O.F.A.',
-          description: 'Sofa na kółkach - korzystając z doświadczenia zebranego przy łaziku wysyłamy odrobinę luksusu na Księżyc!',
-          icon: 'fa-microchip',
-        },
-        {
-          id: 4,
-          title: 'Elektroniczny zamek',
-          description: 'Nigdy więcej zgubionego kluczyka do pokoju koła ;)',
-          icon: 'fa-key',
-        },
-      ]
-    }
-  },
   computed: {
+    ...mapGetters({
+      entries: 'projects/entries',
+    }),
     entryChunks () {
       return _.chunk(this.entries, 2)
     },
+  },
+  async fetch ({ app, store }) {
+    await store.dispatch('projects/getEntries', { axios: app.$axios })
+  },
+  head () {
+    return {
+      title: 'Projekty',
+    }
   },
 }
 </script>
