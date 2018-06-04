@@ -43,7 +43,7 @@ export default {
     return {
       title: this.$t('general.album'),
     }
-  },
+  }
 }
 </script>
 

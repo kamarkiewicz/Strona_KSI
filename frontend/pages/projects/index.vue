@@ -49,7 +49,7 @@ export default {
     return {
       title: 'Projekty',
     }
-  },
+  }
 }
 </script>
 

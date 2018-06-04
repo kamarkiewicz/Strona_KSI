@@ -55,5 +55,10 @@ export default {
   async fetch ({ app, store }) {
     await store.dispatch('news/getEntries', { axios: app.$axios })
   },
+  head () {
+    return {
+      title: 'Strona główna',
+    }
+  }
 }
 </script>

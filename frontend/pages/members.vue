@@ -35,6 +35,11 @@ export default {
     ...mapGetters({
       members: 'members/entries',
     })
+  },
+  head () {
+    return {
+      title: 'Członkowie',
+    }
   }
 }
 </script>

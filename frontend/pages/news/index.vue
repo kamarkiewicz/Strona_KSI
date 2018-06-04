@@ -55,7 +55,7 @@ export default {
     return {
       title: this.$t('general.news'),
     }
-  },
+  }
 }
 </script>
 
