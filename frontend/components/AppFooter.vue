@@ -38,9 +38,21 @@
 
         <div class="p-4 col-md-4">
           <div class="row">
-            <div class="col-md-4"><i class="fa fa-fw fa-facebook fa-3x text-white"></i></div>
-            <div class="col-md-4"><i class="fa fa-fw fa-twitter fa-3x text-white"></i></div>
-            <div class="col-md-4"><i class="fa fa-fw fa-instagram text-white fa-3x"></i></div>
+            <div class="col-md-4">
+              <a href="https://www.facebook.com/uniwroc/" target="_blank">
+                <i class="fa fa-fw fa-3x text-white fa-facebook"></i>
+              </a>
+            </div>
+            <div class="col-md-4">
+              <a href="https://github.com/ksiuwr" target="_blank">
+                <i class="fa fa-fw fa-3x text-white fa-github"></i>
+              </a>
+            </div>
+            <div class="col-md-4">
+              <a href="https://www.instagram.com/uniwersytet_wroclawski/" target="_blank">
+                <i class="fa fa-fw fa-3x text-white fa-instagram"></i>
+              </a>
+            </div>
           </div>
         </div>
       </div>
