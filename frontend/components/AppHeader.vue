@@ -42,6 +42,11 @@
             <b-nav-item :to="localePath('members')">Członkowie</b-nav-item>
             <b-nav-item :to="localePath('album')">Galeria</b-nav-item>
           </b-navbar-nav>
+
+          <b-nav-form class="m-0 ml-auto">
+            <search-bar></search-bar>
+          </b-nav-form>
+
         </b-collapse>
       </b-container>
     </b-navbar>
@@ -49,8 +54,11 @@
 </template>
 
 <script>
+import SearchBar from '~/components/SearchBar'
+
 export default {
   components: {
+    SearchBar,
   }
 }
 </script>
