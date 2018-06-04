@@ -21,6 +21,7 @@
     "@nuxtjs/font-awesome": "^1.0.3",
     "bootstrap": "^4.1.1",
     "bootstrap-vue": "^2.0.0-rc.11",
+    "lodash": "^4.17.10",
     "nuxt": "^1.0.0",
     "nuxt-i18n": "v3.2.3"
   },
