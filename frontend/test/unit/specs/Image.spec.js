@@ -52,6 +52,12 @@ describe.each([
     "path": "/storage/uploads/2018/04/29/5ae57e29cc7981035.jpg"
   },
 
+  ///
+  /// Custom
+  ///
+
+  '', // empty string
+
 ])('Image object', (sample) => {
   let originalProcessEnv
 
@@ -70,3 +76,8 @@ describe.each([
 
 })
 
+describe('Image object', () => {
+  it('is equals to false if constructed with empty', () => {
+    expect(_.isEmpty(new Image([]))).toBeTruthy()
+  })
+})

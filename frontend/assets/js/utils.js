@@ -3,21 +3,24 @@ import _ from 'lodash'
 const BACK_DEFAULT_LOCALE = 'en'
 
 // Image field type from the backend
+const IMAGE_DEFAULT_TITLE = 'Featured image'
 export class Image {
   constructor (image) {
     if (_.isEmpty(image)) {
-      this.path = undefined
-      this.meta = undefined
+      // noop
     }
     else if (_.isString(image)) {
-      this.path = Image.normalizePath(image)
-      this.meta = {
-        title: 'some image',
-      }
+      this.src = Image.normalizePath(image)
+      this.title = IMAGE_DEFAULT_TITLE
     }
     else {
-      this.path = Image.normalizePath(image.path)
-      this.meta = image.meta
+      this.src = Image.normalizePath(image.path)
+      this.title = (image.meta || {}).title
+                || image.title
+                || (image.meta || {}).asset
+                || IMAGE_DEFAULT_TITLE
+      if (image.width) this.width = image.width
+      if (image.height) this.height = image.height
     }
   }
 

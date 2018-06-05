@@ -24,7 +24,7 @@
             <b-carousel-slide v-for="(el, index) in slides" :key="`slide-${index}`"
                               :caption="el.caption"
                               :text="el.description"
-                              :img-src="el.image.path"
+                              :img-src="el.image.src"
             ></b-carousel-slide>
           </b-carousel>
         </div>

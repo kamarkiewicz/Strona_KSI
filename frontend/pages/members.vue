@@ -10,7 +10,7 @@
       <div class="row">
 
         <div class="col-md-4 p-4" v-for="el in members" :key="el">
-          <img class="img-fluid d-block rounded-circle mx-auto" :src="el.image.path">
+          <img class="img-fluid d-block rounded-circle mx-auto" :src="el.image.src" :alt="el.image.title">
           <p class="my-4">
             <i>{{ el.description }}</i>
           </p>

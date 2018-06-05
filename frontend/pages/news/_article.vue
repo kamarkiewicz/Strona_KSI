@@ -5,8 +5,8 @@
         <p class="text-primary"> {{ $d(entry.date) }} </p>
         <h1>{{ entry.title }}</h1>
       </div>
-      <div v-if="entry.image.path" class="image text-center mb-4">
-        <b-img :src="entry.image.path" alt="Featured image" class="rounded" fluid />
+      <div v-if="entry.image.src" class="image text-center mb-4">
+        <b-img :src="entry.image.src" alt="Featured image" class="rounded" fluid />
       </div>
       <div v-html="entry.excerpt" class="font-weight-bold" id="excerpt"></div>
       <hr/>
