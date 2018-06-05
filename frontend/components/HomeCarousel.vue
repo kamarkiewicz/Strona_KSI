@@ -20,10 +20,10 @@
                       @sliding-start="onSlideStart"
                       @sliding-end="onSlideEnd"
           >
-            <b-carousel-slide v-for="slide in slides" :key="slide.id"
-                              :caption="slide.caption"
-                              :text="slide.text"
-                              :img-src="slide.imgSrc"
+            <b-carousel-slide v-for="(el, index) in slides" :key="`slide-${index}`"
+                              :caption="el.caption"
+                              :text="el.description"
+                              :img-src="el.image.path"
             ></b-carousel-slide>
           </b-carousel>
         </div>
@@ -34,28 +34,17 @@
 
 <script>
 export default {
+  props: {
+    slides: {
+      type: Array,
+      required: true
+    },
+  },
   data () {
     return {
       title: 'Zobacz na własne oczy!',
       desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
       linkDesc: 'Przejdź do galerii',
-      slides: [
-        { id: 1,
-          caption: 'First slide',
-          text: 'Nulla vitae elit libero, a pharetra augue mollis interdum.',
-          imgSrc: 'https://picsum.photos/500/500?image=1033'
-        },
-        { id: 2,
-          caption: 'Second slide',
-          text: 'Nulla vitae elit libero, a pharetra augue mollis interdum.',
-          imgSrc: 'https://picsum.photos/500/500?image=1060'
-        },
-        { id: 3,
-          caption: 'Third slide',
-          text: 'Nulla vitae elit libero, a pharetra augue mollis interdum.',
-          imgSrc: 'https://picsum.photos/500/500?image=1059'
-        }
-      ],
 
       slide: 0,
       sliding: null
@@ -68,7 +57,7 @@ export default {
     onSlideEnd (slide) {
       this.sliding = false
     }
-  }
+  },
 }
 </script>
 

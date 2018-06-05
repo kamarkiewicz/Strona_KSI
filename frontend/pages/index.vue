@@ -5,7 +5,7 @@
 
     <showcase :entries="entries" />
 
-    <home-carousel/>
+    <home-carousel :slides="slides" />
 
   </div>
 </template>
@@ -51,9 +51,13 @@ export default {
         },
       ]
     },
+    slides () {
+      return this.$store.getters['slides']
+    },
   },
   async fetch ({ app, store }) {
     await store.dispatch('news/getEntries', { axios: app.$axios })
+    await store.dispatch('getSlides', { axios: app.$axios })
   },
   head () {
     return {

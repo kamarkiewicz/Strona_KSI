@@ -45,12 +45,25 @@ export async function fetchRegion (axios, region, locale) {
         lang: locale
       }
     })
-    data.location = `https://maps.google.com/?q=${data.location.lat},${data.location.lng}`
   }
   catch (e) {
     console.error(e)
   }
   return data
+}
+
+// Gets region data through API
+export async function fetchSlides (axios, region, locale) {
+  let data = await fetchRegion(axios, region, locale)
+  const field = locale !== BACK_DEFAULT_LOCALE ? `slides_${locale}` : 'slides'
+  let slides = data[field]
+    .map(slide => slide.value)
+    .map(slide => ({
+      caption: slide.caption,
+      description: slide.description,
+      image: new Image(slide.image)
+    }))
+  return slides
 }
 
 // Gets collection data through API

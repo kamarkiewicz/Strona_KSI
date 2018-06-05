@@ -16,9 +16,9 @@ export const mutations = {
 
 export const actions = {
   async getEntries ({ commit, rootState }, { axios }) {
-    const data = await fetchRegion (axios, 'contact', rootState.i18n.locale)
-    if (data)
-      commit('SET_ENTRIES', data)
+    let data = await fetchRegion (axios, 'contact', rootState.i18n.locale)
+    data.location = `https://maps.google.com/?q=${data.location.lat},${data.location.lng}`
+    await commit('SET_ENTRIES', data)
   }
 }
 
