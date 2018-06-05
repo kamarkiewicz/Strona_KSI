@@ -57,21 +57,21 @@ module.exports = {
       locales: [
         {
           code: 'en',
-          iso: 'en-US',
+          iso: 'en',
           name: 'English',
-          file: 'en-US.js'
+          file: 'eng.js'
         },
         {
           code: 'pl',
-          iso: 'pl-PL',
+          iso: 'pl',
           name: 'Polski',
-          file: 'pl-PL.js'
+          file: 'pol.js'
         },
         {
-          code: 'ua',
-          iso: 'ua-UA',
-          name: 'український',
-          file: 'ua-UA.js'
+          code: 'uk',
+          iso: 'uk',
+          name: 'українська мова',
+          file: 'ukr.js'
         }
       ],
       defaultLocale: 'pl',
