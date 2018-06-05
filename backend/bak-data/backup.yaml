@@ -1,0 +1,15 @@
+---
+backup:
+  description: >
+    Manual backup created on Jun 05, 2018
+    20:44
+  created: 1528224268
+  config: false
+  collections: true
+  forms: true
+  regions: true
+  accounts: false
+  webhooks: true
+  entries: true
+  assets: true
+  uploads: true
