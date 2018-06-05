@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomeCarousel renders correctly 1`] = `
+<div class="home-carousel pb-5 text-white bg-secondary">
+  <div class="container">
+    <div class="row">
+      <div class="align-self-center p-5 col-md-6">
+        <h1 class="mb-4">homecarousel.title</h1>
+        <p class="mb-5">homecarousel.description</p>
+        <nuxt-link to="&quot;album&quot;" class="btn btn-lg btn-outline-light">homecarousel.gotoAlbum</nuxt-link>
+      </div>
+      <div class="col-md-6 p-0">
+        <div role="region" id="carousel1" aria-busy="false" class="carousel slide" style="text-shadow: 1px 1px 2px #333; background: rgb(171, 171, 171);">
+          <div id="carousel1___BV_inner_" role="list" class="carousel-inner">
+            <div id="__BVID__2" role="listitem" class="carousel-item active" aria-current="true" aria-posinset="1" aria-setsize="3" tabindex="-1">
+              <img src="http://via.placeholder.com/500x500" width="500" height="500" class="img-fluid w-100 d-block">
+              <div class="carousel-caption">
+                <h3>First slide</h3>
+                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+              </div>
+            </div>
+            <div id="__BVID__3" role="listitem" class="carousel-item" aria-current="false" aria-posinset="2" aria-setsize="3" tabindex="-1">
+              <img src="http://via.placeholder.com/500x500" width="500" height="500" class="img-fluid w-100 d-block">
+              <div class="carousel-caption">
+                <h3>Second slide</h3>
+                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+              </div>
+            </div>
+            <div id="__BVID__4" role="listitem" class="carousel-item" aria-current="false" aria-posinset="3" aria-setsize="3" tabindex="-1">
+              <img src="http://via.placeholder.com/500x500" width="500" height="500" class="img-fluid w-100 d-block">
+              <div class="carousel-caption">
+                <h3>Third slide</h3>
+                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+              </div>
+            </div>
+          </div>
+          <a href="#" role="button" aria-controls="carousel1___BV_inner_" class="carousel-control-prev"><span aria-hidden="true" class="carousel-control-prev-icon"></span><span class="sr-only">Previous Slide</span></a>
+          <a href="#" role="button" aria-controls="carousel1___BV_inner_" class="carousel-control-next"><span aria-hidden="true" class="carousel-control-next-icon"></span><span class="sr-only">Next Slide</span></a>
+          <ol id="carousel1___BV_indicators_" aria-hidden="false" aria-label="Select a slide to display" aria-owns="carousel1___BV_inner_" class="carousel-indicators">
+            <li role="button" id="carousel1___BV_indicator_1_" tabindex="0" aria-current="true" aria-label="Goto Slide 1" aria-describedby="__BVID__2" aria-controls="carousel1___BV_inner_" class="active"></li>
+            <li role="button" id="carousel1___BV_indicator_2_" tabindex="0" aria-current="false" aria-label="Goto Slide 2" aria-describedby="__BVID__3" aria-controls="carousel1___BV_inner_" class=""></li>
+            <li role="button" id="carousel1___BV_indicator_3_" tabindex="0" aria-current="false" aria-label="Goto Slide 3" aria-describedby="__BVID__4" aria-controls="carousel1___BV_inner_" class=""></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
