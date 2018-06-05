@@ -5,7 +5,8 @@
         <div class="align-self-center p-5 col-md-6">
           <h1 class="mb-4" v-text="$t('homecarousel.title')"></h1>
           <p class="mb-5" v-text="$t('homecarousel.description')"></p>
-          <a class="btn btn-lg btn-outline-light" :href="localePath('album')" v-text="$t('homecarousel.gotoAlbum')"></a>
+          <nuxt-link class="btn btn-lg btn-outline-light"
+                     :to="localePath('album')" v-text="$t('homecarousel.gotoAlbum')"></nuxt-link>
         </div>
         <div class="col-md-6 p-0">
           <b-carousel id="carousel1"
