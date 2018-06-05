@@ -6,9 +6,9 @@
       <p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
     </div>
 
-    <section class="container px-5">
-      <b-row>
-        <b-col md="12" lg="6" class="p-3" v-for="el in news" :key="el.id">
+    <section class="container">
+      <div class="row" v-for="(chunk, index) in entryChunks" :key="`chunk-${index}`">
+        <div class="col-md-12 col-lg-6 p-3" v-for="el in chunk" :key="el.id">
           <preview-card
             :image="el.image"
             :date="el.date"
@@ -16,8 +16,8 @@
             :excerpt="el.excerpt"
             :link="localePath({ name: 'news-article', params: { article: el.link }})"
             linkText="Czytaj więcej" />
-        </b-col>
-      </b-row>
+        </div>
+      </div>
 
       <b-pagination class="pt-4" align="center"
         :total-rows="totalRows"
@@ -30,7 +30,8 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import PreviewCard from "~/components/PreviewCard.vue"
+import _ from 'lodash'
+import PreviewCard from '~/components/PreviewCard'
 
 export default {
   components: {
@@ -44,9 +45,12 @@ export default {
   },
   computed: {
     ...mapGetters({
-      news: 'news/entries',
+      entries: 'news/entries',
       totalRows: 'news/entriesCount',
-    })
+    }),
+    entryChunks () {
+      return _.chunk(this.entries, 2)
+    },
   },
   async fetch ({ app, store }) {
     await store.dispatch('news/getEntries', { axios: app.$axios })

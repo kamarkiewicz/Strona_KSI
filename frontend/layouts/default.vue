@@ -1,12 +1,8 @@
 <template>
   <div id="app">
-
-    <app-header/>
-
-    <nuxt/>
-
-    <app-footer/>
-
+    <app-header />
+    <nuxt />
+    <app-footer />
   </div>
 </template>
 
