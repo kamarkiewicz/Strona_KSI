@@ -32,7 +32,7 @@ regions:
         <h2>RODO</h2>
         <p>Nasza strona nie przetwarza żadnych danych osobowych swoich odwiedzających. Wszelkie dane o Członkach Koła są przetwarzane za pisemną zgodą do cel&oacute;w informacyjnych.</p>
         </div>
-      content_ua: |
+      content_uk: |
         <h2><span id="result_box" class="" lang="uk">Політика конфіденційності</span></h2>
         <p><span id="result_box" class="" lang="uk">Відвідування веб-сайту не відображає інформацію про файли cookie. Це тому, що на нашому веб-сайті не використовуються файли cookie і не слідують його користувачам :)</span></p>
         <h2><span id="result_box" class="" lang="uk">RODO</span></h2>
@@ -304,7 +304,7 @@ regions:
             caption: Trzeci slajd
             image:
               path: https://picsum.photos/500/500?image=1070
-      slides_ua:
+      slides_uk:
         - 
           field:
             type: set

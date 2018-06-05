@@ -2,7 +2,7 @@
     {
         "title": "First gallery",
         "title_pl": "Pierwsza galeria",
-        "title_ua": "\u041f\u0435\u0440\u0448\u0430 \u0433\u0430\u043b\u0435\u0440\u0435\u044f",
+        "title_uk": "\u041f\u0435\u0440\u0448\u0430 \u0433\u0430\u043b\u0435\u0440\u0435\u044f",
         "images": [
             {
                 "meta": {
@@ -283,20 +283,20 @@
         "published": true,
         "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.<\/p>",
         "description_pl": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.<\/p>",
-        "description_ua": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.<\/p>",
+        "description_uk": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.<\/p>",
         "title_slug": "first-gallery",
         "title_pl_slug": "pierwsza-galeria",
-        "title_ua_slug": "persha-galereya",
+        "title_uk_slug": "persha-galereya",
         "_id": "5b07422525576doc222804033"
     },
     {
         "published": true,
         "title": "Second gallery",
         "title_pl": "Druga galeria",
-        "title_ua": "\u0414\u0440\u0443\u0433\u0430 \u0433\u0430\u043b\u0435\u0440\u0435\u044f",
+        "title_uk": "\u0414\u0440\u0443\u0433\u0430 \u0433\u0430\u043b\u0435\u0440\u0435\u044f",
         "description": "<p>Some simple description of this gallery. Nothing fancy for now.<\/p>",
         "description_pl": "",
-        "description_ua": null,
+        "description_uk": null,
         "image": {
             "path": "\/storage\/uploads\/2018\/04\/29\/5ae57e29cc7981035.jpg"
         },
@@ -344,6 +344,6 @@
         "_created": 1527556093,
         "_id": "5b0ca7fd8333ddoc1276701321",
         "title_pl_slug": "druga-galeria",
-        "title_ua_slug": "druga-galereya"
+        "title_uk_slug": "druga-galereya"
     }
 ]

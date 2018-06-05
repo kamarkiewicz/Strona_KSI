@@ -7,7 +7,7 @@ app.name: Strona_KSI
 languages:
     # en: English (Default)
     pl: Polish
-    ua: Ukrainian
+    uk: Ukrainian
 
 groups:
     editor:
