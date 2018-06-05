@@ -25,6 +25,9 @@
                               :caption="el.caption"
                               :text="el.description"
                               :img-src="el.image.src"
+                              :img-alt="el.image.title"
+                              :img-width="el.image.width"
+                              :img-height="el.image.height"
             ></b-carousel-slide>
           </b-carousel>
         </div>
