@@ -1,12 +1,10 @@
 import Vue from 'vue'
-import BootstrapVue from 'bootstrap-vue'
 import { mount } from '@vue/test-utils'
 import HomeCarousel from '~/components/HomeCarousel.vue'
 import { Image } from '~/assets/js/utils'
 
-Vue.use(BootstrapVue)
 Vue.config.ignoredElements = [
-  'nuxt-link'
+  'b-carousel', 'b-carousel-slide', 'nuxt-link'
 ];
 
 describe('HomeCarousel', () => {
