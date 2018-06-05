@@ -1,22 +1,30 @@
+import _ from 'lodash'
 
 const BACK_DEFAULT_LOCALE = 'en'
 
 // Image field type from the backend
 export class Image {
   constructor (image) {
-    if (image.constructor === String) {
-      image = {
-        path: image,
-        meta: {}
+    if (_.isEmpty(image)) {
+      this.path = undefined
+      this.meta = undefined
+    }
+    else if (_.isString(image)) {
+      this.path = Image.normalizePath(image)
+      this.meta = {
+        title: 'some image',
       }
     }
-    if ((image || {}).path) {
-      // path may be relative URL; this block normalizes it
-      let isAbsolute = /^(?:[a-z]+:)?\/\//i.test(image.path)
-      image.path = (isAbsolute ? '' : process.env.API_URL) + image.path
+    else {
+      this.path = Image.normalizePath(image.path)
+      this.meta = image.meta
     }
-    this.path = image.path
-    this.meta = image.meta
+  }
+
+  static normalizePath (path) {
+    // path may be relative URL; this block normalizes it
+    const isAbsolute = /^(?:[a-z]+:)?\/\//i.test(path)
+    return (isAbsolute ? '' : process.env.API_URL) + path
   }
 }
 
