@@ -3,9 +3,10 @@
     <div class="container">
       <div class="row">
         <div class="align-self-center p-5 col-md-6">
-          <h1 class="mb-4">{{ title }}</h1>
-          <p class="mb-5">{{ desc }}</p>
-          <a class="btn btn-lg btn-outline-light" href="#">{{ linkDesc }}</a>
+          <h1 class="mb-4" v-text="$t('homecarousel.title')"></h1>
+          <p class="mb-5" v-text="$t('homecarousel.description')"></p>
+          <nuxt-link class="btn btn-lg btn-outline-light"
+                     :to="localePath('album')" v-text="$t('homecarousel.gotoAlbum')"></nuxt-link>
         </div>
         <div class="col-md-6 p-0">
           <b-carousel id="carousel1"
@@ -20,10 +21,10 @@
                       @sliding-start="onSlideStart"
                       @sliding-end="onSlideEnd"
           >
-            <b-carousel-slide v-for="slide in slides" :key="slide.id"
-                              :caption="slide.caption"
-                              :text="slide.text"
-                              :img-src="slide.imgSrc"
+            <b-carousel-slide v-for="(el, index) in slides" :key="`slide-${index}`"
+                              :caption="el.caption"
+                              :text="el.description"
+                              :img-src="el.image.path"
             ></b-carousel-slide>
           </b-carousel>
         </div>
@@ -34,29 +35,14 @@
 
 <script>
 export default {
+  props: {
+    slides: {
+      type: Array,
+      required: true
+    },
+  },
   data () {
     return {
-      title: 'Zobacz na własne oczy!',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      linkDesc: 'Przejdź do galerii',
-      slides: [
-        { id: 1,
-          caption: 'First slide',
-          text: 'Nulla vitae elit libero, a pharetra augue mollis interdum.',
-          imgSrc: 'https://picsum.photos/500/500?image=1033'
-        },
-        { id: 2,
-          caption: 'Second slide',
-          text: 'Nulla vitae elit libero, a pharetra augue mollis interdum.',
-          imgSrc: 'https://picsum.photos/500/500?image=1060'
-        },
-        { id: 3,
-          caption: 'Third slide',
-          text: 'Nulla vitae elit libero, a pharetra augue mollis interdum.',
-          imgSrc: 'https://picsum.photos/500/500?image=1059'
-        }
-      ],
-
       slide: 0,
       sliding: null
     }
@@ -68,7 +54,7 @@ export default {
     onSlideEnd (slide) {
       this.sliding = false
     }
-  }
+  },
 }
 </script>
 
