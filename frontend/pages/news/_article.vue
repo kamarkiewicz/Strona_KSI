@@ -43,7 +43,7 @@ export default {
   },
   head () {
     return {
-      title: this.title,
+      title: this.entry.title,
     }
   }
 }
