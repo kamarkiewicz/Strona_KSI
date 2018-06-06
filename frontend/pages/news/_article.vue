@@ -2,8 +2,8 @@
   <div>
     <article class="container my-5">
       <div class="article-header">
-        <p class="text-primary"> {{ $d(entry.date) }} </p>
-        <h1>{{ entry.title }}</h1>
+        <p v-text="$d(entry.date)" class="text-primary"></p>
+        <h1 v-text="entry.title"></h1>
       </div>
       <div v-if="entry.image.src" class="image text-center mb-4">
         <b-img :src="entry.image.src" alt="Featured image" class="rounded" fluid />
