@@ -15,17 +15,7 @@
               <b-nav-item target="_blank" href="https://www.zosia.org/"><i class="fa d-inline fa-lg fa-calendar-o"></i> ZOSIA</b-nav-item>
               <b-nav-item target="_blank" href="http://continuum.uni.wroc.pl/"><i class="fa d-inline fa-lg fa-handshake-o"></i> Continuum</b-nav-item>
               <b-nav-item target="_blank" href="http://www.ii.uni.wroc.pl/"><i class="fa d-inline fa-lg fa-bookmark-o"></i> II UWr</b-nav-item>
-              <b-nav-item-dropdown right>
-                <template slot="button-content"><i class="fa d-inline fa-lg fa-globe pr-1"></i></template>
-                <b-dropdown-item
-                  v-for="(locale, index) in $i18n.locales"
-                  v-if="locale.code !== $i18n.locale"
-                  :key="index"
-                  :exact="true"
-                  :to="switchLocalePath(locale.code)"
-                  v-text="locale.name"
-                ></b-dropdown-item>
-              </b-nav-item-dropdown>
+              <lang-switcher />
             </b-navbar-nav>
           </b-collapse>
       </b-container>
@@ -49,8 +39,11 @@
 </template>
 
 <script>
+import LangSwitcher from '~/components/LangSwitcher'
+
 export default {
   components: {
+    LangSwitcher,
   }
 }
 </script>
