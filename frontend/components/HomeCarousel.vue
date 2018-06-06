@@ -22,6 +22,7 @@
                       @sliding-end="onSlideEnd"
           >
             <b-carousel-slide v-for="(el, index) in slides" :key="`slide-${index}`"
+                              background="#ababab"
                               :caption="el.caption"
                               :text="el.description"
                               :img-src="el.image.src"
