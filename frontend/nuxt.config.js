@@ -4,6 +4,10 @@ const webpack = require('webpack')
 module.exports = {
   mode: 'universal',
 
+  env: {
+    API_URL: process.env.API_URL || 'http://localhost:8080'
+  },
+
   /*
   ** Headers of the page
   */
