@@ -21,17 +21,17 @@ describe('HomeCarousel', () => {
           {
             caption: 'First slide',
             description: 'Nulla vitae elit libero, a pharetra augue mollis interdum.',
-            image: new Image('http://via.placeholder.com/500x500'),
+            image: new Image('https://via.placeholder.com/500x500'),
           },
           {
             caption: 'Second slide',
             description: 'Nulla vitae elit libero, a pharetra augue mollis interdum.',
-            image: new Image('http://via.placeholder.com/500x500'),
+            image: new Image('https://via.placeholder.com/500x500'),
           },
           {
             caption: 'Third slide',
             description: 'Nulla vitae elit libero, a pharetra augue mollis interdum.',
-            image: new Image('http://via.placeholder.com/500x500'),
+            image: new Image('https://via.placeholder.com/500x500'),
           },
         ],
       },
