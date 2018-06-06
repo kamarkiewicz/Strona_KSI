@@ -78,6 +78,7 @@ module.exports = {
       lazy: true,
       langDir: 'locales/',
     }],
+    '@nuxtjs/sitemap',
     // Doc: https://bootstrap-vue.js.org/docs/
     ['bootstrap-vue/nuxt', { css: false }],
     // Doc: https://fontawesome.com/icons
@@ -89,6 +90,12 @@ module.exports = {
   */
   axios: {
     // See https://axios.nuxtjs.org/options.html
+  },
+
+  /*
+  ** Sitemap module configuration
+  */
+  sitemap: {
   },
 
   /*
