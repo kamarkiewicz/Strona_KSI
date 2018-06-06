@@ -1,0 +1,338 @@
+---
+regions:
+  privacy:
+    name: privacy
+    label: Privacy
+    _id: privacy5b0d30111f8fe
+    fields:
+      - 
+        name: content
+        label: Content
+        type: wysiwyg
+        default: ""
+        info: ""
+        group: ""
+        localize: true
+        options: [ ]
+        width: 1-1
+        lst: true
+        acl: [ ]
+        required: true
+    template: ""
+    data:
+      content: |
+        <h2>Cookies</h2>
+        <p>This site doesn't use cookies.</p>
+        <h2>GDPR</h2>
+        <p>This site doesn't collect any data about its viewers.</p>
+      content_pl: |
+        <div class="container p-5">
+        <h2>Polityka prywatności</h2>
+        <p>Odwiedzając stronę nie została wyświetlona informacja o ciasteczkach. To dlatego, że nasz serwis nie używa ciasteczek i nie śledzi jej użytkownik&oacute;w :)</p>
+        <h2>RODO</h2>
+        <p>Nasza strona nie przetwarza żadnych danych osobowych swoich odwiedzających. Wszelkie dane o Członkach Koła są przetwarzane za pisemną zgodą do cel&oacute;w informacyjnych.</p>
+        </div>
+      content_uk: |
+        <h2><span id="result_box" class="" lang="uk">Політика конфіденційності</span></h2>
+        <p><span id="result_box" class="" lang="uk">Відвідування веб-сайту не відображає інформацію про файли cookie. Це тому, що на нашому веб-сайті не використовуються файли cookie і не слідують його користувачам :)</span></p>
+        <h2><span id="result_box" class="" lang="uk">RODO</span></h2>
+        <p><span id="result_box" class="" lang="uk">Наш сайт не обробляє жодних особистих даних своїх відвідувачів. <span class="">Усі дані про учасників кругів обробляються з письмового дозволу для інформаційних цілей.</span></span></p>
+    _created: 1527590929
+    _modified: 1527596385
+    description: ""
+    acl: [ ]
+    icon: password-reset.svg
+  contact:
+    name: contact
+    label: Contact
+    _id: contact5ae584005b9bf
+    fields:
+      - 
+        name: email
+        label: E-mail
+        type: text
+        default: ""
+        info: ""
+        group: ""
+        localize: false
+        options: [ ]
+        width: 1-1
+        lst: true
+        acl: [ ]
+        required: true
+      - 
+        name: location
+        label: Location
+        type: location
+        default: ""
+        info: ""
+        group: ""
+        localize: false
+        options: [ ]
+        width: 1-1
+        lst: true
+        acl: [ ]
+        required: true
+      - 
+        name: details
+        label: Details
+        type: wysiwyg
+        default: ""
+        info: ""
+        group: ""
+        localize: false
+        options: [ ]
+        width: 1-1
+        lst: true
+        acl: [ ]
+        required: true
+    template: ""
+    data:
+      location:
+        lat: "51.110797113223"
+        lng: "17.05361366272"
+      collectionlink: null
+      repeater:
+        - 
+          field:
+            type: text
+          value: 1234 repeater some text
+        - 
+          field:
+            type: text
+          value: more text on repeater
+      set: null
+      email: ksi@cs.uni.wroc.pl
+      details: '<p>Koło Student&oacute;w Informatyki<br />p. 24 Instytut Informatyki<br />Uniwersytetu Wrocławskiego<br />ul. Joliot-Curie 15<br />50-383 Wrocław</p>'
+    _created: 1524990976
+    _modified: 1527374186
+    description: ""
+    acl:
+      public:
+        form: false
+        data: true
+        render: false
+        edit: false
+    icon: map.svg
+  carousel:
+    name: carousel
+    label: Homepage Carousel
+    _id: carousel5b16982e9c018
+    fields:
+      - 
+        name: slides
+        label: Slides
+        type: repeater
+        default: ""
+        info: ""
+        group: ""
+        localize: true
+        options:
+          fields:
+            - 
+              type: set
+              name: slide
+              label: Slide
+              options:
+                fields:
+                  - 
+                    type: text
+                    name: caption
+                    label: Caption
+                  - 
+                    type: text
+                    name: description
+                    label: Description
+                  - 
+                    type: image
+                    name: image
+                    label: Image
+        width: 1-1
+        lst: true
+        acl: [ ]
+    template: ""
+    data:
+      slides:
+        - 
+          field:
+            type: set
+            name: slide
+            label: Slide
+            options:
+              fields:
+                - 
+                  type: text
+                  name: caption
+                  label: Caption
+                - 
+                  type: text
+                  name: description
+                  label: Description
+                - 
+                  type: image
+                  name: image
+                  label: Image
+          value:
+            caption: First slide
+            description: >
+              Nulla vitae elit libero, a pharetra
+              augue mollis interdum.
+            image:
+              path: https://picsum.photos/500/500?image=1033
+        - 
+          field:
+            type: set
+            name: slide
+            label: Slide
+            options:
+              fields:
+                - 
+                  type: text
+                  name: caption
+                  label: Caption
+                - 
+                  type: text
+                  name: description
+                  label: Description
+                - 
+                  type: image
+                  name: image
+                  label: Image
+          value:
+            caption: Second slide
+            description: >
+              Nulla vitae elit libero, a pharetra
+              augue mollis interdum.
+            image:
+              path: https://picsum.photos/500/500?image=1060
+        - 
+          field:
+            type: set
+            name: slide
+            label: Slide
+            options:
+              fields:
+                - 
+                  type: text
+                  name: caption
+                  label: Caption
+                - 
+                  type: text
+                  name: description
+                  label: Description
+                - 
+                  type: image
+                  name: image
+                  label: Image
+          value:
+            description: >
+              Nulla vitae elit libero, a pharetra
+              augue mollis interdum.
+            caption: Third slide
+            image:
+              path: https://picsum.photos/500/500?image=1059
+      slides_pl:
+        - 
+          field:
+            type: set
+            name: slide
+            label: Slide
+            options:
+              fields:
+                - 
+                  type: text
+                  name: caption
+                  label: Caption
+                - 
+                  type: text
+                  name: description
+                  label: Description
+                - 
+                  type: image
+                  name: image
+                  label: Image
+          value:
+            caption: Pierwszy slajd
+            description: Opis do pierwszego slajda
+            image:
+              path: https://picsum.photos/500/500?image=1033
+        - 
+          field:
+            type: set
+            name: slide
+            label: Slide
+            options:
+              fields:
+                - 
+                  type: text
+                  name: caption
+                  label: Caption
+                - 
+                  type: text
+                  name: description
+                  label: Description
+                - 
+                  type: image
+                  name: image
+                  label: Image
+          value:
+            caption: Drugi slajd
+            description: Opis do drugiego slajda
+            image:
+              path: https://picsum.photos/500/500?image=1060
+        - 
+          field:
+            type: set
+            name: slide
+            label: Slide
+            options:
+              fields:
+                - 
+                  type: text
+                  name: caption
+                  label: Caption
+                - 
+                  type: text
+                  name: description
+                  label: Description
+                - 
+                  type: image
+                  name: image
+                  label: Image
+          value:
+            description: Opis do pierwszego slajda
+            caption: Trzeci slajd
+            image:
+              path: https://picsum.photos/500/500?image=1070
+      slides_uk:
+        - 
+          field:
+            type: set
+            name: slide
+            label: Slide
+            options:
+              fields:
+                - 
+                  type: text
+                  name: caption
+                  label: Caption
+                - 
+                  type: text
+                  name: description
+                  label: Description
+                - 
+                  type: image
+                  name: image
+                  label: Image
+          value:
+            caption: UA pierwszy slajd
+            description: Opis po ukraińsku.
+            image:
+              path: https://picsum.photos/500/500?image=1070
+    _created: 1528207406
+    _modified: 1528208219
+    description: ""
+    acl:
+      public:
+        data: true
+    icon: play-cubis.svg

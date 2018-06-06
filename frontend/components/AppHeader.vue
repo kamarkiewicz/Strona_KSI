@@ -11,7 +11,7 @@
           <b-navbar-toggle class="ml-auto" target="brandnav_collapse"></b-navbar-toggle>
 
           <b-collapse is-nav id="brandnav_collapse">
-            <b-navbar-nav class="ml-auto">
+            <b-navbar-nav role="menubar" class="ml-auto">
               <b-nav-item target="_blank" href="https://www.zosia.org/"><i class="fa d-inline fa-lg fa-calendar-o"></i> ZOSIA</b-nav-item>
               <b-nav-item target="_blank" href="http://continuum.uni.wroc.pl/"><i class="fa d-inline fa-lg fa-handshake-o"></i> Continuum</b-nav-item>
               <b-nav-item target="_blank" href="http://www.ii.uni.wroc.pl/"><i class="fa d-inline fa-lg fa-bookmark-o"></i> II UWr</b-nav-item>
@@ -22,9 +22,9 @@
                   v-if="locale.code !== $i18n.locale"
                   :key="index"
                   :exact="true"
-                  :to="switchLocalePath(locale.code)">
-                    {{ locale.name }}
-                </b-dropdown-item>
+                  :to="switchLocalePath(locale.code)"
+                  v-text="locale.name"
+                ></b-dropdown-item>
               </b-nav-item-dropdown>
             </b-navbar-nav>
           </b-collapse>

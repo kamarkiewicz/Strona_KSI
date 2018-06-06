@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Image object constructs properly 1`] = `Image {}`;
+
+exports[`Image object constructs properly 2`] = `
+Image {
+  "src": "https://picsum.photos/505/295?image=1024",
+  "title": "Featured image",
+}
+`;
+
+exports[`Image object constructs properly 3`] = `
+Image {
+  "height": 295,
+  "src": "https://www.example.com/api/storage/uploads/2018/04/26/5ae258ff2ac8d295.jpg",
+  "title": "295.jpg",
+  "width": 505,
+}
+`;
+
+exports[`Image object constructs properly 4`] = `
+Image {
+  "src": "https://www.example.com/api/storage/uploads/2018/04/29/5ae57e29cc7981035.jpg",
+  "title": "5ae57e29dc5c7doc1474185002",
+}
+`;
+
+exports[`Image object constructs properly 5`] = `Image {}`;

@@ -9,7 +9,7 @@ exports[`HomeNews renders correctly 1`] = `
     <b-row>
       <b-col lg="4" class="pr-3 pb-5">
         <div class="preview-card card rounded border-0">
-          <img src="https://picsum.photos/270/180?image=1024" class="card-img-top rounded-top">
+          <img src="https://picsum.photos/270/180?image=1024" alt="Featured image" class="card-img-top rounded-top">
           <div class="card-body">
             <h6 class="card-subtitle mb-2 text-muted">1527628516335</h6>
             <h5 class="card-title">Tytuł aktualności 1</h5>
@@ -23,7 +23,7 @@ exports[`HomeNews renders correctly 1`] = `
       </b-col>
       <b-col lg="4" class="pr-3 pb-5">
         <div class="preview-card card rounded border-0">
-          <img src="https://picsum.photos/270/180?image=1020" class="card-img-top rounded-top">
+          <img src="https://picsum.photos/270/180?image=1020" alt="Featured image" class="card-img-top rounded-top">
           <div class="card-body">
             <h6 class="card-subtitle mb-2 text-muted">1527628516335</h6>
             <h5 class="card-title">Tytuł aktualności 2</h5>
@@ -37,7 +37,7 @@ exports[`HomeNews renders correctly 1`] = `
       </b-col>
       <b-col lg="4" class="pr-3 pb-5">
         <div class="preview-card card rounded border-0">
-          <img src="https://picsum.photos/270/180?image=1010" class="card-img-top rounded-top">
+          <img src="https://picsum.photos/270/180?image=1010" alt="Featured image" class="card-img-top rounded-top">
           <div class="card-body">
             <h6 class="card-subtitle mb-2 text-muted">1527628516335</h6>
             <h5 class="card-title">Tytuł aktualności 3</h5>
