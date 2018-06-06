@@ -1,6 +1,7 @@
 import _ from 'lodash'
 
 const BACK_DEFAULT_LOCALE = 'en'
+const BACK_LOCALES = ['en', 'pl', 'uk']
 
 // Image field type from the backend
 const IMAGE_DEFAULT_TITLE = 'Featured image'
@@ -31,20 +32,29 @@ export class Image {
   }
 }
 
-// Allows to fetch all slugs for given collection
-export async function fetchSlugs (axios, collectionName, slugField, locales) {
-  const fields = locales.map(locale => {
-    return `fields[${slugField}_${locale}_slug]`
+// Allows to fetch all localized slugs for given collection
+export async function fetchSlugsByTitle (axios, collectionName, { locale, slug }) {
+  /// Get only those fields
+  const fields = BACK_LOCALES.map(locale => {
+    return locale !== BACK_DEFAULT_LOCALE ? `title_${locale}_slug` : 'title_slug'
   })
-  fields.push(`fields[${slugField}_slug]`)
   const params = fields.reduce((dict, curr) => {
-    dict[curr] = 1
+    dict[`fields[${curr}]`] = 1
     return dict
   }, {})
+  /// Filtered by the given slug
+  const field = locale !== BACK_DEFAULT_LOCALE ? `title_${locale}_slug` : 'title_slug'
+  const filter = `filter[${field}]`
+  params[filter] = slug
+
   const { entries, total } = await axios.$get('/api/collections/get/' + collectionName, {
     params
   })
-  return entries
+  if (total > 1) console.error(`There is ${total} entries with slug ${slug} in ${locale}`)
+  if (!entries.length) throw new Error('There is no such entry')
+  const data = entries[0]
+  const localSlugs = _.zipObject(BACK_LOCALES, fields.map(field => data[field]))
+  return localSlugs
 }
 
 // Gets region data through API

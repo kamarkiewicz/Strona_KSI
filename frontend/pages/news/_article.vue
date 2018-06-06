@@ -2,8 +2,8 @@
   <div>
     <article class="container my-5">
       <div class="article-header">
-        <p class="text-primary"> {{ $d(entry.date) }} </p>
-        <h1>{{ entry.title }}</h1>
+        <p v-text="$d(entry.date)" class="text-primary"></p>
+        <h1 v-text="entry.title"></h1>
       </div>
       <div v-if="entry.image.src" class="image text-center mb-4">
         <b-img :src="entry.image.src" alt="Featured image" class="rounded" fluid />
@@ -25,11 +25,25 @@ export default {
     })
   },
   async fetch ({ app, params, store }) {
-    await store.dispatch('news/getSingle', { axios: app.$axios, slug: params.article })
+    const ctx = { axios: app.$axios, slug: params.article }
+    await Promise.all([
+      store.dispatch('news/getSingle', ctx),
+      store.dispatch('news/getLocalSlugs', ctx)
+    ])
+  },
+  mounted () {
+    const that = this;
+    this.$store.commit('SET_SWITCHLOCALEPATHIMPL', (locale) => {
+      const slug = that.$store.getters['news/localSlugs'][locale]
+      return that.localePath({ name: 'news-article', params: { article: slug }}, locale)
+    })
+  },
+  destroyed () {
+    this.$store.commit('SET_SWITCHLOCALEPATHIMPL', null)
   },
   head () {
     return {
-      title: this.title,
+      title: this.entry.title,
     }
   }
 }

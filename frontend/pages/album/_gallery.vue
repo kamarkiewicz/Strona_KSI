@@ -24,11 +24,25 @@ export default {
     })
   },
   async fetch ({ app, params, store }) {
-    await store.dispatch('album/getSingle', { axios: app.$axios, slug: params.gallery })
+    const ctx = { axios: app.$axios, slug: params.gallery }
+    await Promise.all([
+      store.dispatch('album/getSingle', ctx),
+      store.dispatch('album/getLocalSlugs', ctx)
+    ])
+  },
+  mounted () {
+    const that = this;
+    this.$store.commit('SET_SWITCHLOCALEPATHIMPL', (locale) => {
+      const slug = that.$store.getters['album/localSlugs'][locale]
+      return that.localePath({ name: 'album-gallery', params: { gallery: slug }}, locale)
+    })
+  },
+  destroyed () {
+    this.$store.commit('SET_SWITCHLOCALEPATHIMPL', null)
   },
   head () {
     return {
-      title: this.title,
+      title: this.entry.title,
     }
   }
 }
