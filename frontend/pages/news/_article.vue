@@ -25,7 +25,21 @@ export default {
     })
   },
   async fetch ({ app, params, store }) {
-    await store.dispatch('news/getSingle', { axios: app.$axios, slug: params.article })
+    const ctx = { axios: app.$axios, slug: params.article }
+    await Promise.all([
+      store.dispatch('news/getSingle', ctx),
+      store.dispatch('news/getLocalSlugs', ctx)
+    ])
+  },
+  mounted () {
+    const that = this;
+    this.$store.commit('SET_SWITCHLOCALEPATHIMPL', (locale) => {
+      const slug = that.$store.getters['news/localSlugs'][locale]
+      return that.localePath({ name: 'news-article', params: { article: slug }}, locale)
+    })
+  },
+  destroyed () {
+    this.$store.commit('SET_SWITCHLOCALEPATHIMPL', null)
   },
   head () {
     return {
