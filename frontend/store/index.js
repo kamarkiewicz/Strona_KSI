@@ -2,7 +2,8 @@ import { fetchRegion, fetchSlides } from '~/assets/js/utils'
 
 export const state = () => ({
   adminPanelLink: '',
-  slides: []
+  slides: [],
+  switchLocalePathImpl: null,
 })
 
 export const mutations = {
@@ -10,6 +11,7 @@ export const mutations = {
     state.adminPanelLink = adminPanelLink
   },
   SET_SLIDES: (state, slides) => state.slides = slides,
+  SET_SWITCHLOCALEPATHIMPL: (state, callback) => state.switchLocalePathImpl = callback,
 }
 
 export const actions = {
@@ -27,4 +29,5 @@ export const actions = {
 
 export const getters = {
   slides: state => state.slides,
+  switchLocalePathImpl: state => state.switchLocalePathImpl,
 }

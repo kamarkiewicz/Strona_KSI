@@ -6,8 +6,19 @@
       v-if="locale.code !== $i18n.locale"
       :key="index"
       :exact="true"
-      :to="switchLocalePath(locale.code)"
+      :to="pathResolver(locale.code)"
       v-text="locale.name"
     ></b-dropdown-item>
   </b-nav-item-dropdown>
 </template>
+
+<script>
+export default {
+  methods: {
+    pathResolver (code) {
+      const switchLocalePathImpl = this.$store.getters['switchLocalePathImpl'] || this.switchLocalePath
+      return switchLocalePathImpl(code)
+    },
+  },
+}
+</script>
