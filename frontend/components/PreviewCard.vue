@@ -2,14 +2,14 @@
   <article class="preview-card card h-100 rounded border-0">
     <img class="card-img-top rounded-top" v-if="image.src" :src="image.src" :alt="image.title">
     <img class="card-img-top rounded-top" v-else src="https://via.placeholder.com/505x295" alt="placeholder">
-    <section class="card-body">
+    <div class="card-body">
       <header>
         <h6 class="card-subtitle mb-2 text-muted" v-if="date" v-text="$d(date)"></h6>
         <h5 class="card-title" v-text="title"></h5>
       </header>
       <div class="card-text text-justify" v-html="excerpt"></div>
       <nuxt-link class="card-link" :to="link" v-text="linkText"></nuxt-link>
-    </section>
+    </div>
   </article>
 </template>
 

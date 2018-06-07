@@ -10,7 +10,7 @@ exports[`HomeNews renders correctly 1`] = `
       <div class="col-lg-4 pr-3 pb-5">
         <article class="preview-card card h-100 rounded border-0">
           <img src="https://picsum.photos/270/180?image=1024" alt="Featured image" class="card-img-top rounded-top">
-          <section class="card-body">
+          <div class="card-body">
             <header>
               <h6 class="card-subtitle mb-2 text-muted">1527628516335</h6>
               <h5 class="card-title">Tytuł aktualności 1</h5>
@@ -20,13 +20,13 @@ exports[`HomeNews renders correctly 1`] = `
               <p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>
             </div>
             <nuxt-link to="{&quot;name&quot;:&quot;news-article&quot;,&quot;params&quot;:{&quot;article&quot;:&quot;tytul-aktualnosci-1&quot;}}" class="card-link">Czytaj więcej</nuxt-link>
-          </section>
+          </div>
         </article>
       </div>
       <div class="col-lg-4 pr-3 pb-5">
         <article class="preview-card card h-100 rounded border-0">
           <img src="https://picsum.photos/270/180?image=1020" alt="Featured image" class="card-img-top rounded-top">
-          <section class="card-body">
+          <div class="card-body">
             <header>
               <h6 class="card-subtitle mb-2 text-muted">1527628516335</h6>
               <h5 class="card-title">Tytuł aktualności 2</h5>
@@ -36,13 +36,13 @@ exports[`HomeNews renders correctly 1`] = `
               <p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>
             </div>
             <nuxt-link to="{&quot;name&quot;:&quot;news-article&quot;,&quot;params&quot;:{&quot;article&quot;:&quot;tytul-aktualnosci-2&quot;}}" class="card-link">Czytaj więcej</nuxt-link>
-          </section>
+          </div>
         </article>
       </div>
       <div class="col-lg-4 pr-3 pb-5">
         <article class="preview-card card h-100 rounded border-0">
           <img src="https://picsum.photos/270/180?image=1010" alt="Featured image" class="card-img-top rounded-top">
-          <section class="card-body">
+          <div class="card-body">
             <header>
               <h6 class="card-subtitle mb-2 text-muted">1527628516335</h6>
               <h5 class="card-title">Tytuł aktualności 3</h5>
@@ -52,7 +52,7 @@ exports[`HomeNews renders correctly 1`] = `
               <p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>
             </div>
             <nuxt-link to="{&quot;name&quot;:&quot;news-article&quot;,&quot;params&quot;:{&quot;article&quot;:&quot;tytul-aktualnosci-3&quot;}}" class="card-link">Czytaj więcej</nuxt-link>
-          </section>
+          </div>
         </article>
       </div>
     </div>
