@@ -82,49 +82,22 @@ $navbar-dark-active-color:          #fff;
 ///
 @import '~assets/scss/utils';
 
-$slant-height: 5em;
-$slant-padding: $slant-height + 1em;
+$slant-angle: 1.25deg;
+$slant-padding: 4.5em;
 
 .slant-in-before {
-  position: relative;
-  &::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: -$slant-height;
-    width: 100%;
-    height: $slant-height;
-    transform: translateY(0) rotate(0) scaleX(-1);
-  }
-  @each $color, $value in join($theme-colors, $colors) {
-    &.bg-#{$color}::before {
-      @include bg-triangle($value);
-    }
-  }
+  @include angle(before, true, $slant-angle);
 }
-
 .slant-in-after {
-  position: relative;
-  &::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: $slant-height;
-    transform: translateY(100%) rotate(180deg);
-  }
-  @each $color, $value in join($theme-colors, $colors) {
-    &.bg-#{$color}::after {
-      @include bg-triangle($value);
-    }
-  }
+  @include angle(after, true, $slant-angle);
+}
+.slant-in-both {
+  @include angle(both, true, $slant-angle);
 }
 
 .pt-slant {
   padding-top: $slant-padding !important;
 }
-
 .pb-slant {
   padding-bottom: $slant-padding !important;
 }
