@@ -1,7 +1,7 @@
 <template>
   <div class="timeline container">
 
-    <article class="row dotline" v-for="el in timeline" :key="el.id">
+    <article class="row dotline" v-for="el in entries" :key="el.id">
       <div class="p-4 col-md-12">
         <div class="row dotline-row pl-2">
           <header class="col-md-6 col-lg-3">
@@ -23,36 +23,12 @@
 
 <script>
 export default {
-  data() {
-    return {
-      timeline: [
-        {
-          id: 1,
-          date: "09.04.16",
-          title: "Magna etiam sed lorem ipsum dolor amet",
-          image: "https://picsum.photos/g/300/180?image=81",
-          content: "Phasellus in ante vitae nibh porttitor tempus vitae ut ante. Vestibulum blandit dolor elementum viverra. Sed quat a diam, aliquet tempus felis. Phasellus et magna vitae nibh porttitor tempus vitae.",
-          link: "#"
-        },
-        {
-          id: 2,
-          date: "08.28.16",
-          title: "Sed feugiat et mauris adipiscing dolor",
-          image: "https://picsum.photos/g/300/180?image=82",
-          content: "Phasellus in ante vitae nibh porttitor tempus vitae ut ante. Vestibulum blandit dolor elementum viverra. Sed quat a diam, aliquet tempus felis. Phasellus et magna vitae nibh porttitor tempus vitae.",
-          link: "#"
-        },
-        {
-          id: 3,
-          date: "08.22.16",
-          title: "Tellus magna dolore sed elementum",
-          image: "https://picsum.photos/g/300/180?image=83",
-          content: "Phasellus in ante vitae nibh porttitor tempus vitae ut ante. Vestibulum blandit dolor elementum viverra. Sed quat a diam, aliquet tempus felis. Phasellus et magna vitae nibh porttitor tempus vitae.",
-          link: "#"
-        }
-      ]
-    }
-  }
+  props: {
+    entries: {
+      type: Array,
+      required: true
+    },
+  },
 }
 </script>
 
