@@ -3,7 +3,7 @@
 
 import server from "../server"
 
-module.exports = {
+export default {
   before: (browser, done) => {
     server.start(done)
   },
@@ -21,7 +21,7 @@ module.exports = {
     browser
       .url(devServer)
       .waitForElementVisible('#app', 5000)
-      .assert.elementPresent('.home')
+      .assert.elementPresent('.home-page')
       .assert.elementPresent('#carousel1')
       .assert.elementCount('img', 11)
       .end()
