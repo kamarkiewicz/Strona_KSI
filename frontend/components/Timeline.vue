@@ -13,7 +13,6 @@
           </section>
           <section class="col-md-12 col-lg-5">
             <p class="my-1" v-text="el.content"></p>
-            <nuxt-link :to="el.link" class="mt-2 btn btn-outline-primary text-uppercase" v-text="'More'" />
           </section>
         </div>
       </div>
