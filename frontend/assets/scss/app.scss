@@ -68,3 +68,11 @@ $navbar-dark-active-color:          #fff;
     vertical-align: inherit;
   }
 }
+
+.accented::after {
+  content: '';
+  display: block;
+  border-bottom: 1px solid #dadada;
+  width: 8em;
+  height: 1px;
+}
