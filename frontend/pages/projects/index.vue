@@ -8,7 +8,7 @@
       </header>
     </div>
 
-    <div class="container">
+    <div class="container pb-4">
       <div class="row" v-for="(chunk, index) in entryChunks" :key="`chunk-${index}`">
         <div class="py-5 col-md-6" v-for="el in chunk" :key="el.id">
           <div class="row">

@@ -3,7 +3,7 @@
 
     <home-news class="pb-slant" :news="news" />
 
-    <showcase class="slant-in-before slant-in-after" :entries="entries" />
+    <showcase class="slant-in-both" :entries="entries" />
 
     <home-carousel class="pt-slant pb-slant" :slides="slides" />
 
