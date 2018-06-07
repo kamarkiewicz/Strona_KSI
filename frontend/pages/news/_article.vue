@@ -1,16 +1,16 @@
 <template>
-  <div>
+  <div class="article-page">
     <article class="container my-5">
-      <div class="article-header">
-        <p v-text="$d(entry.date)" class="text-primary"></p>
-        <h1 v-text="entry.title"></h1>
-      </div>
-      <div v-if="entry.image.src" class="image text-center mb-4">
-        <b-img :src="entry.image.src" alt="Featured image" class="rounded" fluid />
+      <header class="py-3">
+        <time class="text-primary font-weight-bold" v-text="$d(entry.date)"></time>
+        <h1 class="text-secondary pt-2 pb-3" v-text="entry.title"></h1>
+      </header>
+      <div v-if="entry.image.src" class="image text-center py-4">
+        <b-img :src="entry.image.src" :alt="entry.image.title" class="rounded" fluid />
       </div>
       <div v-html="entry.excerpt" class="font-weight-bold" id="excerpt"></div>
       <hr/>
-      <div v-html="entry.content" id="content"></div>
+      <div v-html="entry.content" class="pb-4" id="content"></div>
     </article>
   </div>
 </template>
@@ -49,35 +49,17 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 
-.article-header{
-   padding: 1vw 0 3vw 0;
- }
-.article-header p{
-  font-weight: 700;
-  margin-bottom: 1vh !important;
-}
+$underline-color: #c9c9c9;
 
-
-h1::after{
-  content: '';
-  position: relative;
-  bottom: -3vh;
-	display: block;
-	border-top: 1px solid #c9c9c9;
-  width: 12vw;
-}
-
-.container p{
-  margin-bottom: 1.5vh;
-}
-
-#content{
-  padding: 0;
-  margin-bottom: 10vh;
-
+.article-page {
+  header::after {
+    content: '';
+    display: block;
+    border-top: 1px solid $underline-color;
+    width: 12vw;
+  }
 }
 
 </style>
-
