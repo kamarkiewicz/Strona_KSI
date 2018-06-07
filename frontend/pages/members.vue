@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h1>Członkowie Koła Studentów Informatyki</h1>
+          <h1 class="text-primary">Członkowie Koła Studentów Informatyki</h1>
           <p class="lead">I TY możesz znaleźć się wśród nas!</p>
         </div>
       </div>
