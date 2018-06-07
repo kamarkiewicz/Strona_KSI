@@ -16,10 +16,8 @@
               <i class="d-block mx-auto fa fa-5x" :class="el.icon"></i>
             </div>
             <div class="col-8">
-              <h5 class="mb-3 text-primary">
-                <b>{{ el.title }}</b>
-              </h5>
-              <p class="my-1">{{ el.excerpt }}</p>
+              <h5 class="mb-3 text-primary font-weight-bold" v-text="el.title"></h5>
+              <p class="my-1" v-text="el.excerpt"></p>
             </div>
           </div>
         </div>
