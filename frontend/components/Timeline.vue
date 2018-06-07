@@ -1,23 +1,25 @@
 <template>
-  <section class="timeline">
-    <section v-for="el in timeline" :key="el.id">
-      <header>
-        <p>{{ el.date }}</p>
-        <h4>{{ el.title }}</h4>
-      </header>
-      <div class="image">
-        <img :src="el.image" alt="">
+  <div class="timeline container">
+
+    <article class="row dotline" v-for="el in timeline" :key="el.id">
+      <div class="p-4 col-md-12">
+        <div class="row dotline-row pl-2">
+          <header class="col-md-6 col-lg-3">
+            <time class="text-secondary font-weight-bold" v-text="el.date"></time>
+            <h2 class="pt-2 text-primary font-weight-bold text-uppercase" v-text="el.title"></h2>
+          </header>
+          <section class="col-md-6 py-3 col-lg-4 text-center">
+            <img class="img-fluid d-block mx-auto" :src="el.image" width="290">
+          </section>
+          <section class="col-md-12 col-lg-5">
+            <p class="my-1" v-text="el.content"></p>
+            <nuxt-link :to="el.link" class="mt-2 btn btn-outline-primary text-uppercase" v-text="'More'" />
+          </section>
+        </div>
       </div>
-      <div class="content">
-        <p>{{ el.content }}</p>
-        <ul class="actions">
-          <li>
-            <a class="button" :href="el.moreUrl">More</a>
-          </li>
-        </ul>
-      </div>
-    </section>
-  </section>
+    </article>
+
+  </div>
 </template>
 
 <script>
@@ -29,25 +31,25 @@ export default {
           id: 1,
           date: "09.04.16",
           title: "Magna etiam sed lorem ipsum dolor amet",
-          image: "https://picsum.photos/g/264/134?image=81",
+          image: "https://picsum.photos/g/300/180?image=81",
           content: "Phasellus in ante vitae nibh porttitor tempus vitae ut ante. Vestibulum blandit dolor elementum viverra. Sed quat a diam, aliquet tempus felis. Phasellus et magna vitae nibh porttitor tempus vitae.",
-          moreUrl: "#"
+          link: "#"
         },
         {
           id: 2,
           date: "08.28.16",
           title: "Sed feugiat et mauris adipiscing dolor",
-          image: "https://picsum.photos/g/264/134?image=82",
+          image: "https://picsum.photos/g/300/180?image=82",
           content: "Phasellus in ante vitae nibh porttitor tempus vitae ut ante. Vestibulum blandit dolor elementum viverra. Sed quat a diam, aliquet tempus felis. Phasellus et magna vitae nibh porttitor tempus vitae.",
-          moreUrl: "#"
+          link: "#"
         },
         {
           id: 3,
           date: "08.22.16",
           title: "Tellus magna dolore sed elementum",
-          image: "https://picsum.photos/g/264/134?image=83",
+          image: "https://picsum.photos/g/300/180?image=83",
           content: "Phasellus in ante vitae nibh porttitor tempus vitae ut ante. Vestibulum blandit dolor elementum viverra. Sed quat a diam, aliquet tempus felis. Phasellus et magna vitae nibh porttitor tempus vitae.",
-          moreUrl: "#"
+          link: "#"
         }
       ]
     }
@@ -55,28 +57,29 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 
 $dotline-color: #bbb;
-$timedate-color: #00a6d9;
-$timetitle-color: #637485;
-$morebutton-color: #637485;
 
 .timeline {
-  /// dotline: line
-  > section {
-    border-color: $dotline-color;
-    display: flex;
-    border-left: solid 1px;
-    border-left-color: $dotline-color;
-    position: relative;
-    &:last-child {
-      border-left: none;
-    }
+  h2 {
+    font-size: 1.1em;
+    line-height: 1.3;
   }
+}
 
-  /// dotline: dots
-  > section::before {
+.dotline {
+  /// line
+  border-color: $dotline-color;
+  border-left: solid 1px;
+  &:last-child {
+    border-left: none;
+  }
+  border-left-color: $dotline-color;
+  position: relative;
+
+  /// dots
+  &::before {
     background-color: $dotline-color;
     position: absolute;
     content: '';
@@ -87,83 +90,11 @@ $morebutton-color: #637485;
     top: 0;
   }
 
-  header {
-    flex-shrink: 0;
-    margin-bottom: 2em;
-    padding: 0 2.5em;
-    width: 25%;
-
-    /// date
-    p {
-      color: $timedate-color;
-      margin-bottom: 0.5em;
-      font-weight: 700;
-    }
-
-    /// titles under dates
-    h4 {
-      font-weight: 700;
-      font-size: 1.1em;
-      text-transform: uppercase;
-      color: $timetitle-color;
-      line-height: 1.3;
-      margin: 0 0 1em 0;
-    }
-  }
-
-  /// images on timeline
-  .image {
-    margin-bottom: 2em;
-    margin-right: 2.5em;
-    border: 0;
-    display: inline-block;
-    position: relative;
-    img {
-      display: block;
-    }
-  }
-
-  .content {
-    margin-bottom: 2em;
-    flex: 1;
-    p {
-      margin: 0 0 2em 0;
-    }
-  }
-
-  /// [More] button container
-  ul {
-    &.actions {
-      padding-left: 0;
-    }
-    margin: 0 0 2em 0;
-    padding-left: 1em;
-    &.actions li {
-      &:last-child {
-        padding-right: 0;
-      }
-      display: inline-block;
-      padding: 0 1em 0 0;
-      padding-right: 1em;
-      vertical-align: middle;
-    }
-    li {
-      padding-left: 0.5em;
-    }
-  }
-
-  /// [More] button
-  .button {
-    background-color: transparent;
-    box-shadow: inset 0 0 0 1px rgba(99, 116, 133, 0.25);
-    color: $morebutton-color;
-    border-radius: 8px;
-    display: inline-block;
-    font-size: 0.8em;
-    font-weight: 700;
-    line-height: 3.5em;
-    padding: 0 2.25em;
-    text-transform: uppercase;
+  /// content row
+  .dotline-row {
+    margin-top: -1.75em;
+    margin-bottom: 1.75em
   }
 }
+
 </style>
