@@ -9,7 +9,7 @@
     </div>
 
     <div class="container px-5 pb-4">
-      <div class="row">
+      <div class="row equal">
         <div class="col-md-12 col-lg-6 p-3" v-for="el in galleries" :key="el.id">
           <preview-card
             :image="el.image"

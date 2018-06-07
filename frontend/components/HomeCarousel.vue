@@ -1,6 +1,6 @@
 <template>
   <div class="home-carousel text-white bg-secondary">
-    <div class="container">
+    <div class="container py-4">
       <div class="row">
         <div class="align-self-center p-5 col-md-6">
           <h1 class="mb-4" v-text="$t('homecarousel.title')"></h1>

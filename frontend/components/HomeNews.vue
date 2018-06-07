@@ -6,7 +6,7 @@
     </div>
 
     <section class="container px-sm-5">
-      <div class="row">
+      <div class="row equal">
         <div class="col-lg-4 pr-3 pb-5" v-for="el in news" :key="el.id">
           <preview-card
             :image="el.image"

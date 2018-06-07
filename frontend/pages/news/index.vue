@@ -9,7 +9,7 @@
     </div>
 
     <section class="container">
-      <div class="row" v-for="(chunk, index) in entryChunks" :key="`chunk-${index}`">
+      <div class="row equal" v-for="(chunk, index) in entryChunks" :key="`chunk-${index}`">
         <div class="col-md-12 col-lg-6 p-3" v-for="el in chunk" :key="el.id">
           <preview-card
             :image="el.image"
