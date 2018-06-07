@@ -1,12 +1,15 @@
 <template>
-  <section class="history-page bg-light">
-    <div class="container py-5">
-      <header class="accented">
+  <section class="history-page py-5 bg-light">
+
+    <div class="container">
+      <header class="accented pb-5">
         <p class="text-primary text-uppercase font-weight-bold mb-1" v-text="subtitle"></p>
         <h2 class="text-secondary pb-3" v-text="title"></h2>
       </header>
     </div>
+
     <timeline :entries="entries" />
+
   </section>
 </template>
 
