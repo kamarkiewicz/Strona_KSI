@@ -8,12 +8,10 @@
             <time class="text-secondary font-weight-bold" v-text="el.date"></time>
             <h2 class="pt-2 text-primary font-weight-bold text-uppercase" v-text="el.title"></h2>
           </header>
-          <section class="col-md-6 py-3 col-lg-4 text-center">
-            <img class="img-fluid d-block mx-auto" :src="el.image" width="290">
+          <section class="col-md-6 py-3 col-lg-4">
+            <img class="img-fluid d-block mx-auto" :src="el.image.src" :alt="el.image.title" width="290">
           </section>
-          <section class="col-md-12 col-lg-5">
-            <p class="my-1" v-text="el.content"></p>
-          </section>
+          <section class="col-md-12 col-lg-5 py-1" v-html="el.content"></section>
         </div>
       </div>
     </article>
