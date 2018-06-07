@@ -1,11 +1,11 @@
 <template>
-  <div class="home">
+  <div class="home-page">
 
-    <home-news :news="news" />
+    <home-news class="pb-slant" :news="news" />
 
-    <showcase :entries="entries" />
+    <showcase class="slant-in-before slant-in-after" :entries="entries" />
 
-    <home-carousel :slides="slides" />
+    <home-carousel class="pt-slant pb-slant" :slides="slides" />
 
   </div>
 </template>

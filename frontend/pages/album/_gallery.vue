@@ -1,5 +1,5 @@
 <template>
-  <div class="container mt-5">
+  <div class="container mt-5 pb-slant">
     <h4>{{ entry.album }}</h4>
     <h1>{{ entry.title }}</h1>
     <div class="gallery-container mt-4 mb-5">

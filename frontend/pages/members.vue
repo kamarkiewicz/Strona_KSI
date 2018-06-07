@@ -1,14 +1,14 @@
 <template>
-  <div class="py-5 text-center bg-light">
-    <div class="container">
+  <div class="members-page pt-5 pb-slant bg-light">
+    <div class="container text-center">
       <div class="row">
         <div class="col-md-12">
           <h1 class="text-primary">Członkowie Koła Studentów Informatyki</h1>
           <p class="lead">I TY możesz znaleźć się wśród nas!</p>
         </div>
       </div>
-      <div class="row">
 
+      <div class="row">
         <div class="col-md-4 p-4" v-for="el in members" :key="el">
           <img class="img-fluid d-block rounded-circle mx-auto" :src="el.image.src" :alt="el.image.title">
           <p class="my-4">
@@ -18,8 +18,8 @@
             <b>{{ el.name }}</b>
             <br>{{ el.title }}</p>
         </div>
-
       </div>
+
     </div>
   </div>
 </template>

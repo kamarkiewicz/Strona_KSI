@@ -1,5 +1,5 @@
 <template>
-  <div class="projects-page py-5">
+  <div class="projects-page pt-5 pb-slant">
 
     <div class="container">
       <header>
