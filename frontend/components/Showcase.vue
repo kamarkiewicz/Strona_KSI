@@ -1,6 +1,6 @@
 <template>
   <section class="showcase bg-white">
-    <div class="container">
+    <div class="container pt-slant pb-slant">
 
       <div class="row pt-4" v-for="(el, index) in entries" :key="el.id">
         <div class="col-md-5 align-self-center"

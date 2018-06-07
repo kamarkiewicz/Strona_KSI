@@ -1,6 +1,6 @@
 <template>
   <div class="members-page pt-5 pb-slant bg-light">
-    <div class="container text-center">
+    <div class="container text-center pb-4">
       <div class="row">
         <div class="col-md-12">
           <h1 class="text-primary">Członkowie Koła Studentów Informatyki</h1>

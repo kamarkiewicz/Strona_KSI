@@ -83,7 +83,7 @@ $navbar-dark-active-color:          #fff;
 @import '~assets/scss/utils';
 
 $slant-angle: 1.25deg;
-$slant-padding: 4.5em;
+$slant-padding: 1.5em;
 
 .slant-in-before {
   @include angle(before, true, $slant-angle);
