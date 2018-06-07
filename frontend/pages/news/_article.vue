@@ -1,7 +1,7 @@
 <template>
   <div class="article-page">
     <article class="container my-5">
-      <header class="py-3">
+      <header class="py-3 accented">
         <time class="text-primary font-weight-bold" v-text="$d(entry.date)"></time>
         <h1 class="text-secondary pt-2 pb-3" v-text="entry.title"></h1>
       </header>
@@ -48,18 +48,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-
-$underline-color: #c9c9c9;
-
-.article-page {
-  header::after {
-    content: '';
-    display: block;
-    border-top: 1px solid $underline-color;
-    width: 12vw;
-  }
-}
-
-</style>
