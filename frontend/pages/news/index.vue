@@ -1,9 +1,11 @@
 <template>
-  <section class="news wrapper">
+  <section class="news-page py-5 bg-light">
 
-    <div class="container pt-5 pb-4">
-      <h2 class="major">{{ $t('general.news') }}</h2>
-      <p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
+    <div class="container pb-4">
+      <header>
+        <h2 class="text-primary pb-4" v-text="$t('general.news')"></h2>
+        <p class="text-secondary">Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
+      </header>
     </div>
 
     <section class="container">
@@ -62,33 +64,3 @@ export default {
   }
 }
 </script>
-
-
-<style lang="scss" scoped>
-
-$bg-color: #f5f8fa;
-$headtitle-color: #00a6d9;
-$content-color: #637485;
-
-.news {
-  &.wrapper {
-      background-color: $bg-color;
-      color: $content-color;
-  }
-
-  h1.major, h3.major, h4.major, h5.major, h6.major {
-      border-bottom: solid 2px rgba(255, 255, 255, 0.125);
-  }
-
-  h3 {
-      font-size: 1.2em;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-      color: $headtitle-color;
-      font-weight: 400;
-      margin: 0 0 1em 0;
-  }
-}
-
-</style>
