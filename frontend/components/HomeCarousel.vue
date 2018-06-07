@@ -1,5 +1,5 @@
 <template>
-  <div class="home-carousel pb-5 text-white bg-secondary">
+  <div class="home-carousel text-white bg-secondary">
     <div class="container">
       <div class="row">
         <div class="align-self-center p-5 col-md-6">
@@ -61,9 +61,3 @@ export default {
   },
 }
 </script>
-
-<style lang="scss">
-.home-carousel {
-  padding-top: 10em;
-}
-</style>

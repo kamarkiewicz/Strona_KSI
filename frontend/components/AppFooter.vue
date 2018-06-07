@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer bg-dark text-white">
+  <footer class="app-footer slant-in-before bg-dark text-white">
     <div class="container">
       <div class="row">
         <div class="p-4 col-md-4">

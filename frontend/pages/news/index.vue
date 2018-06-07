@@ -1,5 +1,5 @@
 <template>
-  <section class="news-page py-5 bg-light">
+  <section class="news-page pt-5 pb-slant bg-light">
 
     <div class="container pb-4">
       <header>

@@ -1,5 +1,5 @@
 <template>
-  <div class="article-page">
+  <div class="article-page pb-slant">
     <article class="container my-5">
       <header class="py-3 accented">
         <time class="text-primary font-weight-bold" v-text="$d(entry.date)"></time>

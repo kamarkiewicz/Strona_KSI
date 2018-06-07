@@ -1,5 +1,5 @@
 <template>
-  <section class="album-page py-5 bg-light">
+  <section class="album-page pt-5 pb-slant bg-light">
 
     <div class="container">
       <header>

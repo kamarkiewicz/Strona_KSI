@@ -76,3 +76,76 @@ $navbar-dark-active-color:          #fff;
   width: 8em;
   height: 1px;
 }
+
+///
+/// Fancy slant
+///
+@import '~assets/scss/utils';
+
+.slant-in-before {
+  position: relative;
+
+  &.bg-dark::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -5em;
+
+    width: 100%;
+    height: 5em;
+
+    @include bg-triangle(#343a40);
+    transform: translateY(0) rotate(0) scaleX(-1);
+  }
+
+  &.bg-white::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -5em;
+
+    width: 100%;
+    height: 5em;
+
+    @include bg-triangle(#fff);
+    transform: translateY(0) rotate(0) scaleX(-1);
+  }
+}
+
+.slant-in-after {
+  position: relative;
+
+  &.bg-dark::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 5em;
+
+    @include bg-triangle(#343a40);
+    transform: translateY(100%) rotate(180deg); // scaleX(-1);
+  }
+
+  &.bg-white::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 5em;
+
+    @include bg-triangle(#fff);
+    transform: translateY(100%) rotate(180deg); // scaleX(-1);
+  }
+}
+
+.pt-slant {
+  padding-top: 6em !important;
+}
+
+.pb-slant {
+  padding-bottom: 6em !important;
+}

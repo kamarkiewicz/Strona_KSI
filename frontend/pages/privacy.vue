@@ -1,5 +1,5 @@
 <template>
-  <div class="container p-5">
+  <div class="container px-5 pt-5 pb-slant">
     <h2>Polityka prywatności</h2>
     <p>Odwiedzając stronę nie została wyświetlona informacja o ciasteczkach. To dlatego, że nasz serwis nie używa ciasteczek i nie śledzi jej użytkowników :)</p>
 
