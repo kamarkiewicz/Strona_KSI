@@ -1,7 +1,7 @@
 <template>
   <div class="timeline container">
 
-    <article class="row dotline" v-for="el in entries" :key="el.id">
+    <section class="row dotline" v-for="el in entries" :key="el.id">
       <div class="p-4 col-md-12">
         <div class="row dotline-row pl-2">
           <header class="col-md-6 col-lg-3">
@@ -11,13 +11,13 @@
             ></time>
             <h2 class="pt-2 text-primary font-weight-bold text-uppercase" v-text="el.title"></h2>
           </header>
-          <section class="col-md-6 py-3 col-lg-4">
+          <div class="col-md-6 py-3 col-lg-4">
             <img class="img-fluid d-block mx-auto" :src="el.image.src" :alt="el.image.title" width="290">
-          </section>
-          <section class="col-md-12 col-lg-5 py-1" v-html="el.content"></section>
+          </div>
+          <div class="col-md-12 col-lg-5 py-1" v-html="el.content"></div>
         </div>
       </div>
-    </article>
+    </section>
 
   </div>
 </template>

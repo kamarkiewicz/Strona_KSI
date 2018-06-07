@@ -2,53 +2,53 @@
 
 exports[`Timeline renders correctly 1`] = `
 <div class="timeline container">
-  <article class="row dotline">
+  <section class="row dotline">
     <div class="p-4 col-md-12">
       <div class="row dotline-row pl-2">
         <header class="col-md-6 col-lg-3">
           <time datetime="2017-08-10" class="text-secondary font-weight-bold">1502323200000</time>
           <h2 class="pt-2 text-primary font-weight-bold text-uppercase">Sed feugiat et mauris adipiscing dolor</h2>
         </header>
-        <section class="col-md-6 py-3 col-lg-4">
+        <div class="col-md-6 py-3 col-lg-4">
           <img src="https://picsum.photos/g/264/134?image=82" alt="Featured image" width="290" class="img-fluid d-block mx-auto">
-        </section>
-        <section class="col-md-12 col-lg-5 py-1">
+        </div>
+        <div class="col-md-12 col-lg-5 py-1">
           <p>Phasellus in ante vitae nibh porttitor tempus vitae ut ante. Vestibulum blandit dolor elementum viverra. Sed quat a diam, aliquet tempus felis. Phasellus et magna vitae nibh porttitor tempus vitae.</p>
-        </section>
+        </div>
       </div>
     </div>
-  </article>
-  <article class="row dotline">
+  </section>
+  <section class="row dotline">
     <div class="p-4 col-md-12">
       <div class="row dotline-row pl-2">
         <header class="col-md-6 col-lg-3">
           <time datetime="2016-04-09" class="text-secondary font-weight-bold">1460160000000</time>
           <h2 class="pt-2 text-primary font-weight-bold text-uppercase">Magna etiam sed lorem ipsum dolor amet</h2>
         </header>
-        <section class="col-md-6 py-3 col-lg-4">
+        <div class="col-md-6 py-3 col-lg-4">
           <img src="https://picsum.photos/g/264/134?image=81" alt="Featured image" width="290" class="img-fluid d-block mx-auto">
-        </section>
-        <section class="col-md-12 col-lg-5 py-1">
+        </div>
+        <div class="col-md-12 col-lg-5 py-1">
           <p>Phasellus in ante vitae nibh porttitor tempus vitae ut ante. Vestibulum blandit dolor elementum viverra. Sed quat a diam, aliquet tempus felis. Phasellus et magna vitae nibh porttitor tempus vitae.</p>
-        </section>
+        </div>
       </div>
     </div>
-  </article>
-  <article class="row dotline">
+  </section>
+  <section class="row dotline">
     <div class="p-4 col-md-12">
       <div class="row dotline-row pl-2">
         <header class="col-md-6 col-lg-3">
           <time datetime="2008-10-14" class="text-secondary font-weight-bold">1223942400000</time>
           <h2 class="pt-2 text-primary font-weight-bold text-uppercase">Tellus magna dolore sed elementum</h2>
         </header>
-        <section class="col-md-6 py-3 col-lg-4">
+        <div class="col-md-6 py-3 col-lg-4">
           <img src="https://picsum.photos/g/264/134?image=83" alt="Featured image" width="290" class="img-fluid d-block mx-auto">
-        </section>
-        <section class="col-md-12 col-lg-5 py-1">
+        </div>
+        <div class="col-md-12 col-lg-5 py-1">
           <p>Phasellus in ante vitae nibh porttitor tempus vitae ut ante. Vestibulum blandit dolor elementum viverra. Sed quat a diam, aliquet tempus felis. Phasellus et magna vitae nibh porttitor tempus vitae.</p>
-        </section>
+        </div>
       </div>
     </div>
-  </article>
+  </section>
 </div>
 `;
