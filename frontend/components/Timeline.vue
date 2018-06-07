@@ -5,7 +5,10 @@
       <div class="p-4 col-md-12">
         <div class="row dotline-row pl-2">
           <header class="col-md-6 col-lg-3">
-            <time class="text-secondary font-weight-bold" :datetime="el.date" v-text="el.date"></time>
+            <time class="text-secondary font-weight-bold"
+                  :datetime="new Date(el.date).toISOString().substring(0, 10)"
+                  v-text="$d(el.date)"
+            ></time>
             <h2 class="pt-2 text-primary font-weight-bold text-uppercase" v-text="el.title"></h2>
           </header>
           <section class="col-md-6 py-3 col-lg-4">

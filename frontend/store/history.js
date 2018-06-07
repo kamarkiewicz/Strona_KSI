@@ -15,7 +15,7 @@ export const actions = {
     const { entries } = await fetchCollection(axios, COLLECTION_NAME, rootState.i18n.locale)
     commit('SET_ENTRIES', entries.map(entry => ({
         id: entry._id,
-        date: entry.date, // Date fieldtype returns text
+        date: Date.parse(entry.date), // Date fieldtype returns text
         title: entry.title,
         image: new Image(entry.image),
         content: entry.content,
