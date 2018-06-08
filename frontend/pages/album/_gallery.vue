@@ -23,12 +23,20 @@ export default {
       entry: 'album/entry',
     })
   },
-  async fetch ({ app, params, store }) {
+  async fetch ({ app, params, store, error }) {
     const ctx = { axios: app.$axios, slug: params.gallery }
-    await Promise.all([
-      store.dispatch('album/getSingle', ctx),
-      store.dispatch('album/getLocalSlugs', ctx)
-    ])
+    try {
+      await Promise.all([
+        store.dispatch('album/getSingle', ctx),
+        store.dispatch('album/getLocalSlugs', ctx)
+      ])
+    } catch (err) {
+      if (err.name === 'EntryNotFound') {
+        error({ statusCode: 404, message: 'There is no such entry' })
+      } else {
+        error({ statusCode: 500, message: err.message })
+      }
+    }
   },
   mounted () {
     const that = this;
