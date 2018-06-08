@@ -1,11 +1,11 @@
 <template>
   <section class="home-news bg-light">
 
-    <div class="container pt-5 pb-4">
+    <header class="container pt-5 pb-4">
       <h2 class="text-primary" v-text="$t('general.news')"></h2>
-    </div>
+    </header>
 
-    <section class="container px-sm-5">
+    <div class="container px-sm-5">
       <div class="row equal">
         <div class="col-lg-4 pr-3 pb-5" v-for="el in news" :key="el.id">
           <preview-card
@@ -17,7 +17,7 @@
             linkText="Czytaj więcej" />
         </div>
       </div>
-    </section>
+    </div>
 
   </section>
 </template>
