@@ -32,6 +32,14 @@ export class Image {
   }
 }
 
+// My Errors
+class EntryNotFound extends Error {
+  constructor(message = "", ...args) {
+    super(message, ...args);
+    this.name = "EntryNotFound";
+  }
+}
+
 // Allows to fetch all localized slugs for given collection
 export async function fetchSlugsByTitle (axios, collectionName, { locale, slug }) {
   /// Get only those fields
@@ -51,7 +59,7 @@ export async function fetchSlugsByTitle (axios, collectionName, { locale, slug }
     params
   })
   if (total > 1) console.error(`There is ${total} entries with slug ${slug} in ${locale}`)
-  if (!entries.length) throw new Error('There is no such entry')
+  if (!entries.length) throw new EntryNotFound()
   const data = entries[0]
   const localSlugs = _.zipObject(BACK_LOCALES, fields.map(field => data[field]))
   return localSlugs
@@ -102,6 +110,6 @@ export async function fetchSingleByTitle (axios, collectionName, slug, locale) {
     }
   })
   if (total > 1) console.error(`There is ${total} entries with slug ${slug} in ${locale}`)
-  if (!entries.length) throw new Error('There is no such entry')
+  if (!entries.length) throw new EntryNotFound()
   return entries[0]
 }
