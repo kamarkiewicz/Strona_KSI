@@ -77,6 +77,10 @@ $navbar-dark-active-color:          #fff;
   height: 1px;
 }
 
+.hmin-stronaksi {
+  min-height: calc(100vh - 157px /* for header */ - 334px /* for footer */);
+}
+
 ///
 /// Fancy slant
 ///

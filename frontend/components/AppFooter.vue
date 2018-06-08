@@ -69,9 +69,13 @@
 import { mapGetters } from 'vuex'
 
 export default {
-  data () {
-    return {
-      leftSectionLinks: [
+  computed: {
+    ...mapGetters({
+      adminPanelLink: 'adminPanelLink',
+      contactDetails: 'contactDetails',
+    }),
+    leftSectionLinks () {
+      return [
         {
           id: 1,
           caption: 'Polityka prywatności',
@@ -90,18 +94,20 @@ export default {
         {
           id: 4,
           caption: 'Panel administracyjny',
-          link: this.$store.state.adminPanelLink,
+          link: this.adminPanelLink,
           external: true,
         },
       ]
-    }
+    },
+    email () {
+      return this.contactDetails.email
+    },
+    location () {
+      return this.contactDetails.location
+    },
+    details () {
+      return this.contactDetails.details
+    },
   },
-  computed: {
-    ...mapGetters({
-      email: 'contact/email',
-      location: 'contact/location',
-      details: 'contact/details',
-    })
-  }
 }
 </script>
