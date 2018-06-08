@@ -15,11 +15,11 @@ export const mutations = {
 }
 
 export const actions = {
-  async nuxtServerInit ({ commit, dispatch }, ctx) {
+  async nuxtServerInit ({ commit, dispatch }, { env, $axios, error }) {
     commit('INITIALIZE', {
-      adminPanelLink: ctx.env.API_URL
+      adminPanelLink: env.API_URL
     })
-    await dispatch('contact/getEntries', { axios: ctx.$axios })
+    await dispatch('contact/getEntries', { axios: $axios })
   },
   async getSlides ({ commit, rootState }, { axios }) {
     const slides = await fetchSlides (axios, 'carousel', rootState.i18n.locale)

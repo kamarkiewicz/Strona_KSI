@@ -55,7 +55,7 @@ export async function fetchSlugsByTitle (axios, collectionName, { locale, slug }
   const filter = `filter[${field}]`
   params[filter] = slug
 
-  const { entries, total } = await axios.$get('/api/collections/get/' + collectionName, {
+  const { entries, total } = await axios.$get(`/api/collections/get/${collectionName}`, {
     params
   })
   if (total > 1) console.error(`There is ${total} entries with slug ${slug} in ${locale}`)
@@ -103,7 +103,7 @@ export async function fetchCollection (axios, collectionName, locale) {
 export async function fetchSingleByTitle (axios, collectionName, slug, locale) {
   const field = locale !== BACK_DEFAULT_LOCALE ? `title_${locale}_slug` : 'title_slug'
   const filter = `filter[${field}]`
-  const { entries, total } = await axios.$get('/api/collections/get/' + collectionName, {
+  const { entries, total } = await axios.$get(`/api/collections/get/${collectionName}`, {
     params: {
       [filter]: slug,
       lang: locale
