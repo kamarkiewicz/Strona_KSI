@@ -1,4 +1,5 @@
 import { fetchRegion, fetchSlides } from '~/assets/js/utils'
+import _ from 'lodash'
 
 // Common Store
 export const state = () => ({
@@ -33,8 +34,8 @@ export const actions = {
     commit('SET_CONTACTDETAILS', data)
   },
   async getPrivacyPage ({ commit, rootState }, { axios }) {
+    if (!_.isEmpty(rootState.privacyPage)) return; // data already fetched
     let data = await fetchRegion (axios, 'privacy')
-    data = data[rootState.i18n.locale]
     commit('SET_PRIVACYPAGE', data)
   },
 
@@ -48,5 +49,5 @@ export const getters = {
   slides: state => state.slides,
   adminPanelLink: state => state.adminPanelLink,
   contactDetails: state => state.contactDetails,
-  privacyPage: state => state.privacyPage,
+  privacyPage: state => state.privacyPage[state.i18n.locale],
 }
