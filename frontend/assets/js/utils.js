@@ -1,6 +1,6 @@
 import _ from 'lodash'
 
-const BACK_DEFAULT_LOCALE = 'en'
+export const BACK_DEFAULT_LOCALE = 'en'
 const BACK_LOCALES = ['en', 'pl', 'uk']
 
 // Image field type from the backend
@@ -40,6 +40,18 @@ class EntryNotFound extends Error {
   }
 }
 
+// Returns field language from string like 'content_pl' or 'content'
+const getFieldLang = (field_lang) => {
+  const [, lang] = _.split(field_lang, '_')
+  return lang ? lang : BACK_DEFAULT_LOCALE
+}
+
+// Returns field name from string like 'content_pl' or 'content'
+const getFieldName = (field_lang) => {
+  const [name,] = _.split(field_lang, '_')
+  return name
+}
+
 // Allows to fetch all localized slugs for given collection
 export async function fetchSlugsByTitle (axios, collectionName, { locale, slug }) {
   /// Get only those fields
@@ -66,20 +78,19 @@ export async function fetchSlugsByTitle (axios, collectionName, { locale, slug }
 }
 
 // Gets region data through API
-export async function fetchRegion (axios, region, locale) {
-  let data = await axios.$get(`/api/regions/data/${region}`, {
-    params: {
-      lang: locale
-    }
-  })
-  return data
+export async function fetchRegion (axios, region) {
+  const data = await axios.$get(`/api/regions/data/${region}`)
+  // Redesign data: { 'lang': { 'field': ... } } insteand of { 'field_lang': ... }
+  const postprocess = ([field_lang, value]) => ([getFieldName(field_lang), value])
+  const groups = _.groupBy(_.toPairs(data), ([key, _value]) => getFieldLang(key))
+  const localData = _.mapValues(groups, pairs => _.fromPairs(_.map(pairs, postprocess)))
+  return localData
 }
 
 // Gets region data through API
 export async function fetchSlides (axios, region, locale) {
-  let data = await fetchRegion(axios, region, locale)
-  const field = locale !== BACK_DEFAULT_LOCALE ? `slides_${locale}` : 'slides'
-  let slides = data[field]
+  let data = await fetchRegion(axios, region)
+  let slides = data[locale]['slides']
     .map(slide => slide.value)
     .map(slide => ({
       caption: slide.caption,
