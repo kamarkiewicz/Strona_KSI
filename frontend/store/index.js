@@ -1,4 +1,4 @@
-import { fetchRegion, fetchSlides } from '~/assets/js/utils'
+import { BACK_DEFAULT_LOCALE, fetchRegion, fetchSlides } from '~/assets/js/utils'
 import _ from 'lodash'
 
 // Common Store
@@ -29,7 +29,7 @@ export const actions = {
   },
   async getContactDetails ({ commit, rootState }, { axios }) {
     let data = await fetchRegion (axios, 'contact')
-    data = data['en'] // nothing is localized here; fallback locale
+    data = data[BACK_DEFAULT_LOCALE] // nothing is localized here; fallback locale
     data.location = `https://maps.google.com/?q=${data.location.lat},${data.location.lng}`
     commit('SET_CONTACTDETAILS', data)
   },

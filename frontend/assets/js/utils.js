@@ -1,6 +1,6 @@
 import _ from 'lodash'
 
-const BACK_DEFAULT_LOCALE = 'en'
+export const BACK_DEFAULT_LOCALE = 'en'
 const BACK_LOCALES = ['en', 'pl', 'uk']
 
 // Image field type from the backend
