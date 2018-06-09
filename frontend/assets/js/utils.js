@@ -78,20 +78,19 @@ export async function fetchSlugsByTitle (axios, collectionName, { locale, slug }
 }
 
 // Gets region data through API
-export async function fetchRegion (axios, region, locale) {
+export async function fetchRegion (axios, region) {
   const data = await axios.$get(`/api/regions/data/${region}`)
   // Redesign data: { 'lang': { 'field': ... } } insteand of { 'field_lang': ... }
   const postprocess = ([field_lang, value]) => ([getFieldName(field_lang), value])
   const groups = _.groupBy(_.toPairs(data), ([key, _value]) => getFieldLang(key))
   const localData = _.mapValues(groups, pairs => _.fromPairs(_.map(pairs, postprocess)))
-  return data
+  return localData
 }
 
 // Gets region data through API
 export async function fetchSlides (axios, region, locale) {
-  let data = await fetchRegion(axios, region, locale)
-  const field = locale !== BACK_DEFAULT_LOCALE ? `slides_${locale}` : 'slides'
-  let slides = data[field]
+  let data = await fetchRegion(axios, region)
+  let slides = data[locale]['slides']
     .map(slide => slide.value)
     .map(slide => ({
       caption: slide.caption,

@@ -8,12 +8,9 @@ export const state = () => ({
   slides: [],
   // Used in AppFooter
   adminPanelLink: process.env.API_URL,
-  contactDetails: {
-    email: '',
-    location: '',
-    details: ''
-  },
 
+  // Regions' data
+  contactDetails: {},
   privacyPage: {},
 })
 
@@ -30,12 +27,14 @@ export const actions = {
     await commit('SET_SLIDES', slides)
   },
   async getContactDetails ({ commit, rootState }, { axios }) {
-    let data = await fetchRegion (axios, 'contact', rootState.i18n.locale)
+    let data = await fetchRegion (axios, 'contact')
+    data = data['en'] // nothing is localized here; fallback locale
     data.location = `https://maps.google.com/?q=${data.location.lat},${data.location.lng}`
     commit('SET_CONTACTDETAILS', data)
   },
   async getPrivacyPage ({ commit, rootState }, { axios }) {
-    let data = await fetchRegion (axios, 'privacy', rootState.i18n.locale)
+    let data = await fetchRegion (axios, 'privacy')
+    data = data[rootState.i18n.locale]
     commit('SET_PRIVACYPAGE', data)
   },
 
