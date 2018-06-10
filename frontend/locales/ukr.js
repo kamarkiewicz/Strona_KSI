@@ -1,4 +1,5 @@
 export const general = {
+  homepage: 'Homepage',
   news: 'Новини',
   aboutUs: 'About us',
   projects: 'Projects',
