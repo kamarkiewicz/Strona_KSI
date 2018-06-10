@@ -11,6 +11,7 @@ exports[`Showcase renders correctly 1`] = `
         <h2 class="text-primary pt-3">O nas. Historia KSI</h2>
         <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
           dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <nuxt-link to="&quot;about-us&quot;" class="pretty-link">Read more</nuxt-link>
       </div>
     </div>
     <div class="row pt-4">
@@ -21,6 +22,7 @@ exports[`Showcase renders correctly 1`] = `
         <h2 class="text-primary pt-3">Projekty</h2>
         <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
           dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <nuxt-link to="&quot;projects&quot;" class="pretty-link">Read more</nuxt-link>
       </div>
     </div>
     <div class="row pt-4">
@@ -31,6 +33,7 @@ exports[`Showcase renders correctly 1`] = `
         <h2 class="text-primary pt-3">Członkowie</h2>
         <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
           dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <nuxt-link to="&quot;members&quot;" class="pretty-link">Read more</nuxt-link>
       </div>
     </div>
   </div>
