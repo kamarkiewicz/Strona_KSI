@@ -121,3 +121,35 @@ $slant-padding: 1.5em;
 .pb-slant {
   padding-bottom: $slant-padding !important;
 }
+
+
+$link-color: #00a6d9;
+$linkicon-border: rgba($primary, 0.25);
+
+.pretty-link {
+  color: $link-color;
+  text-decoration: none;
+  letter-spacing: 0.125rem;
+  text-transform: uppercase;
+
+  &:before {
+    border-radius: 100%;
+    border: solid 2px $linkicon-border;
+    content: '\f105';
+    display: inline-block;
+    font-size: 1.25rem;
+    width: 2rem;
+    height: 2rem;
+    line-height: 1.65rem;
+    margin-right: 0.85rem;
+    text-align: center;
+    text-indent: 0.15rem;
+    vertical-align: middle;
+
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+  }
+}
