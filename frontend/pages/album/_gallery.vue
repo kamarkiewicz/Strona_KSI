@@ -14,11 +14,13 @@
       </a>
     </div>
 
-    <vue-gallery
-      :images="images"
-      :index="index"
-      @close="index = null"
-    ></vue-gallery>
+    <no-ssr>
+      <vue-gallery
+        :images="images"
+        :index="index"
+        @close="index = null"
+      ></vue-gallery>
+    </no-ssr>
   </div>
 </template>
 
