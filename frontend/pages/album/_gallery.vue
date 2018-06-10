@@ -4,10 +4,10 @@
     <h1>{{ entry.title }}</h1>
     <div class="gallery-container mt-4 mb-5">
       <a v-for="(img, imgIndex) in images" :key="img.title"
-         :href="img.src" @click.prevent="index = imgIndex">
+         :href="img.href" @click.prevent="index = imgIndex">
         <b-img-lazy
           class="py-2 px-0" fluid
-          :src="img.src"
+          :src="img.href"
           :width="img.width"
           :height="img.height"
           :alt="img.title" />
@@ -15,7 +15,7 @@
     </div>
 
     <vue-gallery
-      :images="imageLinks"
+      :images="images"
       :index="index"
       @close="index = null"
     ></vue-gallery>
@@ -36,15 +36,14 @@ export default {
       entry: 'album/entry',
     }),
     images () {
-      return this.entry.images
-    },
-    imageLinks () {
-      return this.images.map(img => ({
-        title: img.title,
+      return this.entry.images.map(image => ({
+        href: image.src,
         description: '',
-        href: img.src,
+        title: image.title,
+        width: image.width,
+        height: image.height,
       }))
-    }
+    },
   },
   fetch ({ app, params, store, error }) {
     const ctx = { axios: app.$axios, slug: params.gallery }
