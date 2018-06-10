@@ -26,11 +26,11 @@
         <b-navbar-toggle class="ml-auto" target="nav_collapse"></b-navbar-toggle>
         <b-collapse is-nav id="nav_collapse">
           <b-navbar-nav>
-            <b-nav-item :to="localePath('news')">Aktualności</b-nav-item>
-            <b-nav-item :to="localePath('about-us')">O nas</b-nav-item>
-            <b-nav-item :to="localePath('projects')">Projekty</b-nav-item>
-            <b-nav-item :to="localePath('members')">Członkowie</b-nav-item>
-            <b-nav-item :to="localePath('album')">Galeria</b-nav-item>
+            <b-nav-item :to="localePath('news')">{{ $t('general.news') }}</b-nav-item>
+            <b-nav-item :to="localePath('about-us')">{{ $t('general.aboutUs') }}</b-nav-item>
+            <b-nav-item :to="localePath('projects')">{{ $t('general.projects') }}</b-nav-item>
+            <b-nav-item :to="localePath('members')">{{ $t('general.members') }}</b-nav-item>
+            <b-nav-item :to="localePath('album')">{{ $t('general.album') }}</b-nav-item>
           </b-navbar-nav>
         </b-collapse>
       </b-container>
