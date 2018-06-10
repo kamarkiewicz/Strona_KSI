@@ -8,7 +8,7 @@
         <h5 class="card-title" v-text="title"></h5>
       </header>
       <div class="card-text text-justify" v-html="excerpt"></div>
-      <nuxt-link class="card-link" :to="link" v-text="linkText"></nuxt-link>
+      <nuxt-link class="card-link pretty-link" :to="link" v-text="linkText"></nuxt-link>
     </div>
   </article>
 </template>
@@ -51,8 +51,6 @@ export default {
 $headtitle-color: #00a6d9;
 $article-color: #ffffff;
 $content-color: #637485;
-$link-color: #00a6d9;
-$linkicon-border: rgba($content-color, 0.125);
 
 .preview-card {
   background-color: $article-color;
@@ -61,34 +59,6 @@ $linkicon-border: rgba($content-color, 0.125);
   .card-title {
     color: $headtitle-color;
     font-weight: 400;
-  }
-
-  .card-link {
-    color: $link-color;
-    text-decoration: none;
-    letter-spacing: 0.125rem;
-    text-transform: uppercase;
-
-    &:before {
-      border-radius: 100%;
-      border: solid 2px $linkicon-border;
-      content: '\f105';
-      display: inline-block;
-      font-size: 1.25rem;
-      width: 2rem;
-      height: 2rem;
-      line-height: 1.65rem;
-      margin-right: 0.85rem;
-      text-align: center;
-      text-indent: 0.15rem;
-      vertical-align: middle;
-
-      -moz-osx-font-smoothing: grayscale;
-      -webkit-font-smoothing: antialiased;
-      font-family: FontAwesome;
-      font-style: normal;
-      font-weight: normal;
-    }
   }
 }
 
