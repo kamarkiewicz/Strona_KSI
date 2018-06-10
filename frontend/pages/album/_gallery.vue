@@ -1,16 +1,26 @@
 <template>
-  <div class="container mt-5 pb-slant">
+  <div class="container mt-5 pb-slant hmin-stronaksi">
     <h4>{{ entry.album }}</h4>
     <h1>{{ entry.title }}</h1>
     <div class="gallery-container mt-4 mb-5">
-      <a v-for="img in entry.images" :key="img.title" :href="img.src">
-        <b-img class="img-fluid"
-               :src="img.src"
-               :width="img.width"
-               :height="img.height"
-               :alt="img.title" />
+      <a v-for="(img, imgIndex) in images" :key="img.title"
+         :href="img.href" @click.prevent="index = imgIndex">
+        <b-img-lazy
+          class="py-2 px-0" fluid
+          :src="img.href"
+          :width="img.width"
+          :height="img.height"
+          :alt="img.title" />
       </a>
     </div>
+
+    <no-ssr>
+      <vue-gallery
+        :images="images"
+        :index="index"
+        @close="index = null"
+      ></vue-gallery>
+    </no-ssr>
   </div>
 </template>
 
@@ -18,10 +28,24 @@
 import { mapGetters } from 'vuex'
 
 export default {
+  data () {
+    return {
+      index: null,
+    }
+  },
   computed: {
     ...mapGetters({
       entry: 'album/entry',
-    })
+    }),
+    images () {
+      return this.entry.images.map(image => ({
+        href: image.src,
+        description: '',
+        title: image.title,
+        width: image.width,
+        height: image.height,
+      }))
+    },
   },
   fetch ({ app, params, store, error }) {
     const ctx = { axios: app.$axios, slug: params.gallery }
@@ -57,12 +81,6 @@ export default {
 
 <style lang="scss">
 .gallery-container {
-  min-height: 100vh;
-
-  img {
-    padding: 8px 0;
-  }
-
   column-count: 1;
 
   @media (min-width: 720px) { // md

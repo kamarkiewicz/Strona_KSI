@@ -41,6 +41,7 @@ module.exports = {
   */
   plugins: [
     { src: '~plugins/axios.js', ssr: false },
+    { src: '~plugins/gallery.js', ssr: false },
   ],
 
   /*
