@@ -14,7 +14,7 @@
             :title="el.title"
             :excerpt="el.excerpt"
             :link="localePath({ name: 'news-article', params: { article: el.link }})"
-            linkText="Czytaj więcej" />
+            :linkText="$t('general.readMore')" />
         </div>
       </div>
     </div>
@@ -24,7 +24,7 @@
 
 <script>
 import { Image } from '~/assets/js/utils'
-import PreviewCard from '~/components/PreviewCard.vue'
+import PreviewCard from '~/components/PreviewCard'
 
 export default {
   components: {

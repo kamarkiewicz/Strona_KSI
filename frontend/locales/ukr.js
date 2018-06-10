@@ -5,6 +5,8 @@ export const general = {
   members: 'Members',
   album: 'Альбом галереї',
   contact: 'Contact',
+
+  readMore: 'Read more',
 };
 
 export const homecarousel = {
