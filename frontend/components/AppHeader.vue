@@ -3,10 +3,10 @@
     <b-navbar toggleable="lg" type="light" variant="white">
       <b-container class="fluid-md">
           <b-navbar-brand :to="localePath('index')">
-              <img src="~/assets/brand-uwr.svg" width="200" height="75" alt="UWr">
+              <img class="p-1" src="~/assets/brand-uwr.svg" width="200" height="75" alt="UWr">
           </b-navbar-brand>
           <b-navbar-brand :to="localePath('index')">
-              <img src="~/assets/brand-ksi.svg" width="200" height="75" alt="KSI">
+              <img class="p-1" src="~/assets/brand-ksi.svg" width="220" height="75" alt="KSI">
           </b-navbar-brand>
           <b-navbar-toggle class="ml-auto" target="brandnav_collapse"></b-navbar-toggle>
 
