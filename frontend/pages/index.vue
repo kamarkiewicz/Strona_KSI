@@ -32,9 +32,12 @@ export default {
       return this.$store.getters['homepage'].slides
     },
   },
-  async fetch ({ app, store }) {
-    await store.dispatch('news/getEntries', { axios: app.$axios })
-    await store.dispatch('getHomepage', { axios: app.$axios })
+  fetch ({ app, store }) {
+    const ctx = { axios: app.$axios }
+    return Promise.all([
+      store.dispatch('news/getEntries', ctx),
+      store.dispatch('getHomepage', ctx)
+    ])
   },
   head () {
     return {
