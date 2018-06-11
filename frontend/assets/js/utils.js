@@ -87,19 +87,6 @@ export async function fetchRegion (axios, region) {
   return localData
 }
 
-// Gets region data through API
-export async function fetchSlides (axios, region, locale) {
-  let data = await fetchRegion(axios, region)
-  let slides = data[locale]['slides']
-    .map(slide => slide.value)
-    .map(slide => ({
-      caption: slide.caption,
-      description: slide.description,
-      image: new Image(slide.image)
-    }))
-  return slides
-}
-
 // Gets collection data through API
 export async function fetchCollection (axios, collectionName, locale) {
   let data = await axios.$get(`/api/collections/get/${collectionName}`, {

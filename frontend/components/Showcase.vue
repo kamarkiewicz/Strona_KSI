@@ -2,7 +2,7 @@
   <section class="showcase bg-white">
     <div class="container pt-slant pb-slant">
 
-      <div class="row pt-4" v-for="(el, index) in entries" :key="el.id">
+      <div class="row pt-4" v-for="(el, index) in entries" :key="index">
         <div class="col-md-5 align-self-center"
             :class="{ 'order-md-2': index % 2 === 0 }">
           <img class="img-fluid d-block mb-4 w-100 img-thumbnail" :src="el.image.src" :alt="el.image.title">
