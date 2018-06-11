@@ -32,8 +32,9 @@ export default {
   },
   props: {
     news: {
-      type: Array, // must contain max 3 entries
-      required: true
+      type: Array,
+      required: true,
+      validator: arr => arr.length <= 3,
     },
   },
 }
