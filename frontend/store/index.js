@@ -22,7 +22,8 @@ export const mutations = {
 }
 
 export const actions = {
-  async getHomepage ({ commit }, { axios }) {
+  async getHomepage ({ commit, rootState }, { axios }) {
+    if (!_.isEmpty(rootState.homepage)) return; // data already fetched
     let data = await fetchRegion (axios, 'carousel')
     _.each(data, (entry, locale) => {
 
