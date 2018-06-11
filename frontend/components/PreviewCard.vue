@@ -19,7 +19,6 @@ import { Image } from '~/assets/js/utils'
 export default {
   props: {
     image: {
-      type: Image,
       required: false
     },
     date: {
