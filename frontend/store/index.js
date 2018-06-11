@@ -1,31 +1,50 @@
-import { BACK_DEFAULT_LOCALE, fetchRegion, fetchSlides } from '~/assets/js/utils'
+import { BACK_DEFAULT_LOCALE, fetchRegion, Image } from '~/assets/js/utils'
 import _ from 'lodash'
 
 // Common Store
 export const state = () => ({
   // Used in AppHeader >> LangSwitcher
   switchLocalePathImpl: null,
-  // Used in HomeCarousel
-  slides: [],
   // Used in AppFooter
   adminPanelLink: process.env.API_URL,
 
   // Regions' data
   contactDetails: {},
+  homepage: {},
   privacyPage: {},
 })
 
 export const mutations = {
   SET_SWITCHLOCALEPATHIMPL: (state, callback) => state.switchLocalePathImpl = callback,
-  SET_SLIDES: (state, slides) => state.slides = slides,
   SET_CONTACTDETAILS: (state, contactDetails) => state.contactDetails = contactDetails,
+  SET_HOMEPAGE: (state, homepage) => state.homepage = homepage,
   SET_PRIVACYPAGE: (state, privacyPage) => state.privacyPage = privacyPage,
 }
 
 export const actions = {
-  async getSlides ({ commit, rootState }, { axios }) {
-    const slides = await fetchSlides (axios, 'carousel', rootState.i18n.locale)
-    await commit('SET_SLIDES', slides)
+  async getHomepage ({ commit }, { axios }) {
+    let data = await fetchRegion (axios, 'carousel')
+    _.each(data, (entry, locale) => {
+
+      data[locale]['showcase'] = entry['showcase']
+        .map(entry => entry.value)
+        .map(entry => ({
+          title: entry.title,
+          description: entry.description,
+          image: new Image(entry.image),
+          link: entry.link,
+        }))
+
+      data[locale]['slides'] = entry['slides']
+        .map(slide => slide.value)
+        .map(slide => ({
+          caption: slide.caption,
+          description: slide.description,
+          image: new Image(slide.image),
+        }))
+
+    })
+    commit('SET_HOMEPAGE', data)
   },
   async getContactDetails ({ commit, rootState }, { axios }) {
     let data = await fetchRegion (axios, 'contact')
@@ -46,8 +65,8 @@ export const actions = {
 
 export const getters = {
   switchLocalePathImpl: state => state.switchLocalePathImpl,
-  slides: state => state.slides,
   adminPanelLink: state => state.adminPanelLink,
   contactDetails: state => state.contactDetails,
+  homepage: state => state.homepage[state.i18n.locale],
   privacyPage: state => state.privacyPage[state.i18n.locale],
 }
