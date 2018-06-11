@@ -61,7 +61,7 @@ export default {
   },
   head () {
     return {
-      title: 'Strona główna',
+      title: this.$t('general.homepage'),
     }
   }
 }

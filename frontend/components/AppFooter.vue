@@ -3,17 +3,17 @@
     <div class="container">
       <div class="row">
         <div class="p-4 col-md-4">
-          <h2 class="mb-4 text-secondary">Inne linki</h2>
+          <h2 class="mb-4 text-secondary" v-text="$t('appfooter.leftSectionCaption')"></h2>
           <ul class="list-unstyled">
             <li v-for="el in leftSectionLinks" :key="el.id">
-              <a v-if="el.external" :href="el.link" class="text-white" target="_blank">{{ el.caption }}</a>
-              <nuxt-link v-else :to="localePath(el.link)" class="text-white">{{ el.caption }}</nuxt-link>
+              <a v-if="el.external" :href="el.link" class="text-white" target="_blank" v-text="el.caption"></a>
+              <nuxt-link v-else :to="localePath(el.link)" class="text-white" v-text="el.caption"></nuxt-link>
             </li>
           </ul>
         </div>
 
         <div class="p-4 col-md-4">
-          <h2 class="mb-4 text-secondary">Kontakt</h2>
+          <h2 class="mb-4 text-secondary" v-text="$t('general.contact')"></h2>
           <div class="row pb-2">
               <div class="col-xs-3 text-center">
                   <i class="fa mr-3 fa-envelope-o"></i>
@@ -78,22 +78,22 @@ export default {
       return [
         {
           id: 1,
-          caption: 'Polityka prywatności',
+          caption: this.$t('appfooter.privacyCaption'),
           link: 'privacy',
         },
         {
           id: 2,
-          caption: 'Aktualności',
+          caption: this.$t('general.news'),
           link: 'news',
         },
         {
           id: 3,
-          caption: 'Galeria',
+          caption: this.$t('general.album'),
           link: 'album',
         },
         {
           id: 4,
-          caption: 'Panel administracyjny',
+          caption: this.$t('appfooter.adminPanelCaption'),
           link: this.adminPanelLink,
           external: true,
         },
