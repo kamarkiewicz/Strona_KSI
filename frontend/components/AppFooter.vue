@@ -5,9 +5,9 @@
         <div class="p-4 col-md-4">
           <h2 class="mb-4 text-secondary" v-text="$t('appfooter.leftSectionCaption')"></h2>
           <ul class="list-unstyled">
-            <li v-for="el in leftSectionLinks" :key="el.id">
-              <a v-if="el.external" :href="el.link" class="text-white" target="_blank" v-text="el.caption"></a>
-              <nuxt-link v-else :to="localePath(el.link)" class="text-white" v-text="el.caption"></nuxt-link>
+            <li v-for="(el, index) in leftSectionLinks" :key="index">
+              <nuxt-link class="text-white" v-text="el.caption" v-if="!el.external" :to="localePath(el.link)"></nuxt-link>
+              <a class="text-white" v-text="el.caption" v-else :href="el.link" target="_blank"></a>
             </li>
           </ul>
         </div>
@@ -77,22 +77,18 @@ export default {
     leftSectionLinks () {
       return [
         {
-          id: 1,
           caption: this.$t('appfooter.privacyCaption'),
           link: 'privacy',
         },
         {
-          id: 2,
           caption: this.$t('general.news'),
           link: 'news',
         },
         {
-          id: 3,
           caption: this.$t('general.album'),
           link: 'album',
         },
         {
-          id: 4,
           caption: this.$t('appfooter.adminPanelCaption'),
           link: this.adminPanelLink,
           external: true,
