@@ -4,7 +4,7 @@ import HomeNews from '~/components/HomeNews.vue'
 import { Image } from '~/assets/js/utils'
 
 Vue.config.ignoredElements = [
-  'b-row', 'b-col', 'nuxt-link'
+  'b-img', 'b-img-lazy', 'nuxt-link'
 ];
 
 describe('HomeNews', () => {

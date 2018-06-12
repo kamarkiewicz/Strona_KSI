@@ -1,6 +1,11 @@
+import Vue from 'vue'
 import { mount } from '@vue/test-utils'
 import Timeline from '~/components/Timeline.vue'
 import { Image } from '~/assets/js/utils'
+
+Vue.config.ignoredElements = [
+  'b-img', 'b-img-lazy', 'nuxt-link'
+];
 
 describe('Timeline', () => {
   let wrapper

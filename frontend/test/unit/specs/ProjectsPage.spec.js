@@ -1,5 +1,10 @@
-import { shallowMount, mount } from '@vue/test-utils'
+import Vue from 'vue'
+import { mount } from '@vue/test-utils'
 import ProjectsPage from '~/pages/projects/index.vue'
+
+Vue.config.ignoredElements = [
+  'b-img', 'b-img-lazy', 'nuxt-link'
+];
 
 describe('ProjectsPage', () => {
   let wrapper

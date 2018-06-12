@@ -4,7 +4,7 @@ import HomeCarousel from '~/components/HomeCarousel.vue'
 import { Image } from '~/assets/js/utils'
 
 Vue.config.ignoredElements = [
-  'b-carousel', 'b-carousel-slide', 'nuxt-link'
+  'b-carousel', 'b-carousel-slide', 'b-img', 'b-img-lazy', 'nuxt-link'
 ];
 
 describe('HomeCarousel', () => {
