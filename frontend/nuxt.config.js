@@ -25,6 +25,14 @@ module.exports = {
   },
 
   /*
+  ** PWA
+  */
+  manifest: {
+    name: 'Strona_KSI',
+    lang: 'pl'
+  },
+
+  /*
   ** Customize the progress-bar color
   */
   loading: { color: '#3B8070' },
