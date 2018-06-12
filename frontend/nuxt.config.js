@@ -48,6 +48,7 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
+    ['@nuxtjs/pwa', { icon: true }],
     // Doc: https://axios.nuxtjs.org/usage.html
     '@nuxtjs/axios',
     // Doc: https://nuxt-community.github.io/nuxt-i18n/
