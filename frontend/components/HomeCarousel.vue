@@ -10,26 +10,30 @@
         </div>
         <div class="col-md-6 p-0">
           <b-carousel id="carousel1"
-                      style="text-shadow: 1px 1px 2px #333;"
-                      controls
-                      indicators
-                      background="#ababab"
-                      :interval="4000"
-                      img-width="500"
-                      img-height="500"
-                      v-model="slide"
-                      @sliding-start="onSlideStart"
-                      @sliding-end="onSlideEnd"
+            style="text-shadow: 1px 1px 2px #333;"
+            controls
+            indicators
+            background="#ababab"
+            :interval="4000"
+            img-width="500"
+            img-height="500"
+            v-model="slide"
+            @sliding-start="onSlideStart"
+            @sliding-end="onSlideEnd"
           >
             <b-carousel-slide v-for="(el, index) in slides" :key="`slide-${index}`"
-                              background="#ababab"
-                              :caption="el.caption"
-                              :text="el.description"
-                              :img-src="el.image.src"
-                              :img-alt="el.image.title"
-                              :img-width="el.image.width"
-                              :img-height="el.image.height"
-            ></b-carousel-slide>
+              background="#ababab"
+              :caption="el.caption"
+              :text="el.description"
+            >
+              <b-img slot="img"
+                class="d-block img-fluid w-100"
+                :src="el.image.src"
+                :alt="el.image.title"
+                :width="el.image.width"
+                :height="el.image.height"
+              />
+            </b-carousel-slide>
           </b-carousel>
         </div>
       </div>
