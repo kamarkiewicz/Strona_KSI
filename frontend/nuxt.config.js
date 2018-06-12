@@ -25,6 +25,14 @@ module.exports = {
   },
 
   /*
+  ** PWA
+  */
+  manifest: {
+    name: 'Strona_KSI',
+    lang: 'pl'
+  },
+
+  /*
   ** Customize the progress-bar color
   */
   loading: { color: '#3B8070' },
@@ -48,6 +56,7 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
+    ['@nuxtjs/pwa', { icon: true }],
     // Doc: https://axios.nuxtjs.org/usage.html
     '@nuxtjs/axios',
     // Doc: https://nuxt-community.github.io/nuxt-i18n/

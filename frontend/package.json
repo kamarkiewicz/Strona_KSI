@@ -1,5 +1,5 @@
 {
-  "name": "frontend",
+  "name": "strona_ksi",
   "version": "1.0.0",
   "description": "Front-end of KSI webpage",
   "author": "Kamil Markiewicz <k.a.markiewicz@gmail.com>",
@@ -19,6 +19,7 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.3.1",
     "@nuxtjs/font-awesome": "^1.0.3",
+    "@nuxtjs/pwa": "^2.0.8",
     "@nuxtjs/sitemap": "^0.1.1",
     "bootstrap": "^4.1.1",
     "bootstrap-vue": "^2.0.0-rc.11",

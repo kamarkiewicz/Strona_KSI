@@ -10,6 +10,9 @@ selenium-debug.log
 # Nuxt build
 .nuxt
 
+# PWA
+sw.*
+
 # Nuxt generate
 dist
 
