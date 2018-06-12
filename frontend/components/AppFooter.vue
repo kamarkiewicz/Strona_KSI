@@ -7,7 +7,7 @@
           <ul class="list-unstyled">
             <li v-for="(el, index) in leftSectionLinks" :key="index">
               <nuxt-link class="text-white" v-text="el.caption" v-if="!el.external" :to="localePath(el.link)"></nuxt-link>
-              <a class="text-white" v-text="el.caption" v-else :href="el.link" target="_blank"></a>
+              <a class="text-white" v-text="el.caption" v-else :href="el.link" target="_blank" rel="noopener noreferrer"></a>
             </li>
           </ul>
         </div>
@@ -29,7 +29,7 @@
                   <i class="fa mr-3 fa-map-marker"></i>
               </div>
               <div class="col-xs-9">
-                  <a :href="location" class="link-unstyled" target="_blank">
+                  <a :href="location" class="link-unstyled" target="_blank" rel="noopener noreferrer">
                     <div v-html="details"></div>
                   </a>
               </div>
@@ -39,17 +39,17 @@
         <div class="p-4 col-md-4">
           <div class="row">
             <div class="col-md-4">
-              <a href="https://www.facebook.com/uniwroc/" target="_blank">
+              <a href="https://www.facebook.com/uniwroc/" target="_blank" rel="noopener noreferrer">
                 <i class="fa fa-fw fa-3x text-white fa-facebook"></i>
               </a>
             </div>
             <div class="col-md-4">
-              <a href="https://github.com/ksiuwr" target="_blank">
+              <a href="https://github.com/ksiuwr" target="_blank" rel="noopener noreferrer">
                 <i class="fa fa-fw fa-3x text-white fa-github"></i>
               </a>
             </div>
             <div class="col-md-4">
-              <a href="https://www.instagram.com/uniwersytet_wroclawski/" target="_blank">
+              <a href="https://www.instagram.com/uniwersytet_wroclawski/" target="_blank" rel="noopener noreferrer">
                 <i class="fa fa-fw fa-3x text-white fa-instagram"></i>
               </a>
             </div>
