@@ -22,8 +22,6 @@ export default {
       .url(devServer)
       .waitForElementVisible('#app', 5000)
       .assert.elementPresent('.home-page')
-      .assert.elementPresent('#carousel1')
-      .assert.elementCount('img', 11)
       .end()
   }
 }
