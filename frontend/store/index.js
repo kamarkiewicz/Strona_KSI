@@ -12,6 +12,7 @@ export const state = () => ({
   contactDetails: {},
   homepage: {},
   privacyPage: {},
+  zosiaPage: {},
 })
 
 export const mutations = {
@@ -19,6 +20,7 @@ export const mutations = {
   SET_CONTACTDETAILS: (state, contactDetails) => state.contactDetails = contactDetails,
   SET_HOMEPAGE: (state, homepage) => state.homepage = homepage,
   SET_PRIVACYPAGE: (state, privacyPage) => state.privacyPage = privacyPage,
+  SET_ZOSIAPAGE: (state, zosiaPage) => state.zosiaPage = zosiaPage,
 }
 
 export const actions = {
@@ -58,6 +60,11 @@ export const actions = {
     let data = await fetchRegion (axios, 'privacy')
     commit('SET_PRIVACYPAGE', data)
   },
+  async getZosiaPage ({ commit, rootState }, { axios }) {
+    if (!_.isEmpty(rootState.zosiaPage)) return; // data already fetched
+    let data = await fetchRegion (axios, 'zosia')
+    commit('SET_ZOSIAPAGE', data)
+  },
 
   async nuxtServerInit (store, app) {
     await store.dispatch('getContactDetails', { axios: app.$axios })
@@ -70,4 +77,5 @@ export const getters = {
   contactDetails: state => state.contactDetails,
   homepage: state => state.homepage[state.i18n.locale],
   privacyPage: state => state.privacyPage[state.i18n.locale],
+  zosiaPage: state => state.zosiaPage[state.i18n.locale],
 }
