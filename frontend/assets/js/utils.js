@@ -95,6 +95,9 @@ export async function fetchCollection (axios, collectionName, locale, options) {
   if ((options || {}).sortByCreatedTime) {
     params['sort[_created]'] = -1
   }
+  if ((options || {}).limit) {
+    params['limit'] = options.limit
+  }
   let data = await axios.$get(`/api/collections/get/${collectionName}`, {
     params: params,
   })

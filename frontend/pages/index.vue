@@ -30,10 +30,7 @@ export default {
   },
   fetch ({ app, store }) {
     const ctx = { axios: app.$axios }
-    return Promise.all([
-      store.dispatch('news/getEntries', ctx),
-      store.dispatch('getHomepage', ctx)
-    ])
+    return store.dispatch('getHomepage', ctx)
   },
   head () {
     return {
