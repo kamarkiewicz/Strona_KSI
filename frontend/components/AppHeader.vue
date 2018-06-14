@@ -31,6 +31,7 @@
             <b-nav-item :to="localePath('projects')">{{ $t('general.projects') }}</b-nav-item>
             <b-nav-item :to="localePath('members')">{{ $t('general.members') }}</b-nav-item>
             <b-nav-item :to="localePath('album')">{{ $t('general.album') }}</b-nav-item>
+            <b-nav-item :to="localePath('zosia')">ZOSIA</b-nav-item>
             <b-nav-item v-scroll-to="'#contact'">{{ $t('general.contact') }}</b-nav-item>
           </b-navbar-nav>
         </b-collapse>
