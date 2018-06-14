@@ -1,15 +1,13 @@
 ---
 backup:
-  description: >
-    Manual backup created on Jun 05, 2018
-    20:44
-  created: 1528224268
+  description: Schema for Strona_KSI with sample data
+  created: 1528998979
   config: false
   collections: true
-  forms: true
+  forms: false
   regions: true
   accounts: false
-  webhooks: true
+  webhooks: false
   entries: true
   assets: true
   uploads: true

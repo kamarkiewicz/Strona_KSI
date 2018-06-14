@@ -28,7 +28,7 @@ regions:
       content_pl: |
         <div class="container p-5">
         <h2>Polityka prywatności</h2>
-        <p>Odwiedzając stronę nie została wyświetlona informacja o ciasteczkach. To dlatego, że nasz serwis nie używa ciasteczek i nie śledzi jej użytkownik&oacute;w :)</p>
+        <p>Odwiedzając stronę nie została wyświetlona informacja o ciasteczkach. To dlatego, że nasz serwis nie używa ciasteczek i nie śledzi jej użytkownik&oacute;w. Yay!</p>
         <h2>RODO</h2>
         <p>Nasza strona nie przetwarza żadnych danych osobowych swoich odwiedzających. Wszelkie dane o Członkach Koła są przetwarzane za pisemną zgodą do cel&oacute;w informacyjnych.</p>
         </div>
@@ -38,9 +38,16 @@ regions:
         <h2><span id="result_box" class="" lang="uk">RODO</span></h2>
         <p><span id="result_box" class="" lang="uk">Наш сайт не обробляє жодних особистих даних своїх відвідувачів. <span class="">Усі дані про учасників кругів обробляються з письмового дозволу для інформаційних цілей.</span></span></p>
     _created: 1527590929
-    _modified: 1527596385
+    _modified: 1528555569
     description: ""
-    acl: [ ]
+    acl:
+      editor:
+        form: true
+        edit: true
+        render: true
+        data: true
+      public:
+        data: true
     icon: password-reset.svg
   contact:
     name: contact
@@ -105,7 +112,7 @@ regions:
       email: ksi@cs.uni.wroc.pl
       details: '<p>Koło Student&oacute;w Informatyki<br />p. 24 Instytut Informatyki<br />Uniwersytetu Wrocławskiego<br />ul. Joliot-Curie 15<br />50-383 Wrocław</p>'
     _created: 1524990976
-    _modified: 1527374186
+    _modified: 1528555473
     description: ""
     acl:
       public:
@@ -113,12 +120,52 @@ regions:
         data: true
         render: false
         edit: false
+      editor:
+        form: true
+        edit: true
+        render: true
+        data: true
     icon: map.svg
   carousel:
     name: carousel
-    label: Homepage Carousel
+    label: Homepage
     _id: carousel5b16982e9c018
     fields:
+      - 
+        name: showcase
+        label: Showcase
+        type: repeater
+        default: ""
+        info: ""
+        group: ""
+        localize: true
+        options:
+          fields:
+            - 
+              type: set
+              name: showcase
+              label: Showcase element
+              options:
+                fields:
+                  - 
+                    type: image
+                    name: image
+                    label: Image
+                  - 
+                    type: text
+                    name: title
+                    label: Title
+                  - 
+                    type: textarea
+                    name: description
+                    label: Description
+                  - 
+                    type: text
+                    name: link
+                    label: Router link
+        width: 1-1
+        lst: true
+        acl: [ ]
       - 
         name: slides
         label: Slides
@@ -325,14 +372,435 @@ regions:
                   name: image
                   label: Image
           value:
-            caption: UA pierwszy slajd
-            description: Opis po ukraińsku.
+            caption: Перший слайд
+            description: Опис першого слайда
             image:
               path: https://picsum.photos/500/500?image=1070
+      showcase:
+        - 
+          field:
+            type: set
+            name: showcase
+            label: Showcase element
+            options:
+              fields:
+                - 
+                  type: image
+                  name: image
+                  label: Image
+                - 
+                  type: text
+                  name: title
+                  label: Title
+                - 
+                  type: textarea
+                  name: description
+                  label: Description
+                - 
+                  type: text
+                  name: link
+                  label: Router link
+          value:
+            image:
+              path: https://picsum.photos/270/180?image=985
+            title: About us. KSI history
+            description: >
+              EN Lorem ipsum dolor sit amet,
+              consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Ut enim ad minim
+              veniam, quis nostrud exercitation
+              ullamco laboris nisi ut aliquip ex ea
+              commodo consequat. Duis aute irure dolor
+              in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur.
+              Excepteur sint occaecat cupidatat non
+              proident, sunt in culpa qui officia
+              deserunt mollit anim id est laborum.
+            link: about-us
+        - 
+          field:
+            type: set
+            name: showcase
+            label: Showcase element
+            options:
+              fields:
+                - 
+                  type: image
+                  name: image
+                  label: Image
+                - 
+                  type: text
+                  name: title
+                  label: Title
+                - 
+                  type: textarea
+                  name: description
+                  label: Description
+                - 
+                  type: text
+                  name: link
+                  label: Router link
+          value:
+            description: >
+              EN Lorem ipsum dolor sit amet,
+              consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Ut enim ad minim
+              veniam, quis nostrud exercitation
+              ullamco laboris nisi ut aliquip ex ea
+              commodo consequat. Duis aute irure dolor
+              in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur.
+              Excepteur sint occaecat cupidatat non
+              proident, sunt in culpa qui officia
+              deserunt mollit anim id est laborum.
+            image:
+              path: https://picsum.photos/270/180?image=986
+            title: Projects
+            link: projects
+        - 
+          field:
+            type: set
+            name: showcase
+            label: Showcase element
+            options:
+              fields:
+                - 
+                  type: image
+                  name: image
+                  label: Image
+                - 
+                  type: text
+                  name: title
+                  label: Title
+                - 
+                  type: textarea
+                  name: description
+                  label: Description
+                - 
+                  type: text
+                  name: link
+                  label: Router link
+          value:
+            image:
+              path: https://picsum.photos/270/180?image=987
+            link: members
+            title: Members
+            description: >
+              EN Lorem ipsum dolor sit amet,
+              consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Ut enim ad minim
+              veniam, quis nostrud exercitation
+              ullamco laboris nisi ut aliquip ex ea
+              commodo consequat. Duis aute irure dolor
+              in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur.
+              Excepteur sint occaecat cupidatat non
+              proident, sunt in culpa qui officia
+              deserunt mollit anim id est laborum.
+      showcase_pl:
+        - 
+          field:
+            type: set
+            name: showcase
+            label: Showcase element
+            options:
+              fields:
+                - 
+                  type: image
+                  name: image
+                  label: Image
+                - 
+                  type: text
+                  name: title
+                  label: Title
+                - 
+                  type: textarea
+                  name: description
+                  label: Description
+                - 
+                  type: text
+                  name: link
+                  label: Router link
+          value:
+            description: >
+              PL Lorem ipsum dolor sit amet,
+              consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Ut enim ad minim
+              veniam, quis nostrud exercitation
+              ullamco laboris nisi ut aliquip ex ea
+              commodo consequat. Duis aute irure dolor
+              in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur.
+              Excepteur sint occaecat cupidatat non
+              proident, sunt in culpa qui officia
+              deserunt mollit anim id est laborum.
+            link: about-us
+            title: O nas. Historia KSI
+            image:
+              path: https://picsum.photos/270/180?image=985
+        - 
+          field:
+            type: set
+            name: showcase
+            label: Showcase element
+            options:
+              fields:
+                - 
+                  type: image
+                  name: image
+                  label: Image
+                - 
+                  type: text
+                  name: title
+                  label: Title
+                - 
+                  type: textarea
+                  name: description
+                  label: Description
+                - 
+                  type: text
+                  name: link
+                  label: Router link
+          value:
+            title: Projekty
+            image:
+              path: https://picsum.photos/270/180?image=986
+            description: >
+              PL Lorem ipsum dolor sit amet,
+              consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Ut enim ad minim
+              veniam, quis nostrud exercitation
+              ullamco laboris nisi ut aliquip ex ea
+              commodo consequat. Duis aute irure dolor
+              in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur.
+              Excepteur sint occaecat cupidatat non
+              proident, sunt in culpa qui officia
+              deserunt mollit anim id est laborum.
+            link: projects
+        - 
+          field:
+            type: set
+            name: showcase
+            label: Showcase element
+            options:
+              fields:
+                - 
+                  type: image
+                  name: image
+                  label: Image
+                - 
+                  type: text
+                  name: title
+                  label: Title
+                - 
+                  type: textarea
+                  name: description
+                  label: Description
+                - 
+                  type: text
+                  name: link
+                  label: Router link
+          value:
+            title: Członkowie
+            image:
+              path: https://picsum.photos/270/180?image=987
+            description: >
+              PL Lorem ipsum dolor sit amet,
+              consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Ut enim ad minim
+              veniam, quis nostrud exercitation
+              ullamco laboris nisi ut aliquip ex ea
+              commodo consequat. Duis aute irure dolor
+              in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur.
+              Excepteur sint occaecat cupidatat non
+              proident, sunt in culpa qui officia
+              deserunt mollit anim id est laborum.
+            link: members
+      showcase_uk:
+        - 
+          field:
+            type: set
+            name: showcase
+            label: Showcase element
+            options:
+              fields:
+                - 
+                  type: image
+                  name: image
+                  label: Image
+                - 
+                  type: text
+                  name: title
+                  label: Title
+                - 
+                  type: textarea
+                  name: description
+                  label: Description
+                - 
+                  type: text
+                  name: link
+                  label: Router link
+          value:
+            title: Про нас. Історія КСІ
+            image:
+              path: https://picsum.photos/270/180?image=985
+            description: >
+              UK Lorem ipsum dolor sit amet,
+              consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Ut enim ad minim
+              veniam, quis nostrud exercitation
+              ullamco laboris nisi ut aliquip ex ea
+              commodo consequat. Duis aute irure dolor
+              in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur.
+              Excepteur sint occaecat cupidatat non
+              proident, sunt in culpa qui officia
+              deserunt mollit anim id est laborum.
+            link: about-us
+        - 
+          field:
+            type: set
+            name: showcase
+            label: Showcase element
+            options:
+              fields:
+                - 
+                  type: image
+                  name: image
+                  label: Image
+                - 
+                  type: text
+                  name: title
+                  label: Title
+                - 
+                  type: textarea
+                  name: description
+                  label: Description
+                - 
+                  type: text
+                  name: link
+                  label: Router link
+          value:
+            image:
+              path: https://picsum.photos/270/180?image=986
+            link: projects
+            description: >
+              UK Lorem ipsum dolor sit amet,
+              consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Ut enim ad minim
+              veniam, quis nostrud exercitation
+              ullamco laboris nisi ut aliquip ex ea
+              commodo consequat. Duis aute irure dolor
+              in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur.
+              Excepteur sint occaecat cupidatat non
+              proident, sunt in culpa qui officia
+              deserunt mollit anim id est laborum.
+            title: проектів
+        - 
+          field:
+            type: set
+            name: showcase
+            label: Showcase element
+            options:
+              fields:
+                - 
+                  type: image
+                  name: image
+                  label: Image
+                - 
+                  type: text
+                  name: title
+                  label: Title
+                - 
+                  type: textarea
+                  name: description
+                  label: Description
+                - 
+                  type: text
+                  name: link
+                  label: Router link
+          value:
+            image:
+              path: https://picsum.photos/270/180?image=987
+            link: members
+            description: >
+              UK Lorem ipsum dolor sit amet,
+              consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Ut enim ad minim
+              veniam, quis nostrud exercitation
+              ullamco laboris nisi ut aliquip ex ea
+              commodo consequat. Duis aute irure dolor
+              in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur.
+              Excepteur sint occaecat cupidatat non
+              proident, sunt in culpa qui officia
+              deserunt mollit anim id est laborum.
+            title: Члени
     _created: 1528207406
-    _modified: 1528208219
+    _modified: 1528747753
     description: ""
     acl:
       public:
         data: true
+      editor:
+        edit: true
+        data: true
+        form: true
+        render: true
     icon: play-cubis.svg
+  zosia:
+    name: zosia
+    label: ZOSIA
+    _id: zosia5b229abc5d3f6
+    fields:
+      - 
+        name: content
+        label: Content
+        type: wysiwyg
+        default: ""
+        info: ""
+        group: ""
+        localize: true
+        options: [ ]
+        width: 1-1
+        lst: true
+        acl: [ ]
+        required: true
+    template: ""
+    data:
+      content: |
+        <p>EN <strong>ZOSIA</strong>, czyli <strong>Zimowy Ob&oacute;z Student&oacute;w Informatyki A</strong>, to impreza organizowana przez Koło Student&oacute;w Informatyki od ponad 20 lat. Historia obozu rozpoczęła się od nieformalnych wyjazd&oacute;w grupy zaprzyjaźnionych student&oacute;w, dziś zrzesza każdego roku niemal 200 os&oacute;b: student&oacute;w r&oacute;znych uczelni, przedstawicieli świata nauki i firm z branży IT. Podczas trzydniowego wyjazdu odbywają się wykłady, prezentacje firm ale także wycieczki i imprezy integracyjne.</p>
+        <p>ZOSIA tradycyjnie odbywa się na przełomie lutego i marca.</p>
+        <p>Serdecznie zapraszamy do rejestracji na naszej stronie <a href="http://zosia.org">zosia.org</a>.</p>
+      content_pl: |
+        <p><strong>ZOSIA</strong>, czyli <strong>Zimowy Ob&oacute;z Student&oacute;w Informatyki A</strong>, to impreza organizowana przez Koło Student&oacute;w Informatyki od ponad 20 lat. Historia obozu rozpoczęła się od nieformalnych wyjazd&oacute;w grupy zaprzyjaźnionych student&oacute;w, dziś zrzesza każdego roku niemal 200 os&oacute;b: student&oacute;w r&oacute;znych uczelni, przedstawicieli świata nauki i firm z branży IT. Podczas trzydniowego wyjazdu odbywają się wykłady, prezentacje firm ale także wycieczki i imprezy integracyjne.</p>
+        <p>ZOSIA tradycyjnie odbywa się na przełomie lutego i marca.</p>
+        <p>Serdecznie zapraszamy do rejestracji na naszej stronie <a href="http://zosia.org">zosia.org</a>.</p>
+      content_uk: |
+        <p>UK <strong>ZOSIA</strong>, czyli <strong>Zimowy Ob&oacute;z Student&oacute;w Informatyki A</strong>, to impreza organizowana przez Koło Student&oacute;w Informatyki od ponad 20 lat. Historia obozu rozpoczęła się od nieformalnych wyjazd&oacute;w grupy zaprzyjaźnionych student&oacute;w, dziś zrzesza każdego roku niemal 200 os&oacute;b: student&oacute;w r&oacute;znych uczelni, przedstawicieli świata nauki i firm z branży IT. Podczas trzydniowego wyjazdu odbywają się wykłady, prezentacje firm ale także wycieczki i imprezy integracyjne.</p>
+        <p>ZOSIA tradycyjnie odbywa się na przełomie lutego i marca.</p>
+        <p>Serdecznie zapraszamy do rejestracji na naszej stronie <a href="http://zosia.org">zosia.org</a>.</p>
+    _created: 1528994492
+    _modified: 1528995218
+    description: ""
+    acl:
+      public:
+        data: true
+      editor:
+        edit: true
+        data: true
+        form: true
+        render: true
+    icon: image.svg

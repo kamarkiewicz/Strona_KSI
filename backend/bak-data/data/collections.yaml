@@ -74,11 +74,16 @@ collections:
     sortable: true
     in_menu: false
     _created: 1527083012
-    _modified: 1528127296
+    _modified: 1528554945
     color: ""
     acl:
       public:
         entries_view: true
+      editor:
+        entries_view: true
+        entries_edit: true
+        entries_create: true
+        entries_delete: true
     rules:
       create: [ ]
       read: [ ]
@@ -159,11 +164,14 @@ collections:
     sortable: true
     in_menu: false
     _created: 1524989365
-    _modified: 1527635550
+    _modified: 1528554993
     color: ""
     acl:
       editor:
-        entries_create: false
+        entries_create: true
+        entries_view: true
+        entries_edit: true
+        entries_delete: true
       public:
         entries_view: true
     rules:
@@ -229,11 +237,16 @@ collections:
     sortable: true
     in_menu: false
     _created: 1527081804
-    _modified: 1527253923
+    _modified: 1528555107
     color: ""
     acl:
       public:
         entries_view: true
+      editor:
+        entries_view: true
+        entries_edit: true
+        entries_create: true
+        entries_delete: true
     rules:
       create: [ ]
       read: [ ]
@@ -313,11 +326,16 @@ collections:
     sortable: false
     in_menu: false
     _created: 1524783198
-    _modified: 1524784275
+    _modified: 1528555132
     color: ""
     acl:
       public:
         entries_view: true
+      editor:
+        entries_view: true
+        entries_edit: true
+        entries_create: true
+        entries_delete: true
     rules:
       create: [ ]
       read: [ ]
@@ -343,7 +361,7 @@ collections:
         lst: true
       - 
         name: date
-        label: ""
+        label: Date
         type: date
         default: ""
         info: ""
@@ -353,6 +371,7 @@ collections:
         width: 1-3
         lst: true
         acl: [ ]
+        required: true
       - 
         name: title
         label: Title
@@ -389,11 +408,16 @@ collections:
     sortable: true
     in_menu: true
     _created: 1527590793
-    _modified: 1527602313
+    _modified: 1528555180
     color: ""
     acl:
       public:
         entries_view: true
+      editor:
+        entries_view: true
+        entries_edit: true
+        entries_create: true
+        entries_delete: true
     rules:
       create: [ ]
       read: [ ]

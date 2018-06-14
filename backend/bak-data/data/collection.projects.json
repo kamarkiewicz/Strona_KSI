@@ -15,10 +15,10 @@
         "title_uk_slug": "3d-printer",
         "_mby": "5b0740b21477edoc1044706556",
         "_by": "5b0740b21477edoc1044706556",
-        "_modified": 1528126177,
-        "_created": 1528125960,
-        "_id": "5b155a088427ddoc1028334617",
-        "icon": "fa-print"
+        "_modified": 1528226730,
+        "_created": 1528226730,
+        "icon": "fa-print",
+        "_id": "5b16e3aa3f3a7doc1028722269"
     },
     {
         "icon": "fa-code",
@@ -37,30 +37,30 @@
         "title_uk_slug": "strona-ksi",
         "_mby": "5b0740b21477edoc1044706556",
         "_by": "5b0740b21477edoc1044706556",
-        "_modified": 1528126446,
-        "_created": 1528126446,
-        "_id": "5b155bee2ffeedoc1201727928"
+        "_modified": 1528226730,
+        "_created": 1528226730,
+        "_id": "5b16e3aa3f43fdoc605165603"
     },
     {
         "icon": "fa-microchip",
         "title": "S.O.F.A.",
         "title_pl": "S.O.F.A.",
         "title_uk": "S.O.F.A.",
-        "excerpt": "Sofa na k\u00f3\u0142kach - korzystaj\u0105c z do\u015bwiadczenia zebranego przy \u0142aziku wysy\u0142amy odrobin\u0119 luksusu na Ksi\u0119\u017cyc!",
-        "excerpt_pl": "Sofa na k\u00f3\u0142kach - korzystaj\u0105c z do\u015bwiadczenia zebranego przy \u0142aziku wysy\u0142amy odrobin\u0119 luksusu na Ksi\u0119\u017cyc!",
-        "excerpt_uk": "Sofa na k\u00f3\u0142kach - korzystaj\u0105c z do\u015bwiadczenia zebranego przy \u0142aziku wysy\u0142amy odrobin\u0119 luksusu na Ksi\u0119\u017cyc!",
-        "description": "<p>Tamto&nbsp;wprowadzenie to tylko&nbsp;taki \u017cart...<\/p>",
-        "description_pl": "<p>Tamto&nbsp;wprowadzenie to tylko&nbsp;taki \u017cart...<\/p>",
-        "description_uk": "<p>Tamto&nbsp;wprowadzenie to tylko&nbsp;taki \u017cart...<\/p>",
+        "excerpt": "Couch on wheels. Need more description about this project.",
+        "excerpt_pl": "Sofa na k\u00f3\u0142kach - potrzebny lepszy opis tego projektu.",
+        "excerpt_uk": "UK Couch on wheels. Need more description about this project.",
+        "description": "<p>Couch project description.<\/p>",
+        "description_pl": "<p>Szczeg&oacute;\u0142owy opis projektu SOFA.<\/p>",
+        "description_uk": "<p>UK&nbsp;Couch project description.<\/p>",
         "images": "",
         "title_uk_slug": "s-o-f-a",
         "title_slug": "s-o-f-a",
         "title_pl_slug": "s-o-f-a",
-        "_mby": "5b0740b21477edoc1044706556",
+        "_mby": "5b16e18ca75c8doc644090323",
         "_by": "5b0740b21477edoc1044706556",
-        "_modified": 1528126576,
-        "_created": 1528126576,
-        "_id": "5b155c70bf189doc1644610675"
+        "_modified": 1528998830,
+        "_created": 1528226730,
+        "_id": "5b16e3aa3f4aadoc384435341"
     },
     {
         "icon": "fa-key",
@@ -79,8 +79,8 @@
         "title_slug": "elektroniczny-zamek",
         "_mby": "5b0740b21477edoc1044706556",
         "_by": "5b0740b21477edoc1044706556",
-        "_modified": 1528126644,
-        "_created": 1528126644,
-        "_id": "5b155cb4af0aadoc913735642"
+        "_modified": 1528226730,
+        "_created": 1528226730,
+        "_id": "5b16e3aa3f50edoc987189548"
     }
 ]
