@@ -12,7 +12,7 @@
           </ul>
         </div>
 
-        <div class="p-4 col-md-4">
+        <div class="p-4 col-md-4" id="contact">
           <h2 class="mb-4 text-secondary" v-text="$t('general.contact')"></h2>
           <div class="row pb-2">
               <div class="col-xs-3 text-center">

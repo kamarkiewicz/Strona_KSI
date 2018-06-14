@@ -20,11 +20,6 @@
             :linkText="$t('news.moreLink')" />
         </div>
       </div>
-
-      <b-pagination class="pt-4" align="center"
-        :total-rows="totalRows"
-        v-model="currentPage"
-        :per-page="perPage" />
     </section>
 
   </section>
@@ -39,16 +34,9 @@ export default {
   components: {
     PreviewCard,
   },
-  data () {
-    return {
-      currentPage: 1,
-      perPage: 4,
-    }
-  },
   computed: {
     ...mapGetters({
       entries: 'news/entries',
-      totalRows: 'news/entriesCount',
     }),
     entryChunks () {
       return _.chunk(this.entries, 2)
