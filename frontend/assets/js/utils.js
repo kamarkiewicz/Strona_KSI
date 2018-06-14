@@ -88,11 +88,15 @@ export async function fetchRegion (axios, region) {
 }
 
 // Gets collection data through API
-export async function fetchCollection (axios, collectionName, locale) {
+export async function fetchCollection (axios, collectionName, locale, options) {
+  let params = {
+    lang: locale,
+  }
+  if ((options || {}).sortByCreatedTime) {
+    params['sort[_created]'] = -1
+  }
   let data = await axios.$get(`/api/collections/get/${collectionName}`, {
-    params: {
-      lang: locale
-    }
+    params: params,
   })
   return data
 }

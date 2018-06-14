@@ -1,7 +1,6 @@
 <template>
   <article class="preview-card card h-100 rounded border-0">
     <img class="card-img-top rounded-top" v-if="image.src" :src="image.src" :alt="image.title">
-    <img class="card-img-top rounded-top" v-else src="https://via.placeholder.com/505x295" alt="placeholder">
     <div class="card-body">
       <header>
         <h6 class="card-subtitle mb-2 text-muted" v-if="date" v-text="$d(date)"></h6>

@@ -16,7 +16,8 @@ export const mutations = {
 
 export const actions = {
   async getEntries ({ commit, rootState }, { axios }) {
-    const { entries } = await fetchCollection(axios, COLLECTION_NAME, rootState.i18n.locale)
+    const { entries } = await fetchCollection(
+      axios, COLLECTION_NAME, rootState.i18n.locale, { sortByCreatedTime: true })
     commit('SET_ENTRIES', entries.map(entry => ({
         id: entry._id,
         date: entry._created  * 1000,
