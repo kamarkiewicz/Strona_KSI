@@ -3,8 +3,8 @@
 
     <div class="container pb-4">
       <header>
-        <h2 class="text-primary pb-4" v-text="$t('general.news')"></h2>
-        <p class="text-secondary">Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
+        <h2 class="text-primary pb-4" v-text="$t('news.title')"></h2>
+        <p class="text-secondary" v-text="$t('news.description')"></p>
       </header>
     </div>
 
@@ -17,7 +17,7 @@
             :title="el.title"
             :excerpt="el.excerpt"
             :link="localePath({ name: 'news-article', params: { article: el.link }})"
-            linkText="Czytaj więcej" />
+            :linkText="$t('news.moreLink')" />
         </div>
       </div>
 

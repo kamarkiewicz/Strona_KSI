@@ -3,8 +3,8 @@
 
     <div class="container pb-4">
       <header>
-        <h2 class="text-primary pb-4">Album galerii</h2>
-        <p class="text-secondary">Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
+        <h2 class="text-primary pb-4" v-text="$t('album.title')"></h2>
+        <p class="text-secondary" v-text="$t('album.description')"></p>
       </header>
     </div>
 
@@ -16,7 +16,7 @@
             :title="el.title"
             :excerpt="el.description"
             :link="localePath({ name: 'album-gallery', params: { gallery: el.link }})"
-            linkText="Przejdź do galerii" />
+            :linkText="$t('album.moreLink')" />
         </div>
       </div>
     </section>

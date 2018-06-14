@@ -3,8 +3,8 @@
 
     <div class="container">
       <header class="accented pb-5">
-        <p class="text-primary text-uppercase font-weight-bold mb-1" v-text="subtitle"></p>
-        <h2 class="text-secondary pb-3" v-text="title"></h2>
+        <p class="text-primary text-uppercase font-weight-bold mb-1" v-text="$t('aboutUs.subtitle')"></p>
+        <h2 class="text-secondary pb-3" v-text="$t('aboutUs.title')"></h2>
       </header>
     </div>
 
@@ -21,12 +21,6 @@ export default {
   components: {
     Timeline
   },
-  data () {
-    return {
-      subtitle: "Quibusdam dicentibus",
-      title: "Alii sementem faciunt, alii metunt",
-    }
-  },
   computed: {
     ...mapGetters({
       entries: 'history/entries',
@@ -37,7 +31,7 @@ export default {
   },
   head () {
     return {
-      title: 'O nas',
+      title: this.$t('general.aboutUs'),
     }
   }
 }

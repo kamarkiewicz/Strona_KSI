@@ -6,6 +6,11 @@ describe('ProjectsPage', () => {
 
   beforeEach(() => {
     wrapper = mount(ProjectsPage, {
+      mocks: {
+        $t: (label) => { return label },
+        $d: (label) => { return label },
+        localePath: (args) => { return JSON.stringify(args) },
+      },
       computed: {
         entries: () => ([
           {

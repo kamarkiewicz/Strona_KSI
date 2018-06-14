@@ -19,7 +19,7 @@ export default {
   },
   head () {
     return {
-      title: 'Polityka prywatności',
+      title: this.$t('general.privacy'),
     }
   }
 }

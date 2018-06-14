@@ -1,7 +1,7 @@
 <template>
   <div class="container mt-5 pb-slant hmin-stronaksi">
-    <h4>{{ entry.album }}</h4>
-    <h1>{{ entry.title }}</h1>
+    <h4 v-text="entry.album"></h4>
+    <h1 v-text="entry.title"></h1>
     <div class="gallery-container mt-4 mb-5">
       <a v-for="(img, imgIndex) in images" :key="img.title"
          :href="img.href" @click.prevent="index = imgIndex">

@@ -14,7 +14,7 @@
             :title="el.title"
             :excerpt="el.excerpt"
             :link="localePath({ name: 'news-article', params: { article: el.link }})"
-            :linkText="$t('general.readMore')" />
+            :linkText="$t('news.moreLink')" />
         </div>
       </div>
     </div>

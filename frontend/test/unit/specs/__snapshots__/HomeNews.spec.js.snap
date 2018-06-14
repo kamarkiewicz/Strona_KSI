@@ -19,7 +19,7 @@ exports[`HomeNews renders correctly 1`] = `
               <p>A party you cannot refuse...</p>
               <p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>
             </div>
-            <nuxt-link to="{&quot;name&quot;:&quot;news-article&quot;,&quot;params&quot;:{&quot;article&quot;:&quot;tytul-aktualnosci-1&quot;}}" class="card-link pretty-link">general.readMore</nuxt-link>
+            <nuxt-link to="{&quot;name&quot;:&quot;news-article&quot;,&quot;params&quot;:{&quot;article&quot;:&quot;tytul-aktualnosci-1&quot;}}" class="card-link pretty-link">news.moreLink</nuxt-link>
           </div>
         </article>
       </div>
@@ -35,7 +35,7 @@ exports[`HomeNews renders correctly 1`] = `
               <p>A party you cannot refuse...</p>
               <p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>
             </div>
-            <nuxt-link to="{&quot;name&quot;:&quot;news-article&quot;,&quot;params&quot;:{&quot;article&quot;:&quot;tytul-aktualnosci-2&quot;}}" class="card-link pretty-link">general.readMore</nuxt-link>
+            <nuxt-link to="{&quot;name&quot;:&quot;news-article&quot;,&quot;params&quot;:{&quot;article&quot;:&quot;tytul-aktualnosci-2&quot;}}" class="card-link pretty-link">news.moreLink</nuxt-link>
           </div>
         </article>
       </div>
@@ -51,7 +51,7 @@ exports[`HomeNews renders correctly 1`] = `
               <p>A party you cannot refuse...</p>
               <p>Osoby zainteresowane proszone są o imienny zapis w pokoju KSI.</p>
             </div>
-            <nuxt-link to="{&quot;name&quot;:&quot;news-article&quot;,&quot;params&quot;:{&quot;article&quot;:&quot;tytul-aktualnosci-3&quot;}}" class="card-link pretty-link">general.readMore</nuxt-link>
+            <nuxt-link to="{&quot;name&quot;:&quot;news-article&quot;,&quot;params&quot;:{&quot;article&quot;:&quot;tytul-aktualnosci-3&quot;}}" class="card-link pretty-link">news.moreLink</nuxt-link>
           </div>
         </article>
       </div>

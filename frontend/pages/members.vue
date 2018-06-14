@@ -3,8 +3,8 @@
     <div class="container text-center pb-4">
       <div class="row">
         <div class="col-md-12">
-          <h1 class="text-primary">Członkowie Koła Studentów Informatyki</h1>
-          <p class="lead">I TY możesz znaleźć się wśród nas!</p>
+          <h1 class="text-primary" v-text="$t('members.title')"></h1>
+          <p class="lead" v-text="$t('members.description')"></p>
         </div>
       </div>
 
@@ -38,7 +38,7 @@ export default {
   },
   head () {
     return {
-      title: 'Członkowie',
+      title: this.$t('general.members'),
     }
   }
 }

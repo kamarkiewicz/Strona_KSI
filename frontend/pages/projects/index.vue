@@ -3,8 +3,8 @@
 
     <div class="container">
       <header>
-        <h2 class="text-primary pb-4">Projekty</h2>
-        <p class="text-secondary">Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
+        <h2 class="text-primary pb-4" v-text="$t('projects.title')"></h2>
+        <p class="text-secondary" v-text="$t('projects.description')"></p>
       </header>
     </div>
 

@@ -10,7 +10,7 @@
         <div class="col-md-7">
           <h2 class="text-primary pt-3" v-text="el.title"></h2>
           <p class="description" v-text="el.description"></p>
-          <nuxt-link class="pretty-link" :to="localePath(el.link)" v-text="$t('general.readMore')"></nuxt-link>
+          <nuxt-link class="pretty-link" :to="localePath(el.link)" v-text="$t('showcase.moreLink')"></nuxt-link>
         </div>
       </div>
 
