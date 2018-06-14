@@ -2,7 +2,7 @@
 
 [![CircleCI](https://circleci.com/gh/kamarkiewicz/Strona_KSI.svg?style=svg)](https://circleci.com/gh/kamarkiewicz/Strona_KSI)
 
-[![Known Vulnerabilities](https://snyk.io/test/github/kamarkiewicz/strona_ksi/badge.svg?targetFile=frontend/package.json)](https://snyk.io/test/github/kamarkiewicz/strona_ksi)
+[![Known Vulnerabilities](https://snyk.io/test/github/kamarkiewicz/strona_ksi/badge.svg?targetFile=frontend/package.json)](https://snyk.io/test/github/kamarkiewicz/strona_ksi?targetFile=frontend/package.json)
 
 This repository contains the new version of the website designed and implemented
 for Computer Science Students' Association of University of Wroclaw (KSI UWr).
