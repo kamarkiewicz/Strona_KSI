@@ -24,11 +24,15 @@ export const mutations = {
 }
 
 export const actions = {
-  async getHomepage ({ commit, dispatch, rootState }, { axios }) {
-    if (!_.isEmpty(rootState.homepage)) return; // data already fetched
-
+  getHomepage ({ dispatch }, { axios }) {
     // Fetch some news for HomeNews component
-    await dispatch('news/getEntries', { axios, limit: 3 })
+    return Promise.all([
+      dispatch('news/getEntries', { axios, limit: 3 }),
+      dispatch('getHomepageRegions', { axios }),
+    ])
+  },
+  async getHomepageRegions ({ commit, rootState }, { axios }) {
+    if (!_.isEmpty(rootState.homepage)) return; // data in all languages already fetched
 
     let data = await fetchRegion (axios, 'carousel')
     _.each(data, (entry, locale) => {
