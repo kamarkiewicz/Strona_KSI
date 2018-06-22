@@ -17,8 +17,6 @@ RUN apt-get update \
 RUN echo "extension=mongodb.so" > /usr/local/etc/php/conf.d/mongodb.ini
 RUN echo "extension=redis.so" > /usr/local/etc/php/conf.d/redis.ini
 
-RUN chown -R www-data:www-data /var/www/html
-
-VOLUME /var/www/html
+ADD --chown=www-data:www-data . /var/www/html
 
 CMD ["apache2-foreground"]
