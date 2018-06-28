@@ -2,7 +2,7 @@
   <header class="header">
     <b-navbar toggleable="lg" type="light" variant="white">
       <b-container class="fluid-md">
-          <b-navbar-brand :to="localePath('index')">
+          <b-navbar-brand target="_blank" rel="noopener noreferrer" href="https://www.uni.wroc.pl">
               <img class="p-1" src="~/assets/brand-uwr.svg" width="200" height="75" alt="UWr">
           </b-navbar-brand>
           <b-navbar-brand :to="localePath('index')">
