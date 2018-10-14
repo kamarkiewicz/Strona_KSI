@@ -1,5 +1,5 @@
 # Cockpit-CMS image
-FROM kamarkiewicz/cockpitcms
+FROM kamarkiewicz/cockpitcms:latest
 
 # Locally-built base image
 # FROM cockpitcms

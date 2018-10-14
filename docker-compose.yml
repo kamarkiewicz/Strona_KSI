@@ -1,0 +1,16 @@
+version: '3'
+
+volumes:
+  storage:
+
+services:
+  backend:
+    build: ./backend
+    volumes:
+      - storage:/var/www/html/storage
+  frontend:
+    build: ./frontend
+    depends_on:
+      - backend
+    environment:
+      API_URL: ${API_URL}
