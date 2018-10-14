@@ -1,3 +1,6 @@
 [submodule "backend/addons/BackupAndRestore"]
 	path = backend/addons/BackupAndRestore
 	url = https://github.com/pauloamgomes/BackupAndRestore.git
+[submodule "backend/addons/Detektivo"]
+	path = backend/addons/Detektivo
+	url = https://github.com/agentejo/Detektivo.git
