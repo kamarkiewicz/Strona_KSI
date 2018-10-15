@@ -4,3 +4,6 @@
 [submodule "backend/addons/Detektivo"]
 	path = backend/addons/Detektivo
 	url = https://github.com/agentejo/Detektivo.git
+[submodule "backend/cockpit"]
+	path = backend/cockpit
+	url = https://github.com/agentejo/cockpit.git
