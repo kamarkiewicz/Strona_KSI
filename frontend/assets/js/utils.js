@@ -79,7 +79,7 @@ export async function fetchSlugsByTitle (axios, collectionName, { locale, slug }
 
 // Gets region data through API
 export async function fetchRegion (axios, region) {
-  const data = await axios.$get(`/api/regions/data/${region}`)
+  const data = await axios.$get(`/api/singletons/get/${region}`)
   // Redesign data: { 'lang': { 'field': ... } } insteand of { 'field_lang': ... }
   const postprocess = ([field_lang, value]) => ([getFieldName(field_lang), value])
   const groups = _.groupBy(_.toPairs(data), ([key, _value]) => getFieldLang(key))
