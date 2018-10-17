@@ -6,23 +6,27 @@ volumes:
 services:
   backend:
     build: ./backend
+    restart: always
     volumes:
-      - storage:/var/www/html/cms/storage
+      - storage:/var/www/html/storage
 
   frontend:
     build: ./frontend
+    restart: always
     depends_on:
       - backend
     environment:
-      API_URL: https://ksi.ii.uni.wroc.pl/cms/
+      API_URL: https://ksi.ii.uni.wroc.pl:4321/
 
   caddy:
     image: abiosoft/caddy
+    restart: always
     environment:
       ACME_AGREE: 'true'
     ports:
       - 80:80
       - 443:443
+      - 4321:4321
     volumes:
       - ./caddy/Caddyfile:/etc/Caddyfile
       - ./caddy/.caddy:/root/.caddy
