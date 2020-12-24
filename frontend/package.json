@@ -17,7 +17,7 @@
     "deploy:dev": "now --env API_URL=https://stronaksi-backend.now.sh --public && now alias && now rm frontend --safe --yes"
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.3.1",
+    "@nuxtjs/axios": "^5.12.3",
     "@nuxtjs/font-awesome": "^1.0.3",
     "@nuxtjs/pwa": "^2.0.8",
     "@nuxtjs/sitemap": "^0.1.1",
